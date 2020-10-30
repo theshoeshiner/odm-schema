@@ -10,6 +10,8 @@
 			<id>gen</id>
 			<build>
 				<plugins>
+					
+
 					<plugin>
 						<groupId>org.jvnet.jaxb2.maven2</groupId>
 						<artifactId>maven-jaxb2-plugin</artifactId>
@@ -27,14 +29,43 @@
 									<forceRegenerate>true</forceRegenerate>
 									<enableIntrospection>true</enableIntrospection>
 									<schemaExcludes>
-										<!-- <schemaExclude>xlink.xsd</schemaExclude> -->
+										<schemaExclude>xlink.xsd</schemaExclude>
+										<schemaExclude>xmldsig-core-schema.xsd</schemaExclude>
 									</schemaExcludes>
 								</configuration>
 							</execution>
 						</executions>
 					</plugin>
+					
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>1.1</version>
+						<executions>
+							<execution>
+								<id>clean</id>
+								<phase>generate-sources</phase>
+								<configuration>
+									<tasks>
+										<delete dir="src/main/java/org/w3" />
+									</tasks>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					
 				</plugins>
 			</build>
 		</profile>
 	</profiles>
+	<dependencies>
+		<dependency>
+			<groupId>org.w3</groupId>
+			<artifactId>xmldsig-schema</artifactId>
+			<version>2000.09</version>
+		</dependency>
+	</dependencies>
 </project>

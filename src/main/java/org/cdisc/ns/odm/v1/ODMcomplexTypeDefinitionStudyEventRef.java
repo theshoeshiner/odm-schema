@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}StudyEventRefElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}StudyEventRefAttributeDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}RefAttributeSharedDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}StudyEventRefAttributeExtension"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}StudyEventRefAttributeDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -34,14 +34,38 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-StudyEventRef")
 public class ODMcomplexTypeDefinitionStudyEventRef {
 
+    @XmlAttribute(name = "StudyEventOID", required = true)
+    protected String studyEventOID;
     @XmlAttribute(name = "OrderNumber")
     protected BigInteger orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     protected YesOrNo mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
-    @XmlAttribute(name = "StudyEventOID", required = true)
-    protected String studyEventOID;
+
+    /**
+     * Gets the value of the studyEventOID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStudyEventOID() {
+        return studyEventOID;
+    }
+
+    /**
+     * Sets the value of the studyEventOID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setStudyEventOID(String value) {
+        this.studyEventOID = value;
+    }
 
     /**
      * Gets the value of the orderNumber property.
@@ -113,30 +137,6 @@ public class ODMcomplexTypeDefinitionStudyEventRef {
      */
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
-    }
-
-    /**
-     * Gets the value of the studyEventOID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getStudyEventOID() {
-        return studyEventOID;
-    }
-
-    /**
-     * Sets the value of the studyEventOID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setStudyEventOID(String value) {
-        this.studyEventOID = value;
     }
 
 }

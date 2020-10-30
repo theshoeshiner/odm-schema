@@ -21,8 +21,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListAttributeExtension"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalSharedAttributeDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListAttributeDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalSharedAttributeDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -34,63 +34,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ExternalCodeList")
 public class ODMcomplexTypeDefinitionExternalCodeList {
 
-    @XmlAttribute(name = "Dictionary")
-    protected String dictionary;
-    @XmlAttribute(name = "Version")
-    protected String version;
     @XmlAttribute(name = "href")
     @XmlSchemaType(name = "anyURI")
     protected String href;
     @XmlAttribute(name = "ref")
     protected String ref;
-
-    /**
-     * Gets the value of the dictionary property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDictionary() {
-        return dictionary;
-    }
-
-    /**
-     * Sets the value of the dictionary property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDictionary(String value) {
-        this.dictionary = value;
-    }
-
-    /**
-     * Gets the value of the version property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getVersion() {
-        return version;
-    }
-
-    /**
-     * Sets the value of the version property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setVersion(String value) {
-        this.version = value;
-    }
+    @XmlAttribute(name = "Dictionary")
+    protected String dictionary;
+    @XmlAttribute(name = "Version")
+    protected String version;
 
     /**
      * Gets the value of the href property.
@@ -138,6 +90,54 @@ public class ODMcomplexTypeDefinitionExternalCodeList {
      */
     public void setRef(String value) {
         this.ref = value;
+    }
+
+    /**
+     * Gets the value of the dictionary property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDictionary() {
+        return dictionary;
+    }
+
+    /**
+     * Sets the value of the dictionary property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDictionary(String value) {
+        this.dictionary = value;
+    }
+
+    /**
+     * Gets the value of the version property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    /**
+     * Sets the value of the version property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVersion(String value) {
+        this.version = value;
     }
 
 }

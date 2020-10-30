@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}ItemGroupRefElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}RefAttributeSharedDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemGroupRefAttributeExtension"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemGroupRefAttributeDefinition"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}RefAttributeSharedDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -34,38 +34,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemGroupRef")
 public class ODMcomplexTypeDefinitionItemGroupRef {
 
-    @XmlAttribute(name = "ItemGroupOID", required = true)
-    protected String itemGroupOID;
     @XmlAttribute(name = "OrderNumber")
     protected BigInteger orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     protected YesOrNo mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
-
-    /**
-     * Gets the value of the itemGroupOID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getItemGroupOID() {
-        return itemGroupOID;
-    }
-
-    /**
-     * Sets the value of the itemGroupOID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemGroupOID(String value) {
-        this.itemGroupOID = value;
-    }
+    @XmlAttribute(name = "ItemGroupOID", required = true)
+    protected String itemGroupOID;
 
     /**
      * Gets the value of the orderNumber property.
@@ -137,6 +113,30 @@ public class ODMcomplexTypeDefinitionItemGroupRef {
      */
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
+    }
+
+    /**
+     * Gets the value of the itemGroupOID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getItemGroupOID() {
+        return itemGroupOID;
+    }
+
+    /**
+     * Sets the value of the itemGroupOID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setItemGroupOID(String value) {
+        this.itemGroupOID = value;
     }
 
 }

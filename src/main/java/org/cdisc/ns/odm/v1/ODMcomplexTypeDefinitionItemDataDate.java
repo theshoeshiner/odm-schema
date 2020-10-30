@@ -20,8 +20,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * &lt;complexType name="ODMcomplexTypeDefinition-ItemDataDate"&gt;
  *   &lt;simpleContent&gt;
  *     &lt;extension base="&lt;http://www.cdisc.org/ns/odm/v1.3&gt;date"&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataTypeAttributeSharedDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataStarAttributeDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataTypeAttributeSharedDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataStarAttributeExtension"/&gt;
  *     &lt;/extension&gt;
  *   &lt;/simpleContent&gt;
@@ -38,10 +38,6 @@ public class ODMcomplexTypeDefinitionItemDataDate {
 
     @XmlValue
     protected XMLGregorianCalendar value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -56,6 +52,10 @@ public class ODMcomplexTypeDefinitionItemDataDate {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
 
     /**
      * Gets the value of the value property.
@@ -79,54 +79,6 @@ public class ODMcomplexTypeDefinitionItemDataDate {
      */
     public void setValue(XMLGregorianCalendar value) {
         this.value = value;
-    }
-
-    /**
-     * Gets the value of the itemOID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    /**
-     * Sets the value of the itemOID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    /**
-     * Gets the value of the transactionType property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TransactionType }
-     *     
-     */
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    /**
-     * Sets the value of the transactionType property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TransactionType }
-     *     
-     */
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     /**
@@ -223,6 +175,54 @@ public class ODMcomplexTypeDefinitionItemDataDate {
      */
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    /**
+     * Gets the value of the itemOID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    /**
+     * Sets the value of the itemOID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    /**
+     * Gets the value of the transactionType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TransactionType }
+     *     
+     */
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    /**
+     * Sets the value of the transactionType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TransactionType }
+     *     
+     */
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

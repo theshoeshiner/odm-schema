@@ -26,9 +26,9 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element ref="{http://www.cdisc.org/ns/odm/v1.3}Annotation" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataAttributeDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataAttributeSharedDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataAttributeExtension"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemDataAttributeDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -53,14 +53,14 @@ public class ODMcomplexTypeDefinitionItemData {
     protected ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef;
     @XmlElement(name = "Annotation")
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
+    @XmlAttribute(name = "Value")
+    protected String value;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
     @XmlAttribute(name = "IsNull")
     protected YesOnly isNull;
-    @XmlAttribute(name = "Value")
-    protected String value;
 
     /**
      * Gets the value of the auditRecord property.
@@ -164,6 +164,30 @@ public class ODMcomplexTypeDefinitionItemData {
     }
 
     /**
+     * Gets the value of the value property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     * Sets the value of the value property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
      * Gets the value of the itemOID property.
      * 
      * @return
@@ -233,30 +257,6 @@ public class ODMcomplexTypeDefinitionItemData {
      */
     public void setIsNull(YesOnly value) {
         this.isNull = value;
-    }
-
-    /**
-     * Gets the value of the value property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getValue() {
-        return value;
-    }
-
-    /**
-     * Sets the value of the value property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setValue(String value) {
-        this.value = value;
     }
 
 }
