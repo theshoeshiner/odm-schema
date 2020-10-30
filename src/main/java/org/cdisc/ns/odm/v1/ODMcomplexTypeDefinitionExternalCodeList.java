@@ -21,8 +21,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListAttributeExtension"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListAttributeDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalSharedAttributeDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ExternalCodeListAttributeDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -34,63 +34,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ExternalCodeList")
 public class ODMcomplexTypeDefinitionExternalCodeList {
 
+    @XmlAttribute(name = "Dictionary")
+    protected String dictionary;
+    @XmlAttribute(name = "Version")
+    protected String version;
     @XmlAttribute(name = "href")
     @XmlSchemaType(name = "anyURI")
     protected String href;
     @XmlAttribute(name = "ref")
     protected String ref;
-    @XmlAttribute(name = "Dictionary")
-    protected String dictionary;
-    @XmlAttribute(name = "Version")
-    protected String version;
-
-    /**
-     * Gets the value of the href property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getHref() {
-        return href;
-    }
-
-    /**
-     * Sets the value of the href property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setHref(String value) {
-        this.href = value;
-    }
-
-    /**
-     * Gets the value of the ref property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getRef() {
-        return ref;
-    }
-
-    /**
-     * Sets the value of the ref property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setRef(String value) {
-        this.ref = value;
-    }
 
     /**
      * Gets the value of the dictionary property.
@@ -138,6 +90,54 @@ public class ODMcomplexTypeDefinitionExternalCodeList {
      */
     public void setVersion(String value) {
         this.version = value;
+    }
+
+    /**
+     * Gets the value of the href property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getHref() {
+        return href;
+    }
+
+    /**
+     * Sets the value of the href property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setHref(String value) {
+        this.href = value;
+    }
+
+    /**
+     * Gets the value of the ref property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRef() {
+        return ref;
+    }
+
+    /**
+     * Sets the value of the ref property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRef(String value) {
+        this.ref = value;
     }
 
 }

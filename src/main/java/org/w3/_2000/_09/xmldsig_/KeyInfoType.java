@@ -1,12 +1,15 @@
 
-package org.w3.www._2000._09.xmldsig_;
+package org.w3._2000._09.xmldsig_;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlElementRefs;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlMixed;
 import javax.xml.bind.annotation.XmlSchemaType;
@@ -17,20 +20,25 @@ import org.w3c.dom.Element;
 
 
 /**
- * <p>Java class for ObjectType complex type.
+ * <p>Java class for KeyInfoType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ObjectType"&gt;
+ * &lt;complexType name="KeyInfoType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
- *       &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
- *         &lt;any processContents='lax'/&gt;
- *       &lt;/sequence&gt;
+ *       &lt;choice maxOccurs="unbounded"&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}KeyName"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}KeyValue"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}RetrievalMethod"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}X509Data"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}PGPData"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}SPKIData"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}MgmtData"/&gt;
+ *         &lt;any processContents='lax' namespace='##other'/&gt;
+ *       &lt;/choice&gt;
  *       &lt;attribute name="Id" type="{http://www.w3.org/2001/XMLSchema}ID" /&gt;
- *       &lt;attribute name="MimeType" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
- *       &lt;attribute name="Encoding" type="{http://www.w3.org/2001/XMLSchema}anyURI" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -39,11 +47,20 @@ import org.w3c.dom.Element;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ObjectType", propOrder = {
+@XmlType(name = "KeyInfoType", propOrder = {
     "content"
 })
-public class ObjectType {
+public class KeyInfoType {
 
+    @XmlElementRefs({
+        @XmlElementRef(name = "KeyName", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "KeyValue", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "RetrievalMethod", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "X509Data", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "PGPData", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "SPKIData", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "MgmtData", namespace = "http://www.w3.org/2000/09/xmldsig#", type = JAXBElement.class, required = false)
+    })
     @XmlMixed
     @XmlAnyElement(lax = true)
     protected List<Object> content;
@@ -52,11 +69,6 @@ public class ObjectType {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
-    @XmlAttribute(name = "MimeType")
-    protected String mimeType;
-    @XmlAttribute(name = "Encoding")
-    @XmlSchemaType(name = "anyURI")
-    protected String encoding;
 
     /**
      * Gets the value of the content property.
@@ -76,6 +88,13 @@ public class ObjectType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
+     * {@link JAXBElement }{@code <}{@link KeyValueType }{@code >}
+     * {@link JAXBElement }{@code <}{@link RetrievalMethodType }{@code >}
+     * {@link JAXBElement }{@code <}{@link X509DataType }{@code >}
+     * {@link JAXBElement }{@code <}{@link PGPDataType }{@code >}
+     * {@link JAXBElement }{@code <}{@link SPKIDataType }{@code >}
+     * {@link JAXBElement }{@code <}{@link String }{@code >}
      * {@link Element }
      * {@link Object }
      * {@link String }
@@ -111,54 +130,6 @@ public class ObjectType {
      */
     public void setId(String value) {
         this.id = value;
-    }
-
-    /**
-     * Gets the value of the mimeType property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMimeType() {
-        return mimeType;
-    }
-
-    /**
-     * Sets the value of the mimeType property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMimeType(String value) {
-        this.mimeType = value;
-    }
-
-    /**
-     * Gets the value of the encoding property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getEncoding() {
-        return encoding;
-    }
-
-    /**
-     * Sets the value of the encoding property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setEncoding(String value) {
-        this.encoding = value;
     }
 
 }

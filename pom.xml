@@ -27,7 +27,7 @@
 									<forceRegenerate>true</forceRegenerate>
 									<enableIntrospection>true</enableIntrospection>
 									<schemaExcludes>
-										<schemaExclude>xlink.xsd</schemaExclude>
+										<!-- <schemaExclude>xlink.xsd</schemaExclude> -->
 									</schemaExcludes>
 								</configuration>
 							</execution>

@@ -21,8 +21,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}FormRefElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}FormRefAttributeExtension"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}FormRefAttributeDefinition"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}RefAttributeSharedDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}FormRefAttributeDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -34,38 +34,14 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-FormRef")
 public class ODMcomplexTypeDefinitionFormRef {
 
-    @XmlAttribute(name = "FormOID", required = true)
-    protected String formOID;
     @XmlAttribute(name = "OrderNumber")
     protected BigInteger orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     protected YesOrNo mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
-
-    /**
-     * Gets the value of the formOID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFormOID() {
-        return formOID;
-    }
-
-    /**
-     * Sets the value of the formOID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFormOID(String value) {
-        this.formOID = value;
-    }
+    @XmlAttribute(name = "FormOID", required = true)
+    protected String formOID;
 
     /**
      * Gets the value of the orderNumber property.
@@ -137,6 +113,30 @@ public class ODMcomplexTypeDefinitionFormRef {
      */
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
+    }
+
+    /**
+     * Gets the value of the formOID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFormOID() {
+        return formOID;
+    }
+
+    /**
+     * Sets the value of the formOID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFormOID(String value) {
+        this.formOID = value;
     }
 
 }

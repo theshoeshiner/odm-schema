@@ -1,5 +1,5 @@
 
-package org.w3.www._2000._09.xmldsig_;
+package org.w3._2000._09.xmldsig_;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;

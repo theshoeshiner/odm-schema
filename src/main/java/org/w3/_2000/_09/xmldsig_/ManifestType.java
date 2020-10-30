@@ -1,5 +1,5 @@
 
-package org.w3.www._2000._09.xmldsig_;
+package org.w3._2000._09.xmldsig_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for SignaturePropertiesType complex type.
+ * <p>Java class for ManifestType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SignaturePropertiesType"&gt;
+ * &lt;complexType name="ManifestType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}SignatureProperty" maxOccurs="unbounded"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}Reference" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="Id" type="{http://www.w3.org/2001/XMLSchema}ID" /&gt;
  *     &lt;/restriction&gt;
@@ -35,13 +35,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SignaturePropertiesType", propOrder = {
-    "signatureProperty"
+@XmlType(name = "ManifestType", propOrder = {
+    "reference"
 })
-public class SignaturePropertiesType {
+public class ManifestType {
 
-    @XmlElement(name = "SignatureProperty", required = true)
-    protected List<SignaturePropertyType> signatureProperty;
+    @XmlElement(name = "Reference", required = true)
+    protected List<ReferenceType> reference;
     @XmlAttribute(name = "Id")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -49,32 +49,32 @@ public class SignaturePropertiesType {
     protected String id;
 
     /**
-     * Gets the value of the signatureProperty property.
+     * Gets the value of the reference property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the signatureProperty property.
+     * This is why there is not a <CODE>set</CODE> method for the reference property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSignatureProperty().add(newItem);
+     *    getReference().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SignaturePropertyType }
+     * {@link ReferenceType }
      * 
      * 
      */
-    public List<SignaturePropertyType> getSignatureProperty() {
-        if (signatureProperty == null) {
-            signatureProperty = new ArrayList<SignaturePropertyType>();
+    public List<ReferenceType> getReference() {
+        if (reference == null) {
+            reference = new ArrayList<ReferenceType>();
         }
-        return this.signatureProperty;
+        return this.reference;
     }
 
     /**

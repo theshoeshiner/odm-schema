@@ -1,5 +1,5 @@
 
-package org.w3.www._2000._09.xmldsig_;
+package org.w3._2000._09.xmldsig_;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,15 +15,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>Java class for ManifestType complex type.
+ * <p>Java class for SignedInfoType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ManifestType"&gt;
+ * &lt;complexType name="SignedInfoType"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}CanonicalizationMethod"/&gt;
+ *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}SignatureMethod"/&gt;
  *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}Reference" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="Id" type="{http://www.w3.org/2001/XMLSchema}ID" /&gt;
@@ -35,11 +37,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ManifestType", propOrder = {
+@XmlType(name = "SignedInfoType", propOrder = {
+    "canonicalizationMethod",
+    "signatureMethod",
     "reference"
 })
-public class ManifestType {
+public class SignedInfoType {
 
+    @XmlElement(name = "CanonicalizationMethod", required = true)
+    protected CanonicalizationMethodType canonicalizationMethod;
+    @XmlElement(name = "SignatureMethod", required = true)
+    protected SignatureMethodType signatureMethod;
     @XmlElement(name = "Reference", required = true)
     protected List<ReferenceType> reference;
     @XmlAttribute(name = "Id")
@@ -47,6 +55,54 @@ public class ManifestType {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
+
+    /**
+     * Gets the value of the canonicalizationMethod property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CanonicalizationMethodType }
+     *     
+     */
+    public CanonicalizationMethodType getCanonicalizationMethod() {
+        return canonicalizationMethod;
+    }
+
+    /**
+     * Sets the value of the canonicalizationMethod property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CanonicalizationMethodType }
+     *     
+     */
+    public void setCanonicalizationMethod(CanonicalizationMethodType value) {
+        this.canonicalizationMethod = value;
+    }
+
+    /**
+     * Gets the value of the signatureMethod property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link SignatureMethodType }
+     *     
+     */
+    public SignatureMethodType getSignatureMethod() {
+        return signatureMethod;
+    }
+
+    /**
+     * Sets the value of the signatureMethod property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link SignatureMethodType }
+     *     
+     */
+    public void setSignatureMethod(SignatureMethodType value) {
+        this.signatureMethod = value;
+    }
 
     /**
      * Gets the value of the reference property.

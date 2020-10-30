@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
-import org.w3.www._2000._09.xmldsig_.SignatureType;
+import org.w3._2000._09.xmldsig_.SignatureType;
 
 
 /**

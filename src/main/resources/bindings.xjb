@@ -3,41 +3,5 @@
 
 
 
-	<!-- XML 1.0 -->
-
-	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="xml.xsd" node="/xs:schema">
-		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			node="//xs:schema">
-			<jxb:schemaBindings>
-				<jxb:package name="org.w3.www.xml._1998.namespace" />
-			</jxb:schemaBindings>
-		</jxb:bindings>
-	</jxb:bindings>
-
-	<!-- XML Dsig 1.0 -->
-
-	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="xmldsig-core-schema.xsd" node="/xs:schema">
-		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			node="//xs:schema">
-			<jxb:schemaBindings>
-				<jxb:package name="org.w3.www._2000._09.xmldsig_" />
-			</jxb:schemaBindings>
-		</jxb:bindings>
-	</jxb:bindings>
-
-	<!-- XLink 1.0 -->
-
-	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="xlink.xsd" node="/xs:schema">
-		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			node="//xs:schema">
-			<jxb:schemaBindings>
-				<jxb:package name="org.w3.www._1999.xlink" />
-			</jxb:schemaBindings>
-		</jxb:bindings>
-	</jxb:bindings>
-
 
 </jxb:bindings>
