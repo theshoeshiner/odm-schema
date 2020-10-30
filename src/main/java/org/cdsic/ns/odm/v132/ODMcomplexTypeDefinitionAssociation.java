@@ -27,8 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element ref="{http://www.cdisc.org/ns/odm/v1.3}Annotation"/&gt;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}AssociationElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}AssociationAttributeExtension"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}AssociationAttributeDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}AssociationAttributeExtension"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -58,8 +58,8 @@ public class ODMcomplexTypeDefinitionAssociation {
      * <p>
      * You are getting this "catch-all" property because of the following reason: 
      * The field name "KeySet" is used by two different parts of a schema. See: 
-     * line 1865 of file:/E:/Workspaces/bioclinica/eclipse/odm/src/main/resources/ODM1-3-2-foundation.xsd
-     * line 1864 of file:/E:/Workspaces/bioclinica/eclipse/odm/src/main/resources/ODM1-3-2-foundation.xsd
+     * line 1865 of file:/E:/Workspaces/bioclinica/eclipse/odm-schema/src/main/resources/ODM1-3-2-foundation.xsd
+     * line 1864 of file:/E:/Workspaces/bioclinica/eclipse/odm-schema/src/main/resources/ODM1-3-2-foundation.xsd
      * <p>
      * To get rid of this property, apply a property customization to one 
      * of both of the following declarations to change their names: 

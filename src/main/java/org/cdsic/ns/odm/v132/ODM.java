@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.datatype.XMLGregorianCalendar;
-import org.w3._2000._09.xmldsig_.SignatureType;
+import org.w3.v200009.xmldsig.SignatureType;
 
 
 /**
@@ -35,8 +35,8 @@ import org.w3._2000._09.xmldsig_.SignatureType;
  *         &lt;element ref="{http://www.w3.org/2000/09/xmldsig#}Signature" maxOccurs="unbounded" minOccurs="0"/&gt;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}ODMElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ODMAttributeExtension"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ODMAttributeDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ODMAttributeExtension"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;

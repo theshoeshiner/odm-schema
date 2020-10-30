@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;group ref="{http://www.cdisc.org/ns/odm/v1.3}ItemRefElementExtension" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}RefAttributeSharedDefinition"/&gt;
- *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemRefAttributeExtension"/&gt;
  *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemRefAttributeDefinition"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}ItemRefAttributeExtension"/&gt;
+ *       &lt;attGroup ref="{http://www.cdisc.org/ns/odm/v1.3}RefAttributeSharedDefinition"/&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -34,12 +34,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemRef")
 public class ODMcomplexTypeDefinitionItemRef {
 
-    @XmlAttribute(name = "OrderNumber")
-    protected BigInteger orderNumber;
-    @XmlAttribute(name = "Mandatory", required = true)
-    protected YesOrNo mandatory;
-    @XmlAttribute(name = "CollectionExceptionConditionOID")
-    protected String collectionExceptionConditionOID;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "KeySequence")
@@ -52,78 +46,12 @@ public class ODMcomplexTypeDefinitionItemRef {
     protected String role;
     @XmlAttribute(name = "RoleCodeListOID")
     protected String roleCodeListOID;
-
-    /**
-     * Gets the value of the orderNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
-     */
-    public BigInteger getOrderNumber() {
-        return orderNumber;
-    }
-
-    /**
-     * Sets the value of the orderNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
-    public void setOrderNumber(BigInteger value) {
-        this.orderNumber = value;
-    }
-
-    /**
-     * Gets the value of the mandatory property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link YesOrNo }
-     *     
-     */
-    public YesOrNo getMandatory() {
-        return mandatory;
-    }
-
-    /**
-     * Sets the value of the mandatory property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link YesOrNo }
-     *     
-     */
-    public void setMandatory(YesOrNo value) {
-        this.mandatory = value;
-    }
-
-    /**
-     * Gets the value of the collectionExceptionConditionOID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getCollectionExceptionConditionOID() {
-        return collectionExceptionConditionOID;
-    }
-
-    /**
-     * Sets the value of the collectionExceptionConditionOID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setCollectionExceptionConditionOID(String value) {
-        this.collectionExceptionConditionOID = value;
-    }
+    @XmlAttribute(name = "OrderNumber")
+    protected BigInteger orderNumber;
+    @XmlAttribute(name = "Mandatory", required = true)
+    protected YesOrNo mandatory;
+    @XmlAttribute(name = "CollectionExceptionConditionOID")
+    protected String collectionExceptionConditionOID;
 
     /**
      * Gets the value of the itemOID property.
@@ -267,6 +195,78 @@ public class ODMcomplexTypeDefinitionItemRef {
      */
     public void setRoleCodeListOID(String value) {
         this.roleCodeListOID = value;
+    }
+
+    /**
+     * Gets the value of the orderNumber property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BigInteger }
+     *     
+     */
+    public BigInteger getOrderNumber() {
+        return orderNumber;
+    }
+
+    /**
+     * Sets the value of the orderNumber property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BigInteger }
+     *     
+     */
+    public void setOrderNumber(BigInteger value) {
+        this.orderNumber = value;
+    }
+
+    /**
+     * Gets the value of the mandatory property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link YesOrNo }
+     *     
+     */
+    public YesOrNo getMandatory() {
+        return mandatory;
+    }
+
+    /**
+     * Sets the value of the mandatory property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link YesOrNo }
+     *     
+     */
+    public void setMandatory(YesOrNo value) {
+        this.mandatory = value;
+    }
+
+    /**
+     * Gets the value of the collectionExceptionConditionOID property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCollectionExceptionConditionOID() {
+        return collectionExceptionConditionOID;
+    }
+
+    /**
+     * Sets the value of the collectionExceptionConditionOID property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCollectionExceptionConditionOID(String value) {
+        this.collectionExceptionConditionOID = value;
     }
 
 }

@@ -26,10 +26,6 @@
 									<cleanPackageDirectories>true</cleanPackageDirectories>
 									<forceRegenerate>true</forceRegenerate>
 									<enableIntrospection>true</enableIntrospection>
-									<schemaExcludes>
-										<schemaExclude>xlink.xsd</schemaExclude>
-										<schemaExclude>xmldsig-core-schema.xsd</schemaExclude>
-									</schemaExcludes>
 								</configuration>
 							</execution>
 						</executions>
