@@ -1,5 +1,5 @@
 
-package org.cdisc.ns.odm.v1;
+package org.cdsic.ns.odm.v132;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;

@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
+import org.cdsic.ns.odm.v132.YesOrNo;
+
 
 /**
  * <p>Java class for ODMcomplexTypeDefinition-ItemGroupRef complex type.

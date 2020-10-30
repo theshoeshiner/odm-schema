@@ -9,6 +9,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
+import org.cdsic.ns.odm.v132.YesOrNo;
+
 
 /**
  * <p>Java class for ODMcomplexTypeDefinition-FormDef complex type.
