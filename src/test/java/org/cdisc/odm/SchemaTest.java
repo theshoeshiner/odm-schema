@@ -11,6 +11,7 @@ import javax.xml.transform.stream.StreamSource;
 import org.cdsic.odm.v132.ODM;
 import org.cdsic.odm.v132.ODMcomplexTypeDefinitionItemDef;
 import org.cdsic.odm.v132.ODMcomplexTypeDefinitionMetaDataVersion;
+import org.cdsic.odm.v132.OdmSchema;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,24 +26,24 @@ public class SchemaTest {
 		
 		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional.xml");
 		
+		/*
+		 * LOGGER.info("stream: {}",stream);
+		 * 
+		 * JAXBContext context = OdmSchema.getContext();
+		 * 
+		 * LOGGER.info("context: {}",context);
+		 * 
+		 * Unmarshaller um = context.createUnmarshaller(); //um.setSchema(sm);
+		 * //um.setEventHandler(getValidationEventHandler());
+		 * 
+		 * LOGGER.info("Unmarshaller: {}",um);
+		 * 
+		 * StreamSource source = new StreamSource(stream);
+		 * 
+		 * LOGGER.info("StreamSource: {}",source);
+		 */
 		
-		LOGGER.info("stream: {}",stream);
-		
-		JAXBContext context = JAXBContext.newInstance(ODM.class);
-		
-		LOGGER.info("context: {}",context);
-		
-		Unmarshaller um = context.createUnmarshaller();
-		//um.setSchema(sm);
-		//um.setEventHandler(getValidationEventHandler());
-		
-		LOGGER.info("Unmarshaller: {}",um);
-		
-		StreamSource source = new StreamSource(stream);
-		
-		LOGGER.info("StreamSource: {}",source);
-		
-		Object object = um.unmarshal(source);
+		Object object = OdmSchema.parseOdmStream(stream);
 		
 		LOGGER.info("Unmarshalled: {}",object);
 		
