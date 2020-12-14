@@ -103,4 +103,11 @@ public class SchemaTest {
 		
 	}
 	
+	@Test
+	public void testFail() throws JAXBException {
+		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional-invalid.xml");
+		ODM odm = OdmSchema.parseOdmStream(stream);
+		LOGGER.info("ODM: {}",odm);
+	}
+	
 }
