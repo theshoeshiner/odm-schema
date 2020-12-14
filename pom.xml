@@ -23,7 +23,7 @@
 									<goal>generate</goal>
 								</goals>
 								<configuration>
-
+									<schemaDirectory>src/main/resources/org/cdisc/odm/v132</schemaDirectory>
 									<generateDirectory>src/jaxb/java</generateDirectory>
 									<noFileHeader>true</noFileHeader>
 									<episode>false</episode>

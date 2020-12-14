@@ -8,10 +8,10 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.stream.StreamSource;
 
-import org.cdsic.odm.v132.ODM;
-import org.cdsic.odm.v132.ODMcomplexTypeDefinitionItemDef;
-import org.cdsic.odm.v132.ODMcomplexTypeDefinitionMetaDataVersion;
-import org.cdsic.odm.v132.OdmSchema;
+import org.cdisc.ns.odm.v1.ODM;
+import org.cdisc.ns.odm.v1.ODMcomplexTypeDefinitionItemDef;
+import org.cdisc.ns.odm.v1.ODMcomplexTypeDefinitionMetaDataVersion;
+import org.cdisc.odm.v132.OdmSchema;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +23,7 @@ public class SchemaTest {
 	
 	@Test
 	public void testObjects() throws JAXBException{
+		
 		
 		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional.xml");
 		
@@ -75,9 +76,10 @@ public class SchemaTest {
 			
 		}
 		
-		for(ODMcomplexTypeDefinitionItemDef id : mdv.getItemDef()) {
-			LOGGER.info("item: {}", id);
-		}
+		
+		/* for(ODMcomplexTypeDefinitionItemDef id : mdv.getItemDef()) {
+		 LOGGER.info("item: {}", id); }*/
+		 
 		
 		//LOGGER.info("here2: {}", odm.getStudy().get(0).getMetaDataVersion().get(0).getItemDef());
 		

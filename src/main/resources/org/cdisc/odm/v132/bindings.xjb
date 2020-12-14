@@ -1,8 +1,8 @@
-<jxb:bindings version="2.0"
-	xmlns:jxb="http://java.sun.com/xml/ns/jaxb">
+<?xml version="1.0" encoding="utf-8"?>
+<bindings version="2.0"  xmlns="http://java.sun.com/xml/ns/jaxb" xmlns:jxb="http://java.sun.com/xml/ns/jaxb">
 
 
-	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<!-- 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		schemaLocation="ODM1-3-2.xsd" node="/xs:schema">
 		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			node="//xs:schema">
@@ -10,7 +10,7 @@
 				<jxb:package name="org.cdsic.odm.v132" />
 			</jxb:schemaBindings>
 		</jxb:bindings>
-	</jxb:bindings>
+	</jxb:bindings> -->
 
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		schemaLocation="xlink.xsd" node="/xs:schema">
@@ -32,4 +32,4 @@
 		</jxb:bindings>
 	</jxb:bindings>
 
-</jxb:bindings>
+</bindings>
