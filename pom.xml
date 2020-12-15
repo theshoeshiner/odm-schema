@@ -130,5 +130,10 @@
 			<version>1.0.13</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.thshsh</groupId>
+			<artifactId>commons-xml</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 </project>

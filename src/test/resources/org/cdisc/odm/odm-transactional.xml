@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularity="All" FileOID="987-654-321" CreationDateTime="2002-04-29T11:07:23-05:00" >
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" 
+xmlns:q="http://www.cdisc.org/ns/odm/v1.3/query" 
+Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularity="All" FileOID="987-654-321" CreationDateTime="2002-04-29T11:07:23-05:00" >
 	<Study OID = "123-456-789">
 		<GlobalVariables>
 			<StudyName>CDISC Connect-A-Thon Test Study III</StudyName>
@@ -6075,7 +6077,11 @@
 						<ItemData ItemOID = "IT.SCTRY" Value = "USA"/>
 						<ItemData ItemOID = "IT.F_STATUS" Value = "V"/>
 						<ItemData ItemOID = "IT.BODY_SYS" Value = "13"/>
-						<ItemData ItemOID = "IT.ABNORM" Value = "1"/>
+						<ItemData ItemOID = "IT.ABNORM" Value = "1">
+							<QueryData QueryKey="123" Text="This is a problem." Status="Open" />
+							
+						</ItemData>
+						
 					</ItemGroupData>
 				</FormData>
 			</StudyEventData>
