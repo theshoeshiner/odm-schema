@@ -3,12 +3,13 @@
 xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 xmlns:def="http://www.cdisc.org/ns/def/v2.1"
   xmlns:odm="http://www.cdisc.org/ns/odm/v1.3" 
-  xmlns:query="http://www.cdisc.org/ns/odm/query/v1.3" 
+  xmlns:query="http://www.cdisc.org/ns/odm/v1.3/query" 
   elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1">
 
 
 
-  <xs:import namespace="http://www.cdisc.org/ns/odm/query/v1.3" schemaLocation="ODM-Query.xsd"/>
+  <xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="ODM-Query.xsd"/>
+  
   <xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
   
   
