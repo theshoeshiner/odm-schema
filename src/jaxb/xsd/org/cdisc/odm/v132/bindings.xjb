@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bindings version="2.0"  xmlns="http://java.sun.com/xml/ns/jaxb" xmlns:jxb="http://java.sun.com/xml/ns/jaxb">
+
+	<!-- This puts the code in more reasonable packages -->
+
+ 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		schemaLocation="ODM1-3-2.xsd" node="/xs:schema">
+		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
+			<jxb:schemaBindings>
+				<jxb:package name="org.cdisc.odm.v132" />
+			</jxb:schemaBindings>
+		</jxb:bindings>
+	</jxb:bindings> 
+	
+	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		schemaLocation="ODM-Query.xsd" node="/xs:schema">
+		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
+			<jxb:schemaBindings>
+				<jxb:package name="org.cdisc.odm.v132.query" />
+			</jxb:schemaBindings>
+		</jxb:bindings>
+	</jxb:bindings> 
+
+	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		schemaLocation="xlink.xsd" node="/xs:schema">
+		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
+			<jxb:schemaBindings>
+				<jxb:package name="org.w3.v1999.xlink" />
+			</jxb:schemaBindings>
+		</jxb:bindings>
+	</jxb:bindings>
+
+	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		schemaLocation="xmldsig-core-schema.xsd" node="/xs:schema">
+		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
+			<jxb:schemaBindings>
+				<jxb:package name="org.w3.v200009.xmldsig" />
+			</jxb:schemaBindings>
+		</jxb:bindings>
+	</jxb:bindings>
+
+</bindings>
