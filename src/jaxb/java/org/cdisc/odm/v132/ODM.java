@@ -1,8 +1,10 @@
 
 package org.cdisc.odm.v132;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.LocalDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -13,7 +15,6 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import javax.xml.datatype.XMLGregorianCalendar;
 import org.w3.v200009.xmldsig.SignatureType;
 
 
@@ -53,11 +54,13 @@ public class ODM {
     @XmlAttribute(name = "FileOID", required = true)
     protected String fileOID;
     @XmlAttribute(name = "CreationDateTime", required = true)
-    protected XMLGregorianCalendar creationDateTime;
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
+    protected LocalDateTime creationDateTime;
     @XmlAttribute(name = "PriorFileOID")
     protected String priorFileOID;
     @XmlAttribute(name = "AsOfDateTime")
-    protected XMLGregorianCalendar asOfDateTime;
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
+    protected LocalDateTime asOfDateTime;
     @XmlAttribute(name = "ODMVersion")
     protected String odmVersion;
     @XmlAttribute(name = "Originator")
@@ -171,12 +174,12 @@ public class ODM {
     }
 
     
-    public XMLGregorianCalendar getCreationDateTime() {
+    public LocalDateTime getCreationDateTime() {
         return creationDateTime;
     }
 
     
-    public void setCreationDateTime(XMLGregorianCalendar value) {
+    public void setCreationDateTime(LocalDateTime value) {
         this.creationDateTime = value;
     }
 
@@ -191,12 +194,12 @@ public class ODM {
     }
 
     
-    public XMLGregorianCalendar getAsOfDateTime() {
+    public LocalDateTime getAsOfDateTime() {
         return asOfDateTime;
     }
 
     
-    public void setAsOfDateTime(XMLGregorianCalendar value) {
+    public void setAsOfDateTime(LocalDateTime value) {
         this.asOfDateTime = value;
     }
 

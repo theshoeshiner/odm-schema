@@ -7,7 +7,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1">
 
 
-<!-- This should contain the actual elements necessary for queries -->
+	<!-- This contains any new elements or types necessary for queries -->
 
 
 	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd" />

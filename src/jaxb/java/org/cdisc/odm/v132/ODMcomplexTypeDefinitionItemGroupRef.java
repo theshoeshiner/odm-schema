@@ -13,14 +13,24 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemGroupRef")
 public class ODMcomplexTypeDefinitionItemGroupRef {
 
+    @XmlAttribute(name = "ItemGroupOID", required = true)
+    protected String itemGroupOID;
     @XmlAttribute(name = "OrderNumber")
     protected BigInteger orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     protected YesOrNo mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
-    @XmlAttribute(name = "ItemGroupOID", required = true)
-    protected String itemGroupOID;
+
+    
+    public String getItemGroupOID() {
+        return itemGroupOID;
+    }
+
+    
+    public void setItemGroupOID(String value) {
+        this.itemGroupOID = value;
+    }
 
     
     public BigInteger getOrderNumber() {
@@ -50,16 +60,6 @@ public class ODMcomplexTypeDefinitionItemGroupRef {
     
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
-    }
-
-    
-    public String getItemGroupOID() {
-        return itemGroupOID;
-    }
-
-    
-    public void setItemGroupOID(String value) {
-        this.itemGroupOID = value;
     }
 
 }

@@ -1,6 +1,8 @@
 
 package org.cdisc.odm.v132;
 
+import java.time.LocalDateTime;
+import javax.xml.bind.LocalDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -8,7 +10,7 @@ import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
-import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -19,7 +21,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class ODMcomplexTypeDefinitionItemDataDatetime {
 
     @XmlValue
-    protected XMLGregorianCalendar value;
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
+    protected LocalDateTime value;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
@@ -40,12 +43,12 @@ public class ODMcomplexTypeDefinitionItemDataDatetime {
     protected String measurementUnitOID;
 
     
-    public XMLGregorianCalendar getValue() {
+    public LocalDateTime getValue() {
         return value;
     }
 
     
-    public void setValue(XMLGregorianCalendar value) {
+    public void setValue(LocalDateTime value) {
         this.value = value;
     }
 
