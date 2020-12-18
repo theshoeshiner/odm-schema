@@ -19,12 +19,6 @@ public class ODMcomplexTypeDefinitionItemDataAny {
 
     @XmlValue
     protected String value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
-    @XmlAttribute(name = "IsNull")
-    protected YesOnly isNull;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -39,6 +33,12 @@ public class ODMcomplexTypeDefinitionItemDataAny {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+    @XmlAttribute(name = "IsNull")
+    protected YesOnly isNull;
 
     
     public String getValue() {
@@ -48,36 +48,6 @@ public class ODMcomplexTypeDefinitionItemDataAny {
     
     public void setValue(String value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
-    }
-
-    
-    public YesOnly getIsNull() {
-        return isNull;
-    }
-
-    
-    public void setIsNull(YesOnly value) {
-        this.isNull = value;
     }
 
     
@@ -118,6 +88,36 @@ public class ODMcomplexTypeDefinitionItemDataAny {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
+    }
+
+    
+    public YesOnly getIsNull() {
+        return isNull;
+    }
+
+    
+    public void setIsNull(YesOnly value) {
+        this.isNull = value;
     }
 
 }
