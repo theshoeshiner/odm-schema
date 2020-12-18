@@ -7,9 +7,11 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.cdisc.odm.v132.query.QueryData;
+import org.cdisc.odm.v132.status.StatusData;
 
 
 
@@ -31,8 +33,11 @@ public class ODMcomplexTypeDefinitionItemData {
     protected ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef;
     @XmlElement(name = "Annotation")
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
-    @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query")
-    protected List<QueryData> itemDataElementExtension;
+    @XmlElements({
+        @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query", type = QueryData.class),
+        @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status", type = StatusData.class)
+    })
+    protected List<Object> itemDataElementExtension;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
@@ -82,9 +87,9 @@ public class ODMcomplexTypeDefinitionItemData {
     }
 
     
-    public List<QueryData> getItemDataElementExtension() {
+    public List<Object> getItemDataElementExtension() {
         if (itemDataElementExtension == null) {
-            itemDataElementExtension = new ArrayList<QueryData>();
+            itemDataElementExtension = new ArrayList<Object>();
         }
         return this.itemDataElementExtension;
     }

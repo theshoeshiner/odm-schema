@@ -33,7 +33,16 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 				<jxb:package name="org.cdisc.odm.v132.query" />
 			</jxb:schemaBindings>
 		</jxb:bindings>
-	</jxb:bindings> 
+	</jxb:bindings>
+	
+	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		schemaLocation="ODM-Status.xsd" node="/xs:schema">
+		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
+			<jxb:schemaBindings>
+				<jxb:package name="org.cdisc.odm.v132.status" />
+			</jxb:schemaBindings>
+		</jxb:bindings>
+	</jxb:bindings>  
 
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		schemaLocation="xlink.xsd" node="/xs:schema">

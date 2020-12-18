@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.cdisc.odm.v132.status.StatusData;
 
 
 
@@ -16,7 +17,8 @@ import javax.xml.bind.annotation.XmlType;
     "auditRecord",
     "signature",
     "annotation",
-    "formData"
+    "formData",
+    "studyEventDataElementExtension"
 })
 public class ODMcomplexTypeDefinitionStudyEventData {
 
@@ -28,6 +30,8 @@ public class ODMcomplexTypeDefinitionStudyEventData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "FormData")
     protected List<ODMcomplexTypeDefinitionFormData> formData;
+    @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status")
+    protected List<StatusData> studyEventDataElementExtension;
     @XmlAttribute(name = "StudyEventOID", required = true)
     protected String studyEventOID;
     @XmlAttribute(name = "StudyEventRepeatKey")
@@ -69,6 +73,14 @@ public class ODMcomplexTypeDefinitionStudyEventData {
             formData = new ArrayList<ODMcomplexTypeDefinitionFormData>();
         }
         return this.formData;
+    }
+
+    
+    public List<StatusData> getStudyEventDataElementExtension() {
+        if (studyEventDataElementExtension == null) {
+            studyEventDataElementExtension = new ArrayList<StatusData>();
+        }
+        return this.studyEventDataElementExtension;
     }
 
     

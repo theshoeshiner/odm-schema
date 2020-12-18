@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.cdisc.odm.v132.status.StatusData;
 
 
 
@@ -18,7 +19,8 @@ import javax.xml.bind.annotation.XmlType;
     "investigatorRef",
     "siteRef",
     "annotation",
-    "studyEventData"
+    "studyEventData",
+    "subjectDataElementExtension"
 })
 public class ODMcomplexTypeDefinitionSubjectData {
 
@@ -34,6 +36,8 @@ public class ODMcomplexTypeDefinitionSubjectData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "StudyEventData")
     protected List<ODMcomplexTypeDefinitionStudyEventData> studyEventData;
+    @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status")
+    protected List<StatusData> subjectDataElementExtension;
     @XmlAttribute(name = "SubjectKey", required = true)
     protected String subjectKey;
     @XmlAttribute(name = "TransactionType")
@@ -93,6 +97,14 @@ public class ODMcomplexTypeDefinitionSubjectData {
             studyEventData = new ArrayList<ODMcomplexTypeDefinitionStudyEventData>();
         }
         return this.studyEventData;
+    }
+
+    
+    public List<StatusData> getSubjectDataElementExtension() {
+        if (subjectDataElementExtension == null) {
+            subjectDataElementExtension = new ArrayList<StatusData>();
+        }
+        return this.subjectDataElementExtension;
     }
 
     

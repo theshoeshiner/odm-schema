@@ -5,7 +5,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
-import org.cdisc.odm.v132.YesOrNo;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import org.cdisc.odm.v132.YesOrNoAdapter;
 
 
 
@@ -14,39 +15,42 @@ import org.cdisc.odm.v132.YesOrNo;
 public class StatusData {
 
     @XmlAttribute(name = "Entered")
-    protected YesOrNo entered;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean entered;
     @XmlAttribute(name = "Frozen")
-    protected YesOrNo frozen;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean frozen;
     @XmlAttribute(name = "Conformant")
-    protected YesOrNo conformant;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean conformant;
 
     
-    public YesOrNo getEntered() {
+    public Boolean getEntered() {
         return entered;
     }
 
     
-    public void setEntered(YesOrNo value) {
+    public void setEntered(Boolean value) {
         this.entered = value;
     }
 
     
-    public YesOrNo getFrozen() {
+    public Boolean getFrozen() {
         return frozen;
     }
 
     
-    public void setFrozen(YesOrNo value) {
+    public void setFrozen(Boolean value) {
         this.frozen = value;
     }
 
     
-    public YesOrNo getConformant() {
+    public Boolean getConformant() {
         return conformant;
     }
 
     
-    public void setConformant(YesOrNo value) {
+    public void setConformant(Boolean value) {
         this.conformant = value;
     }
 

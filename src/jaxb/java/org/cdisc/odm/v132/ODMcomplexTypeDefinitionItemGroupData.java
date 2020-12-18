@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlType;
+import org.cdisc.odm.v132.status.StatusData;
 
 
 
@@ -18,7 +19,8 @@ import javax.xml.bind.annotation.XmlType;
     "signature",
     "annotation",
     "itemDataGroup",
-    "itemDataStarGroup"
+    "itemDataStarGroup",
+    "itemGroupDataElementExtension"
 })
 public class ODMcomplexTypeDefinitionItemGroupData {
 
@@ -55,6 +57,8 @@ public class ODMcomplexTypeDefinitionItemGroupData {
         @XmlElement(name = "ItemDataIncompleteTime", type = ODMcomplexTypeDefinitionItemDataIncompleteTime.class)
     })
     protected List<Object> itemDataStarGroup;
+    @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status")
+    protected List<StatusData> itemGroupDataElementExtension;
     @XmlAttribute(name = "ItemGroupOID", required = true)
     protected String itemGroupOID;
     @XmlAttribute(name = "ItemGroupRepeatKey")
@@ -104,6 +108,14 @@ public class ODMcomplexTypeDefinitionItemGroupData {
             itemDataStarGroup = new ArrayList<Object>();
         }
         return this.itemDataStarGroup;
+    }
+
+    
+    public List<StatusData> getItemGroupDataElementExtension() {
+        if (itemGroupDataElementExtension == null) {
+            itemGroupDataElementExtension = new ArrayList<StatusData>();
+        }
+        return this.itemGroupDataElementExtension;
     }
 
     

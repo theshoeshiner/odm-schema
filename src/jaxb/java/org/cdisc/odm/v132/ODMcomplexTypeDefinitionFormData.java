@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import org.cdisc.odm.v132.status.StatusData;
 
 
 
@@ -17,7 +18,8 @@ import javax.xml.bind.annotation.XmlType;
     "signature",
     "archiveLayoutRef",
     "annotation",
-    "itemGroupData"
+    "itemGroupData",
+    "formDataElementExtension"
 })
 public class ODMcomplexTypeDefinitionFormData {
 
@@ -31,6 +33,8 @@ public class ODMcomplexTypeDefinitionFormData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "ItemGroupData")
     protected List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData;
+    @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status")
+    protected List<StatusData> formDataElementExtension;
     @XmlAttribute(name = "FormOID", required = true)
     protected String formOID;
     @XmlAttribute(name = "FormRepeatKey")
@@ -82,6 +86,14 @@ public class ODMcomplexTypeDefinitionFormData {
             itemGroupData = new ArrayList<ODMcomplexTypeDefinitionItemGroupData>();
         }
         return this.itemGroupData;
+    }
+
+    
+    public List<StatusData> getFormDataElementExtension() {
+        if (formDataElementExtension == null) {
+            formDataElementExtension = new ArrayList<StatusData>();
+        }
+        return this.formDataElementExtension;
     }
 
     
