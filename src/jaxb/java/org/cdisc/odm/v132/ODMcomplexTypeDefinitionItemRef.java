@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -13,12 +14,6 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemRef")
 public class ODMcomplexTypeDefinitionItemRef {
 
-    @XmlAttribute(name = "OrderNumber")
-    protected BigInteger orderNumber;
-    @XmlAttribute(name = "Mandatory", required = true)
-    protected YesOrNo mandatory;
-    @XmlAttribute(name = "CollectionExceptionConditionOID")
-    protected String collectionExceptionConditionOID;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "KeySequence")
@@ -31,36 +26,13 @@ public class ODMcomplexTypeDefinitionItemRef {
     protected String role;
     @XmlAttribute(name = "RoleCodeListOID")
     protected String roleCodeListOID;
-
-    
-    public BigInteger getOrderNumber() {
-        return orderNumber;
-    }
-
-    
-    public void setOrderNumber(BigInteger value) {
-        this.orderNumber = value;
-    }
-
-    
-    public YesOrNo getMandatory() {
-        return mandatory;
-    }
-
-    
-    public void setMandatory(YesOrNo value) {
-        this.mandatory = value;
-    }
-
-    
-    public String getCollectionExceptionConditionOID() {
-        return collectionExceptionConditionOID;
-    }
-
-    
-    public void setCollectionExceptionConditionOID(String value) {
-        this.collectionExceptionConditionOID = value;
-    }
+    @XmlAttribute(name = "OrderNumber")
+    protected BigInteger orderNumber;
+    @XmlAttribute(name = "Mandatory", required = true)
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean mandatory;
+    @XmlAttribute(name = "CollectionExceptionConditionOID")
+    protected String collectionExceptionConditionOID;
 
     
     public String getItemOID() {
@@ -120,6 +92,36 @@ public class ODMcomplexTypeDefinitionItemRef {
     
     public void setRoleCodeListOID(String value) {
         this.roleCodeListOID = value;
+    }
+
+    
+    public BigInteger getOrderNumber() {
+        return orderNumber;
+    }
+
+    
+    public void setOrderNumber(BigInteger value) {
+        this.orderNumber = value;
+    }
+
+    
+    public Boolean getMandatory() {
+        return mandatory;
+    }
+
+    
+    public void setMandatory(Boolean value) {
+        this.mandatory = value;
+    }
+
+    
+    public String getCollectionExceptionConditionOID() {
+        return collectionExceptionConditionOID;
+    }
+
+    
+    public void setCollectionExceptionConditionOID(String value) {
+        this.collectionExceptionConditionOID = value;
     }
 
 }

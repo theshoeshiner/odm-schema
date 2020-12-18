@@ -50,7 +50,8 @@ public class ODM {
     @XmlAttribute(name = "Granularity")
     protected Granularity granularity;
     @XmlAttribute(name = "Archival")
-    protected YesOnly archival;
+    @XmlJavaTypeAdapter(YesOnlyAdapter.class)
+    protected Boolean archival;
     @XmlAttribute(name = "FileOID", required = true)
     protected String fileOID;
     @XmlAttribute(name = "CreationDateTime", required = true)
@@ -154,12 +155,12 @@ public class ODM {
     }
 
     
-    public YesOnly getArchival() {
+    public Boolean getArchival() {
         return archival;
     }
 
     
-    public void setArchival(YesOnly value) {
+    public void setArchival(Boolean value) {
         this.archival = value;
     }
 

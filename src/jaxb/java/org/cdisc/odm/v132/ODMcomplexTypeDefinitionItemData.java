@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.cdisc.odm.v132.query.QueryData;
 
 
@@ -32,14 +33,15 @@ public class ODMcomplexTypeDefinitionItemData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query")
     protected List<QueryData> itemDataElementExtension;
-    @XmlAttribute(name = "Value")
-    protected String value;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
     @XmlAttribute(name = "IsNull")
-    protected YesOnly isNull;
+    @XmlJavaTypeAdapter(YesOnlyAdapter.class)
+    protected Boolean isNull;
+    @XmlAttribute(name = "Value")
+    protected String value;
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -88,16 +90,6 @@ public class ODMcomplexTypeDefinitionItemData {
     }
 
     
-    public String getValue() {
-        return value;
-    }
-
-    
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    
     public String getItemOID() {
         return itemOID;
     }
@@ -118,13 +110,23 @@ public class ODMcomplexTypeDefinitionItemData {
     }
 
     
-    public YesOnly getIsNull() {
+    public Boolean getIsNull() {
         return isNull;
     }
 
     
-    public void setIsNull(YesOnly value) {
+    public void setIsNull(Boolean value) {
         this.isNull = value;
+    }
+
+    
+    public String getValue() {
+        return value;
+    }
+
+    
+    public void setValue(String value) {
+        this.value = value;
     }
 
 }

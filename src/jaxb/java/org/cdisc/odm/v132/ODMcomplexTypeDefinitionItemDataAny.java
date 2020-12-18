@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -38,7 +39,8 @@ public class ODMcomplexTypeDefinitionItemDataAny {
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
     @XmlAttribute(name = "IsNull")
-    protected YesOnly isNull;
+    @XmlJavaTypeAdapter(YesOnlyAdapter.class)
+    protected Boolean isNull;
 
     
     public String getValue() {
@@ -111,12 +113,12 @@ public class ODMcomplexTypeDefinitionItemDataAny {
     }
 
     
-    public YesOnly getIsNull() {
+    public Boolean getIsNull() {
         return isNull;
     }
 
     
-    public void setIsNull(YesOnly value) {
+    public void setIsNull(Boolean value) {
         this.isNull = value;
     }
 

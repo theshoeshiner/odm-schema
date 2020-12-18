@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -33,7 +34,8 @@ public class ODMcomplexTypeDefinitionFormDef {
     @XmlAttribute(name = "Name", required = true)
     protected String name;
     @XmlAttribute(name = "Repeating", required = true)
-    protected YesOrNo repeating;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean repeating;
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {
@@ -90,12 +92,12 @@ public class ODMcomplexTypeDefinitionFormDef {
     }
 
     
-    public YesOrNo getRepeating() {
+    public Boolean getRepeating() {
         return repeating;
     }
 
     
-    public void setRepeating(YesOrNo value) {
+    public void setRepeating(Boolean value) {
         this.repeating = value;
     }
 

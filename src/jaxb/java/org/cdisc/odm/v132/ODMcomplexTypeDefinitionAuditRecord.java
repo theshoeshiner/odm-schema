@@ -36,7 +36,8 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     @XmlAttribute(name = "EditPoint")
     protected EditPointType editPoint;
     @XmlAttribute(name = "UsedImputationMethod")
-    protected YesOrNo usedImputationMethod;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean usedImputationMethod;
     @XmlAttribute(name = "ID")
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlID
@@ -104,12 +105,12 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     }
 
     
-    public YesOrNo getUsedImputationMethod() {
+    public Boolean getUsedImputationMethod() {
         return usedImputationMethod;
     }
 
     
-    public void setUsedImputationMethod(YesOrNo value) {
+    public void setUsedImputationMethod(Boolean value) {
         this.usedImputationMethod = value;
     }
 

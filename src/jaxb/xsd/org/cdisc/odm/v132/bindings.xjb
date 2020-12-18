@@ -3,12 +3,15 @@
 xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
 xmlns:xs="http://www.w3.org/2001/XMLSchema"
 xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 >
 
 	<!-- global changes -->
 	
 	<jxb:globalBindings>
 		<xjc:javaType adapter="javax.xml.bind.LocalDateTimeAdapter" name="java.time.LocalDateTime" xmlType="xs:dateTime"/>
+		<xjc:javaType adapter="org.cdisc.odm.v132.YesOrNoAdapter" name="java.lang.Boolean" xmlType="odm:YesOrNo"/>
+		<xjc:javaType adapter="org.cdisc.odm.v132.YesOnlyAdapter" name="java.lang.Boolean" xmlType="odm:YesOnly"/>
 	</jxb:globalBindings>
 
 

@@ -12,22 +12,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ExternalQuestion")
 public class ODMcomplexTypeDefinitionExternalQuestion {
 
-    @XmlAttribute(name = "Code")
-    protected String code;
     @XmlAttribute(name = "Dictionary")
     protected String dictionary;
     @XmlAttribute(name = "Version")
     protected String version;
-
-    
-    public String getCode() {
-        return code;
-    }
-
-    
-    public void setCode(String value) {
-        this.code = value;
-    }
+    @XmlAttribute(name = "Code")
+    protected String code;
 
     
     public String getDictionary() {
@@ -47,6 +37,16 @@ public class ODMcomplexTypeDefinitionExternalQuestion {
     
     public void setVersion(String value) {
         this.version = value;
+    }
+
+    
+    public String getCode() {
+        return code;
+    }
+
+    
+    public void setCode(String value) {
+        this.code = value;
     }
 
 }

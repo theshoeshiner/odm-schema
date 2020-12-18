@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -30,9 +31,11 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     @XmlAttribute(name = "Name", required = true)
     protected String name;
     @XmlAttribute(name = "Repeating", required = true)
-    protected YesOrNo repeating;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean repeating;
     @XmlAttribute(name = "IsReferenceData")
-    protected YesOrNo isReferenceData;
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean isReferenceData;
     @XmlAttribute(name = "SASDatasetName")
     protected String sasDatasetName;
     @XmlAttribute(name = "Domain")
@@ -93,22 +96,22 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     }
 
     
-    public YesOrNo getRepeating() {
+    public Boolean getRepeating() {
         return repeating;
     }
 
     
-    public void setRepeating(YesOrNo value) {
+    public void setRepeating(Boolean value) {
         this.repeating = value;
     }
 
     
-    public YesOrNo getIsReferenceData() {
+    public Boolean getIsReferenceData() {
         return isReferenceData;
     }
 
     
-    public void setIsReferenceData(YesOrNo value) {
+    public void setIsReferenceData(Boolean value) {
         this.isReferenceData = value;
     }
 
