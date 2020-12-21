@@ -1,7 +1,5 @@
 package org.cdisc.odm.v132;
 
-import java.time.LocalDateTime;
-
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class YesOrNoAdapter extends XmlAdapter<YesOrNo, Boolean>{

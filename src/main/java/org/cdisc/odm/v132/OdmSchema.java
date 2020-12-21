@@ -2,7 +2,6 @@ package org.cdisc.odm.v132;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
 import java.net.URISyntaxException;
 
 import javax.xml.XMLConstants;
@@ -20,8 +19,6 @@ import javax.xml.validation.SchemaFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3.dom.ls.ClasspathResourceResolver;
-import org.w3c.dom.ls.LSInput;
-import org.w3c.dom.ls.LSResourceResolver;
 import org.xml.sax.SAXException;
 
 public class OdmSchema {
