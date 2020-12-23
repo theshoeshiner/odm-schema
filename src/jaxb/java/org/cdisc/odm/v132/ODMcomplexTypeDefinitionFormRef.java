@@ -14,6 +14,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-FormRef")
 public class ODMcomplexTypeDefinitionFormRef {
 
+    @XmlAttribute(name = "FormOID", required = true)
+    protected String formOID;
     @XmlAttribute(name = "OrderNumber")
     protected BigInteger orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
@@ -21,8 +23,16 @@ public class ODMcomplexTypeDefinitionFormRef {
     protected Boolean mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
-    @XmlAttribute(name = "FormOID", required = true)
-    protected String formOID;
+
+    
+    public String getFormOID() {
+        return formOID;
+    }
+
+    
+    public void setFormOID(String value) {
+        this.formOID = value;
+    }
 
     
     public BigInteger getOrderNumber() {
@@ -52,16 +62,6 @@ public class ODMcomplexTypeDefinitionFormRef {
     
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
-    }
-
-    
-    public String getFormOID() {
-        return formOID;
-    }
-
-    
-    public void setFormOID(String value) {
-        this.formOID = value;
     }
 
 }

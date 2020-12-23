@@ -27,7 +27,7 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 	</jxb:bindings> 
 	
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="ODM-Query.xsd" node="/xs:schema">
+		schemaLocation="./query/ODM-Query.xsd" node="/xs:schema">
 		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
 			<jxb:schemaBindings>
 				<jxb:package name="org.cdisc.odm.v132.query" />

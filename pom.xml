@@ -24,6 +24,9 @@
 								</goals>
 								<configuration>
 									<schemaDirectory>src/jaxb/xsd/org/cdisc/odm/v132</schemaDirectory>
+									<schemaIncludes>
+										<schemaInclude>**\*.xsd</schemaInclude>
+									</schemaIncludes>
 									<generateDirectory>src/jaxb/java</generateDirectory>
 									<noFileHeader>true</noFileHeader>
 									<episode>false</episode>

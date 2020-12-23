@@ -14,8 +14,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-StudyEventRef")
 public class ODMcomplexTypeDefinitionStudyEventRef {
 
-    @XmlAttribute(name = "StudyEventOID", required = true)
-    protected String studyEventOID;
     @XmlAttribute(name = "OrderNumber")
     protected BigInteger orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
@@ -23,16 +21,8 @@ public class ODMcomplexTypeDefinitionStudyEventRef {
     protected Boolean mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
-
-    
-    public String getStudyEventOID() {
-        return studyEventOID;
-    }
-
-    
-    public void setStudyEventOID(String value) {
-        this.studyEventOID = value;
-    }
+    @XmlAttribute(name = "StudyEventOID", required = true)
+    protected String studyEventOID;
 
     
     public BigInteger getOrderNumber() {
@@ -62,6 +52,16 @@ public class ODMcomplexTypeDefinitionStudyEventRef {
     
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
+    }
+
+    
+    public String getStudyEventOID() {
+        return studyEventOID;
+    }
+
+    
+    public void setStudyEventOID(String value) {
+        this.studyEventOID = value;
     }
 
 }

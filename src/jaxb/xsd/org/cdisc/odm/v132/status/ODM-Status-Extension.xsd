@@ -5,9 +5,9 @@
 	xmlns:status="http://www.cdisc.org/ns/odm/v1.3/status" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1">
 
 
-	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/status" schemaLocation="ODM-Status.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/status" schemaLocation="ODM-Status.xsd" /> 
 
-	<xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
+	<xs:redefine schemaLocation="../ODM1-3-2-foundation.xsd">
 
 		<xs:group name="SubjectDataElementExtension">
 			<xs:sequence>

@@ -7,8 +7,8 @@
            elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
-    <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../xmldsig-core-schema.xsd"/>
     <xs:include schemaLocation="ODM-Status-Extension.xsd"/>
     
 </xs:schema>

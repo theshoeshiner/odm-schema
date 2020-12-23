@@ -10,7 +10,7 @@ xmlns:def="http://www.cdisc.org/ns/def/v2.1"
 
   <xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="ODM-Query.xsd"/>
   
-  <xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
+  <xs:redefine schemaLocation="../ODM1-3-2-foundation.xsd">
   
   
  <xs:group name="ItemDataElementExtension">
