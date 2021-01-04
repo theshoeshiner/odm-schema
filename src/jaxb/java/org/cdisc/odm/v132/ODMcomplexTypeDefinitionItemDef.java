@@ -1,7 +1,6 @@
 
 package org.cdisc.odm.v132;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -9,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -48,9 +48,11 @@ public class ODMcomplexTypeDefinitionItemDef {
     @XmlAttribute(name = "DataType", required = true)
     protected DataType dataType;
     @XmlAttribute(name = "Length")
-    protected BigInteger length;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer length;
     @XmlAttribute(name = "SignificantDigits")
-    protected BigInteger significantDigits;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer significantDigits;
     @XmlAttribute(name = "SASFieldName")
     protected String sasFieldName;
     @XmlAttribute(name = "SDSVarName")
@@ -59,6 +61,9 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected String origin;
     @XmlAttribute(name = "Comment")
     protected String comment;
+    @XmlAttribute(name = "Repeating", required = true)
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean repeating;
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {
@@ -163,22 +168,22 @@ public class ODMcomplexTypeDefinitionItemDef {
     }
 
     
-    public BigInteger getLength() {
+    public Integer getLength() {
         return length;
     }
 
     
-    public void setLength(BigInteger value) {
+    public void setLength(Integer value) {
         this.length = value;
     }
 
     
-    public BigInteger getSignificantDigits() {
+    public Integer getSignificantDigits() {
         return significantDigits;
     }
 
     
-    public void setSignificantDigits(BigInteger value) {
+    public void setSignificantDigits(Integer value) {
         this.significantDigits = value;
     }
 
@@ -220,6 +225,16 @@ public class ODMcomplexTypeDefinitionItemDef {
     
     public void setComment(String value) {
         this.comment = value;
+    }
+
+    
+    public Boolean getRepeating() {
+        return repeating;
+    }
+
+    
+    public void setRepeating(Boolean value) {
+        this.repeating = value;
     }
 
 }

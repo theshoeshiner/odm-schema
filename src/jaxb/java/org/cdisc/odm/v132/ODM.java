@@ -1,10 +1,10 @@
 
 package org.cdisc.odm.v132;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.LocalDateTimeAdapter;
+import javax.xml.bind.IsoZonedDateTimeFormatter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -55,13 +55,13 @@ public class ODM {
     @XmlAttribute(name = "FileOID", required = true)
     protected String fileOID;
     @XmlAttribute(name = "CreationDateTime", required = true)
-    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
-    protected LocalDateTime creationDateTime;
+    @XmlJavaTypeAdapter(IsoZonedDateTimeFormatter.class)
+    protected ZonedDateTime creationDateTime;
     @XmlAttribute(name = "PriorFileOID")
     protected String priorFileOID;
     @XmlAttribute(name = "AsOfDateTime")
-    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
-    protected LocalDateTime asOfDateTime;
+    @XmlJavaTypeAdapter(IsoZonedDateTimeFormatter.class)
+    protected ZonedDateTime asOfDateTime;
     @XmlAttribute(name = "ODMVersion")
     protected String odmVersion;
     @XmlAttribute(name = "Originator")
@@ -175,12 +175,12 @@ public class ODM {
     }
 
     
-    public LocalDateTime getCreationDateTime() {
+    public ZonedDateTime getCreationDateTime() {
         return creationDateTime;
     }
 
     
-    public void setCreationDateTime(LocalDateTime value) {
+    public void setCreationDateTime(ZonedDateTime value) {
         this.creationDateTime = value;
     }
 
@@ -195,12 +195,12 @@ public class ODM {
     }
 
     
-    public LocalDateTime getAsOfDateTime() {
+    public ZonedDateTime getAsOfDateTime() {
         return asOfDateTime;
     }
 
     
-    public void setAsOfDateTime(LocalDateTime value) {
+    public void setAsOfDateTime(ZonedDateTime value) {
         this.asOfDateTime = value;
     }
 

@@ -19,6 +19,10 @@ public class ODMcomplexTypeDefinitionItemDataBoolean {
 
     @XmlValue
     protected boolean value;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -33,10 +37,6 @@ public class ODMcomplexTypeDefinitionItemDataBoolean {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
 
     
     public boolean isValue() {
@@ -46,6 +46,26 @@ public class ODMcomplexTypeDefinitionItemDataBoolean {
     
     public void setValue(boolean value) {
         this.value = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
     
@@ -86,26 +106,6 @@ public class ODMcomplexTypeDefinitionItemDataBoolean {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
 }

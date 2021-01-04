@@ -2,7 +2,6 @@
 package org.cdisc.odm.v132;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -10,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -29,7 +29,8 @@ public class ODMcomplexTypeDefinitionCodeListItem {
     @XmlAttribute(name = "Rank")
     protected BigDecimal rank;
     @XmlAttribute(name = "OrderNumber")
-    protected BigInteger orderNumber;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer orderNumber;
 
     
     public ODMcomplexTypeDefinitionDecode getDecode() {
@@ -70,12 +71,12 @@ public class ODMcomplexTypeDefinitionCodeListItem {
     }
 
     
-    public BigInteger getOrderNumber() {
+    public Integer getOrderNumber() {
         return orderNumber;
     }
 
     
-    public void setOrderNumber(BigInteger value) {
+    public void setOrderNumber(Integer value) {
         this.orderNumber = value;
     }
 

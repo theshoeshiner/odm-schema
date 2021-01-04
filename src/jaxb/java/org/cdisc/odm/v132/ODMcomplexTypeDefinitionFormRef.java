@@ -1,7 +1,6 @@
 
 package org.cdisc.odm.v132;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -17,7 +16,8 @@ public class ODMcomplexTypeDefinitionFormRef {
     @XmlAttribute(name = "FormOID", required = true)
     protected String formOID;
     @XmlAttribute(name = "OrderNumber")
-    protected BigInteger orderNumber;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean mandatory;
@@ -35,12 +35,12 @@ public class ODMcomplexTypeDefinitionFormRef {
     }
 
     
-    public BigInteger getOrderNumber() {
+    public Integer getOrderNumber() {
         return orderNumber;
     }
 
     
-    public void setOrderNumber(BigInteger value) {
+    public void setOrderNumber(Integer value) {
         this.orderNumber = value;
     }
 

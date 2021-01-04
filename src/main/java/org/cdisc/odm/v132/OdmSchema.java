@@ -56,10 +56,21 @@ public class OdmSchema {
 
 			@Override
 			public boolean handleEvent(ValidationEvent event) {
+				
+				String message = event.getMessage();
+				if(message.matches(".*?UC-MDV-OID-unique.*?")) {
+					//skip
+				}
+				else {
+					LOGGER.error("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage(),event.getLinkedException());
+				}
+				
 				//Object node = event.getLocator().getLineNumber();
-				LOGGER.error("handle event: {} , {}", event.getSeverity(), event.getMessage());
+				//LOGGER.error("handle event: {} , {}", event.getSeverity(), event.getMessage());
+				
+				
 				//LOGGER.error("Object: {}",node);
-
+				//event.getLinkedException()
 				return true;
 			}
 		});

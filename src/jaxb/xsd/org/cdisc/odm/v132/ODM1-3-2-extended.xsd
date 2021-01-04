@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.cdisc.org/ns/odm/v1.3"
+			xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+           targetNamespace="http://www.cdisc.org/ns/odm/v1.3"
+			xmlns:query="http://www.cdisc.org/ns/odm/v1.3/query"
+           elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+
+  <xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="query/ODM-Query.xsd"/>
+  
+  <xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
+  
+  
+ 	<xs:group name="ItemDataElementExtension">
+      <xs:sequence>
+        <xs:group ref="ItemDataElementExtension"/>
+        <xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:group>
+	</xs:redefine>
+	
+	<xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
+	
+	<xs:attributeGroup name="SubjectDataAttributeExtension">
+      <xs:attributeGroup ref="SubjectDataAttributeExtension"/>
+      <xs:attribute name="SubjectName" type="odm:text" />
+    </xs:attributeGroup>
+	
+	</xs:redefine>
+    
+</xs:schema>

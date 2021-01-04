@@ -1,7 +1,6 @@
 
 package org.cdisc.odm.v132;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -14,33 +13,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemGroupRef")
 public class ODMcomplexTypeDefinitionItemGroupRef {
 
-    @XmlAttribute(name = "ItemGroupOID", required = true)
-    protected String itemGroupOID;
     @XmlAttribute(name = "OrderNumber")
-    protected BigInteger orderNumber;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean mandatory;
     @XmlAttribute(name = "CollectionExceptionConditionOID")
     protected String collectionExceptionConditionOID;
+    @XmlAttribute(name = "ItemGroupOID", required = true)
+    protected String itemGroupOID;
 
     
-    public String getItemGroupOID() {
-        return itemGroupOID;
-    }
-
-    
-    public void setItemGroupOID(String value) {
-        this.itemGroupOID = value;
-    }
-
-    
-    public BigInteger getOrderNumber() {
+    public Integer getOrderNumber() {
         return orderNumber;
     }
 
     
-    public void setOrderNumber(BigInteger value) {
+    public void setOrderNumber(Integer value) {
         this.orderNumber = value;
     }
 
@@ -62,6 +52,16 @@ public class ODMcomplexTypeDefinitionItemGroupRef {
     
     public void setCollectionExceptionConditionOID(String value) {
         this.collectionExceptionConditionOID = value;
+    }
+
+    
+    public String getItemGroupOID() {
+        return itemGroupOID;
+    }
+
+    
+    public void setItemGroupOID(String value) {
+        this.itemGroupOID = value;
     }
 
 }

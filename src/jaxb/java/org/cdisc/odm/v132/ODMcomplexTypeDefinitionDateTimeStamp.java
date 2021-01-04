@@ -1,8 +1,8 @@
 
 package org.cdisc.odm.v132;
 
-import java.time.LocalDateTime;
-import javax.xml.bind.LocalDateTimeAdapter;
+import java.time.ZonedDateTime;
+import javax.xml.bind.IsoZonedDateTimeFormatter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -18,16 +18,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class ODMcomplexTypeDefinitionDateTimeStamp {
 
     @XmlValue
-    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
-    protected LocalDateTime value;
+    @XmlJavaTypeAdapter(IsoZonedDateTimeFormatter.class)
+    protected ZonedDateTime value;
 
     
-    public LocalDateTime getValue() {
+    public ZonedDateTime getValue() {
         return value;
     }
 
     
-    public void setValue(LocalDateTime value) {
+    public void setValue(ZonedDateTime value) {
         this.value = value;
     }
 

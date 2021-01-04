@@ -1,7 +1,6 @@
 
 package org.cdisc.odm.v132;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -28,7 +27,8 @@ public class ODMcomplexTypeDefinitionAnnotation {
     @XmlElement(name = "Flag")
     protected List<ODMcomplexTypeDefinitionFlag> flag;
     @XmlAttribute(name = "SeqNum", required = true)
-    protected BigInteger seqNum;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer seqNum;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
     @XmlAttribute(name = "ID")
@@ -56,12 +56,12 @@ public class ODMcomplexTypeDefinitionAnnotation {
     }
 
     
-    public BigInteger getSeqNum() {
+    public Integer getSeqNum() {
         return seqNum;
     }
 
     
-    public void setSeqNum(BigInteger value) {
+    public void setSeqNum(Integer value) {
         this.seqNum = value;
     }
 

@@ -34,8 +34,8 @@ public class ODMcomplexTypeDefinitionItemData {
     @XmlElement(name = "Annotation")
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElements({
-        @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status", type = StatusData.class),
-        @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query", type = QueryData.class)
+        @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query", type = QueryData.class),
+        @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status", type = StatusData.class)
     })
     protected List<Object> itemDataElementExtension;
     @XmlAttribute(name = "ItemOID", required = true)

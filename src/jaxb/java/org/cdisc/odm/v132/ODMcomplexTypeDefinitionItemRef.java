@@ -1,7 +1,6 @@
 
 package org.cdisc.odm.v132;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -17,7 +16,8 @@ public class ODMcomplexTypeDefinitionItemRef {
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "KeySequence")
-    protected BigInteger keySequence;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer keySequence;
     @XmlAttribute(name = "MethodOID")
     protected String methodOID;
     @XmlAttribute(name = "ImputationMethodOID")
@@ -27,7 +27,8 @@ public class ODMcomplexTypeDefinitionItemRef {
     @XmlAttribute(name = "RoleCodeListOID")
     protected String roleCodeListOID;
     @XmlAttribute(name = "OrderNumber")
-    protected BigInteger orderNumber;
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer orderNumber;
     @XmlAttribute(name = "Mandatory", required = true)
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean mandatory;
@@ -45,12 +46,12 @@ public class ODMcomplexTypeDefinitionItemRef {
     }
 
     
-    public BigInteger getKeySequence() {
+    public Integer getKeySequence() {
         return keySequence;
     }
 
     
-    public void setKeySequence(BigInteger value) {
+    public void setKeySequence(Integer value) {
         this.keySequence = value;
     }
 
@@ -95,12 +96,12 @@ public class ODMcomplexTypeDefinitionItemRef {
     }
 
     
-    public BigInteger getOrderNumber() {
+    public Integer getOrderNumber() {
         return orderNumber;
     }
 
     
-    public void setOrderNumber(BigInteger value) {
+    public void setOrderNumber(Integer value) {
         this.orderNumber = value;
     }
 

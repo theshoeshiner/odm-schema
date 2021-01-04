@@ -38,6 +38,8 @@ public class ODMcomplexTypeDefinitionSubjectData {
     protected List<ODMcomplexTypeDefinitionStudyEventData> studyEventData;
     @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status")
     protected List<StatusData> subjectDataElementExtension;
+    @XmlAttribute(name = "SubjectName")
+    protected String subjectName;
     @XmlAttribute(name = "SubjectKey", required = true)
     protected String subjectKey;
     @XmlAttribute(name = "TransactionType")
@@ -105,6 +107,16 @@ public class ODMcomplexTypeDefinitionSubjectData {
             subjectDataElementExtension = new ArrayList<StatusData>();
         }
         return this.subjectDataElementExtension;
+    }
+
+    
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    
+    public void setSubjectName(String value) {
+        this.subjectName = value;
     }
 
     
