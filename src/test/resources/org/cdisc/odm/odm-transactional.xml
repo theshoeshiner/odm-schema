@@ -740,10 +740,10 @@ Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularit
 			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "2001-10-19"/>
 		</Location>
 		<Location OID = "LOC.site001" Name = "Fred Hutchinson" LocationType = "Site">
-			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "20011019T10:45:57-05:00"/>
+			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "2001-10-19"/>
 		</Location>
 		<Location OID = "LOC.site002" Name = "Roswell Park" LocationType = "Site">
-			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "20011019T10:45:57-05:00"/>
+			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "2001-10-19"/>
 		</Location>
 		<SignatureDef OID = "SD.cdisc001-es" Methodology = "Electronic">
 			<Meaning>Signature Meaning</Meaning>
@@ -6078,7 +6078,7 @@ Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularit
 						<ItemData ItemOID = "IT.F_STATUS" Value = "V"/>
 						<ItemData ItemOID = "IT.BODY_SYS" Value = "13"/>
 						<ItemData ItemOID = "IT.ABNORM" Value = "1">
-							<QueryData QueryKey="123" Text="This is a problem." Status="Open" />
+							<q:QueryData QueryKey="123" Text="This is a problem." Status="Open" />
 							
 						</ItemData>
 						

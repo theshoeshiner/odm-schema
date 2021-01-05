@@ -8,6 +8,7 @@ import javax.xml.bind.JAXBException;
 import org.cdisc.odm.v132.ODM;
 import org.cdisc.odm.v132.ODMcomplexTypeDefinitionMetaDataVersion;
 import org.cdisc.odm.v132.OdmSchema;
+import org.cdisc.odm.v132.query.QueryData;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ public class SchemaTest {
 	
 	@Test
 	public void testObjects() throws JAXBException{
-		
+		 
 		
 		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional.xml");
 		
@@ -72,6 +73,25 @@ public class SchemaTest {
 			
 		}
 		
+		odm.getAdminData().get(0).getLocation().forEach(location -> {
+			LOGGER.info("mdref: {}",location.getMetaDataVersionRef().get(0).getEffectiveDate());
+		});
+		
+		
+		odm.getClinicalData().forEach(cd -> {
+			cd.getSubjectData().forEach(sd -> {
+				sd.getStudyEventData().forEach(ed -> {
+					ed.getFormData().forEach(fd -> {
+						fd.getItemGroupData().forEach(gd -> {
+							gd.getItemDataGroup().forEach(id -> {
+								List<QueryData> qd = id.getQueryData();
+								if(qd.size()>0) LOGGER.info("Queries: {}",qd);
+							});
+						});
+					});
+				});
+			});
+		});
 		
 		/* for(ODMcomplexTypeDefinitionItemDef id : mdv.getItemDef()) {
 		 LOGGER.info("item: {}", id); }*/
