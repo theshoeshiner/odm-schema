@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ODM FileType="Snapshot" FileOID="987-654-321"
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" FileType="Snapshot" FileOID="987-654-321"
 	CreationDateTime="2001-11-15T16:37:21-05:00">
 	<Study OID="123-456-789">
 		<GlobalVariables>
@@ -847,7 +847,7 @@
 		<Location OID="LOC.CDISCHome" Name="CDISC Headquarters"
 			LocationType="Other">
 			<MetaDataVersionRef StudyOID="123-456-789"
-				MetaDataVersionOID="v1.01" EffectiveDate="20011019T10:45:57-05:00" />
+				MetaDataVersionOID="v1.01" EffectiveDate="2001-10-19" />
 		</Location>
 		<SignatureDef OID="SD.cdisc001-es"
 			Methodology="Electronic">
@@ -864,7 +864,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -889,7 +889,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -908,7 +908,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -971,7 +971,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -1142,7 +1142,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.AE"
 						ItemGroupRepeatKey="1">
@@ -1194,7 +1194,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -1253,7 +1253,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -1278,7 +1278,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -1297,7 +1297,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -1360,7 +1360,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -1531,7 +1531,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -1568,7 +1568,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -1593,7 +1593,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -1612,7 +1612,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -1675,7 +1675,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -1846,7 +1846,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -1873,7 +1873,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -2041,7 +2041,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -2066,7 +2066,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -2085,7 +2085,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -2148,7 +2148,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -2319,7 +2319,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -2352,7 +2352,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -2520,7 +2520,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -2545,7 +2545,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -2575,7 +2575,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -2638,7 +2638,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -3288,7 +3288,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -3371,7 +3371,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -3539,7 +3539,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -3564,7 +3564,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -3583,7 +3583,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -3646,7 +3646,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -3817,7 +3817,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -3854,7 +3854,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -3879,7 +3879,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -3898,7 +3898,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -4066,7 +4066,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -4091,7 +4091,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -4121,7 +4121,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -4184,7 +4184,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -4354,7 +4354,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -4391,7 +4391,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -4416,7 +4416,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -4435,7 +4435,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -4498,7 +4498,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -4669,7 +4669,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -4702,7 +4702,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -4870,7 +4870,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -4895,7 +4895,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -4914,7 +4914,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -4977,7 +4977,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -5148,7 +5148,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -5181,7 +5181,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -5349,7 +5349,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -5374,7 +5374,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -5393,7 +5393,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -5456,7 +5456,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -5627,7 +5627,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -5664,7 +5664,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DEMOG"
 						ItemGroupRepeatKey="1">
@@ -5689,7 +5689,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.DRUG_TRT"
 						ItemGroupRepeatKey="1">
@@ -5708,7 +5708,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHARMO1"
 						ItemGroupRepeatKey="1">
@@ -5771,7 +5771,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">
@@ -5942,7 +5942,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.CONMED"
 						ItemGroupRepeatKey="1">
@@ -5975,7 +5975,7 @@
 						<UserRef UserOID="USR.cdisc001" />
 						<LocationRef LocationOID="LOC.CDISCHome" />
 						<SignatureRef SignatureOID="SD.cdisc001-es" />
-						<DateTimeStamp>20010530T10:06:32</DateTimeStamp>
+						<DateTimeStamp>2001-05-30T10:06:32</DateTimeStamp>
 					</Signature>
 					<ItemGroupData ItemGroupOID="IG.PHYEX"
 						ItemGroupRepeatKey="1">

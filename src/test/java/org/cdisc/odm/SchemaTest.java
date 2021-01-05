@@ -1,7 +1,6 @@
 package org.cdisc.odm;
 
 import java.io.InputStream;
-import java.util.List;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.UnmarshalException;
@@ -9,19 +8,42 @@ import javax.xml.bind.UnmarshalException;
 import org.cdisc.odm.v132.ODM;
 import org.cdisc.odm.v132.ODMcomplexTypeDefinitionMetaDataVersion;
 import org.cdisc.odm.v132.OdmSchema;
-import org.cdisc.odm.v132.query.QueryData;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.xml.sax.SAXException;
 
-
+@SuppressWarnings("unused")
 public class SchemaTest {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(SchemaTest.class);
 	
+	
 	@Test
-	public void testObjects() throws JAXBException{
+	public void testSnapshot() throws JAXBException{
+		InputStream stream = SchemaTest.class.getResourceAsStream("odm-snapshot.xml");
+		Object object = OdmSchema.parseOdmStream(stream);
+	}
+	
+	@Test
+	public void testSnapshot2() throws JAXBException{
+		InputStream stream = SchemaTest.class.getResourceAsStream("odm-snapshot-2.xml");
+		Object object = OdmSchema.parseOdmStream(stream);
+	}
+	
+	@Test
+	public void testSnapshot3() throws JAXBException{
+		InputStream stream = SchemaTest.class.getResourceAsStream("odm-snapshot-3.xml");
+		Object object = OdmSchema.parseOdmStream(stream);
+	}
+	
+	@Test
+	public void testTransactional2() throws JAXBException{
+		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional-2.xml");
+		Object object = OdmSchema.parseOdmStream(stream);
+	}
+	
+	@Test
+	public void testTransactional() throws JAXBException{
 		 
 		
 		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional.xml");

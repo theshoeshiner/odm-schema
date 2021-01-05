@@ -19,7 +19,7 @@
 	correct value in a separate data entry session, and this change was captured in the audit
 	trail of the clinical data management system. 
 -->
-<ODM FileType="Transactional" FileOID="987-654-321" CreationDateTime="2001-11-15T16:37:21-05:00" AsOfDateTime="2001-11-15T16:37:21-05:00" Description="Two visits for patients P001 and P027, plus updates of data for P001" Granularity="All">
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3"  FileType="Transactional" FileOID="987-654-321" CreationDateTime="2001-11-15T16:37:21-05:00" AsOfDateTime="2001-11-15T16:37:21-05:00" Description="Two visits for patients P001 and P027, plus updates of data for P001" Granularity="All">
    <Study OID="123-456-789">
       <GlobalVariables>
          <StudyName>HarrisonA</StudyName>
@@ -100,7 +100,6 @@
             </CodeListItem>
          </CodeList>
          <!--Since structure and content of Presentation have not yet been defined, we have inserted an empty Presentation element.-->
-         <Presentation OID=""/>
       </MetaDataVersion>
    </Study>
    <!--Beginning of Administrative Data-->
@@ -116,7 +115,7 @@
       </User>
       <!--There is 1 location: General Hospital (a site).-->
       <Location OID="Location.001" Name="General Hospital" LocationType="Site">
-         <MetaDataVersionRef StudyOID="123-456-789" MetaDataVersionOID="MetaDataVersion.001" EffectiveDate="2001-10-19T10:45:57-05:00"/>
+         <MetaDataVersionRef StudyOID="123-456-789" MetaDataVersionOID="MetaDataVersion.001" EffectiveDate="2001-10-19"/>
       </Location>
       <!--There is one signature definition (electronic signature for data entry)
 -->
@@ -136,7 +135,7 @@
                <AuditRecord>
                   <UserRef UserOID="User.002"/>
                   <LocationRef LocationOID="Location.001"/>
-                  <DateTimeStamp>2001-05-31-T10:08:40-05:00</DateTimeStamp>
+                  <DateTimeStamp>2001-05-31T10:08:40-05:00</DateTimeStamp>
                </AuditRecord>
                <!--  Electronic signature for this form   -->
                <Signature>
@@ -156,7 +155,7 @@
                   <ItemData ItemOID="WEIGHT_KG" Value="68.18"/>
                   <!--  ItemGroupData element for the Vitals part of the form     -->
                </ItemGroupData>
-               <ItemGroupData ItemGroupOID="VITALS" ItemGroupRepeatKey="">
+               <ItemGroupData ItemGroupOID="VITALS" ItemGroupRepeatKey="1">
                   <ItemData ItemOID="PT" Value="P001"/>
                   <ItemData ItemOID="VISITNAME" Value="Visit1"/>
                   <ItemData ItemOID="SBP" Value="120"/>
@@ -174,7 +173,7 @@
                <AuditRecord>
                   <UserRef UserOID="User.002"/>
                   <LocationRef LocationOID="Location.001"/>
-                  <DateTimeStamp>2001-05-31T9:06:45-05:00</DateTimeStamp>
+                  <DateTimeStamp>2001-05-30T09:06:45-05:00</DateTimeStamp>
                </AuditRecord>
                <!-- Electronic signature for this form -->
                <Signature>
@@ -240,7 +239,7 @@
                <AuditRecord>
                   <UserRef UserOID="User.002"/>
                   <LocationRef LocationOID="Location.001"/>
-                  <DateTimeStamp>2001-05-31-T10:08:40-05:00</DateTimeStamp>
+                  <DateTimeStamp>2001-05-31T10:08:40-05:00</DateTimeStamp>
                </AuditRecord>
                <!--  Electronic signature for this form   -->
                <Signature>
@@ -260,7 +259,7 @@
                   <ItemData ItemOID="WEIGHT_KG" Value="63.04"/>
                   <!--  ItemGroupData element for the Vitals part of the form     -->
                </ItemGroupData>
-               <ItemGroupData ItemGroupOID="VITALS" ItemGroupRepeatKey="">
+               <ItemGroupData ItemGroupOID="VITALS" ItemGroupRepeatKey="1">
                   <ItemData ItemOID="PT" Value="P027"/>
                   <ItemData ItemOID="VISITNAME" Value="Visit1"/>
                   <ItemData ItemOID="SBP" Value="115"/>
@@ -278,7 +277,7 @@
                <AuditRecord>
                   <UserRef UserOID="User.002"/>
                   <LocationRef LocationOID="Location.001"/>
-                  <DateTimeStamp>2001-05-31T9:06:45-05:00</DateTimeStamp>
+                  <DateTimeStamp>2001-05-31T09:06:45-05:00</DateTimeStamp>
                </AuditRecord>
                <!-- Electronic signature for this form -->
                <Signature>
