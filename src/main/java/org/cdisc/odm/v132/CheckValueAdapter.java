@@ -2,6 +2,8 @@ package org.cdisc.odm.v132;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
+//FIXME REMOVE
+@Deprecated
 public class CheckValueAdapter extends XmlAdapter<ODMcomplexTypeDefinitionCheckValue, String>{
 
 	@Override

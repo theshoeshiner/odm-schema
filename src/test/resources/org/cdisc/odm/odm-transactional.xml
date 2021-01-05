@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" 
-xmlns:q="http://www.cdisc.org/ns/odm/v1.3/query" 
+xmlns:q="http://www.cdisc.org/ns/odm/v1.3/query"
+xmlns:s="http://www.cdisc.org/ns/odm/v1.3/status"  
 Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularity="All" FileOID="987-654-321" CreationDateTime="2002-04-29T11:07:23-05:00" >
 	<Study OID = "123-456-789">
 		<GlobalVariables>
@@ -232,7 +233,7 @@ Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularit
 				<CodeListRef CodeListOID = "CL.N_A_ND"/>
 				<Role>ABNORM Role</Role>
 			</ItemDef>
-			<ItemDef OID = "IT.AEACTTRT" Name = "Actions taken re study drug" DataType = "text" Length = "1" SASFieldName = "AEACTTRT">
+			<ItemDef OID = "IT.AEACTTRT" Name = "Actions taken re study drug" DataType = "text" Length = "1" SASFieldName = "AEACTTRT" Repeating="Yes">
 				<Question>
 					<TranslatedText xml:lang = "en">Actions taken re study drug?</TranslatedText>
 				</Question>
@@ -6083,6 +6084,7 @@ Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularit
 						</ItemData>
 						
 					</ItemGroupData>
+					<s:StatusData Entered="Yes" Conformant="No"/>
 				</FormData>
 			</StudyEventData>
 			<StudyEventData StudyEventOID = "SE.VISIT1">
