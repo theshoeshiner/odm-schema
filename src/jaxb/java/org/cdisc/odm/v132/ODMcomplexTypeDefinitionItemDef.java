@@ -42,7 +42,7 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected List<ODMcomplexTypeDefinitionRole> role;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
-    @XmlAttribute(name = "Repeating", required = true)
+    @XmlAttribute(name = "Repeating")
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean repeating;
     @XmlAttribute(name = "OID", required = true)

@@ -23,7 +23,7 @@ public class SchemaTest {
 		 
 		
 		InputStream stream = SchemaTest.class.getResourceAsStream("odm-transactional.xml");
-		
+		 
 		/*
 		  LOGGER.info("stream: {}",stream);
 		  

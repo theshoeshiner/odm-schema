@@ -30,7 +30,7 @@
    
 		<xs:attributeGroup name="ItemDefAttributeExtension">
 			<xs:attributeGroup ref="ItemDefAttributeExtension"/>
-			<xs:attribute name="Repeating" type="YesOrNo" use="required"/>
+			<xs:attribute name="Repeating" type="YesOrNo" use="optional"/>
 		</xs:attributeGroup>
 	
 		<xs:complexType name="ODMcomplexTypeDefinition-SubjectData">
