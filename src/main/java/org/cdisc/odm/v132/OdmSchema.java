@@ -93,7 +93,7 @@ public class OdmSchema {
 		return JAXBContext.newInstance(ODM.class);
 	}
 
-	private static final String SCHEMA_FILE = "ODM1-3-2.xsd";
+	private static final String SCHEMA_FILE = "ODM1-3-2-extended.xsd";
 	private static Schema SCHEMA;
 
 	public static Schema getSchema() {
