@@ -8,7 +8,7 @@
 	attributeFormDefault="unqualified" version="2.1">
 
 
-	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="../xlink.xsd" />
-	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="../ODM1-3-2-foundation.xsd" />
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="ODM1-3-2-foundation.xsd" />
 	
 </xs:schema>

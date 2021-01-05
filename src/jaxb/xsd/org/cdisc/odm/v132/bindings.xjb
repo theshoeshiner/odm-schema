@@ -9,12 +9,14 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 	<!-- global changes -->
 	
 	<jxb:globalBindings>
-		<xjc:javaType adapter="javax.xml.bind.IsoZonedDateTimeFormatter" name="java.time.ZonedDateTime" xmlType="xs:dateTime"/>
+		<xjc:javaType adapter="javax.xml.bind.IsoDateTimeFormatter" name="java.time.ZonedDateTime" xmlType="xs:dateTime"/>
+		<xjc:javaType adapter="javax.xml.bind.IsoLocalDateAdapter" name="java.time.LocalDate" xmlType="xs:date"/>
+		<xjc:javaType adapter="javax.xml.bind.IsoOffsetTimeAdapter" name="java.time.OffsetTime" xmlType="xs:time"/>
 		<xjc:javaType adapter="org.cdisc.odm.v132.YesOrNoAdapter" name="java.lang.Boolean" xmlType="odm:YesOrNo"/>
 		<xjc:javaType adapter="org.cdisc.odm.v132.YesOnlyAdapter" name="java.lang.Boolean" xmlType="odm:YesOnly"/>
-		<xjc:javaType adapter="org.cdisc.odm.v132.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:positiveInteger"/>
-		<xjc:javaType adapter="org.cdisc.odm.v132.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:nonNegativeInteger"/>
-		<xjc:javaType adapter="org.cdisc.odm.v132.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:integer"/>
+		<xjc:javaType adapter="javax.xml.bind.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:positiveInteger"/>
+		<xjc:javaType adapter="javax.xml.bind.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:nonNegativeInteger"/>
+		<xjc:javaType adapter="javax.xml.bind.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:integer"/>
 	</jxb:globalBindings>
 
 
@@ -30,7 +32,7 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 	</jxb:bindings> 
 	
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="./query/ODM-Query.xsd" node="/xs:schema">
+		schemaLocation="ODM-Query.xsd" node="/xs:schema">
 		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
 			<jxb:schemaBindings>
 				<jxb:package name="org.cdisc.odm.v132.query" />
@@ -39,7 +41,7 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 	</jxb:bindings>
 	
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="./status/ODM-Status.xsd" node="/xs:schema">
+		schemaLocation="ODM-Status.xsd" node="/xs:schema">
 		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
 			<jxb:schemaBindings>
 				<jxb:package name="org.cdisc.odm.v132.status" />
@@ -48,7 +50,7 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 	</jxb:bindings>
 	
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		schemaLocation="./subject/ODM-Subject.xsd" node="/xs:schema">
+		schemaLocation="ODM-Subject.xsd" node="/xs:schema">
 		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">
 			<jxb:schemaBindings>
 				<jxb:package name="org.cdisc.odm.v132.subject" />

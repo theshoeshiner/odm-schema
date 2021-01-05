@@ -11,7 +11,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
 
 	<!-- <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="../xlink.xsd" /> -->
-	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="../ODM1-3-2-foundation.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="ODM1-3-2-foundation.xsd" />
 
 	<xs:simpleType name="queryStatus">
 		<xs:restriction base="xs:string">
