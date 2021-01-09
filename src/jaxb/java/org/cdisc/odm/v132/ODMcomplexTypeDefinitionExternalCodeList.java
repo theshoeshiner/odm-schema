@@ -13,35 +13,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "ODMcomplexTypeDefinition-ExternalCodeList")
 public class ODMcomplexTypeDefinitionExternalCodeList {
 
-    @XmlAttribute(name = "Dictionary")
-    protected String dictionary;
-    @XmlAttribute(name = "Version")
-    protected String version;
     @XmlAttribute(name = "href")
     @XmlSchemaType(name = "anyURI")
     protected String href;
     @XmlAttribute(name = "ref")
     protected String ref;
-
-    
-    public String getDictionary() {
-        return dictionary;
-    }
-
-    
-    public void setDictionary(String value) {
-        this.dictionary = value;
-    }
-
-    
-    public String getVersion() {
-        return version;
-    }
-
-    
-    public void setVersion(String value) {
-        this.version = value;
-    }
+    @XmlAttribute(name = "Dictionary")
+    protected String dictionary;
+    @XmlAttribute(name = "Version")
+    protected String version;
 
     
     public String getHref() {
@@ -61,6 +41,26 @@ public class ODMcomplexTypeDefinitionExternalCodeList {
     
     public void setRef(String value) {
         this.ref = value;
+    }
+
+    
+    public String getDictionary() {
+        return dictionary;
+    }
+
+    
+    public void setDictionary(String value) {
+        this.dictionary = value;
+    }
+
+    
+    public String getVersion() {
+        return version;
+    }
+
+    
+    public void setVersion(String value) {
+        this.version = value;
     }
 
 }
