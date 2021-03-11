@@ -50,6 +50,9 @@
 			<FormDef OID="FORM.AE" Name="Adverse Events" Repeating="No">
 				<ItemGroupRef ItemGroupOID="IG.AE" OrderNumber="1" Mandatory="No"/>
 			</FormDef>
+			<FormDef OID="TESTDUP" Name="Adverse Events" Repeating="No">
+				<ItemGroupRef ItemGroupOID="IG.AE" OrderNumber="1" Mandatory="No"/>
+			</FormDef>
 			<FormDef OID="FORM.CONMED" Name="Concom Meds" Repeating="No">
 				<ItemGroupRef ItemGroupOID="IG.CONMED" OrderNumber="1" Mandatory="No"/>
 			</FormDef>
@@ -248,6 +251,7 @@
 				<CodeListRef CodeListOID="CL.AECONTR"/>
 			</ItemDef>
 			<ItemDef OID="IT.AEENDAY" Name="Stop Day - Enter Two Digits 01-31" DataType="text" Length="2" SASFieldName="AEENDAY"/>
+			<ItemDef OID="TESTDUP" Name="Stop Day - Enter Two Digits 01-31" DataType="text" Length="2" SASFieldName="AEENDAY"/>
 			<ItemDef OID="IT.AEENDT" Name="Derived Stop Date" DataType="text" Length="8" SASFieldName="AEENDT"/>
 			<ItemDef OID="IT.AEENMON" Name="Stop Month - Enter Two Digits 01-12" DataType="text" Length="2" SASFieldName="AEENMON"/>
 			<ItemDef OID="IT.AEENYR" Name="Stop Year - Enter Four Digit Year" DataType="text" Length="4" SASFieldName="AEENYR"/>

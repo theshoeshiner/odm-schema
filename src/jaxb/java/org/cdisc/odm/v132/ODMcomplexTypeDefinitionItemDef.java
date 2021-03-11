@@ -42,6 +42,9 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected List<ODMcomplexTypeDefinitionRole> role;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+    @XmlAttribute(name = "Repeating")
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean repeating;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -62,9 +65,6 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected String origin;
     @XmlAttribute(name = "Comment")
     protected String comment;
-    @XmlAttribute(name = "Repeating")
-    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
-    protected Boolean repeating;
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {
@@ -136,6 +136,16 @@ public class ODMcomplexTypeDefinitionItemDef {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();
         }
         return this.alias;
+    }
+
+    
+    public Boolean getRepeating() {
+        return repeating;
+    }
+
+    
+    public void setRepeating(Boolean value) {
+        this.repeating = value;
     }
 
     
@@ -226,16 +236,6 @@ public class ODMcomplexTypeDefinitionItemDef {
     
     public void setComment(String value) {
         this.comment = value;
-    }
-
-    
-    public Boolean getRepeating() {
-        return repeating;
-    }
-
-    
-    public void setRepeating(Boolean value) {
-        this.repeating = value;
     }
 
 }

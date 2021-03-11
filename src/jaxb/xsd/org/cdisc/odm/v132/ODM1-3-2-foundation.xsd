@@ -2365,10 +2365,10 @@
 			<xs:field xpath="@OID"/>
 		</xs:unique>
 
-    <xs:unique name="UC-MDV-OID-unique">
+   <!--  <xs:unique name="UC-MDV-OID-unique">
       <xs:selector xpath="*"/>
       <xs:field xpath="@OID"/>
-    </xs:unique>
+    </xs:unique> -->
 
 
 

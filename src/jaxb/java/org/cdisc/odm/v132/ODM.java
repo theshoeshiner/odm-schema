@@ -4,7 +4,7 @@ package org.cdisc.odm.v132;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.IsoDateTimeFormatter;
+import javax.xml.bind.LooseIsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -55,12 +55,12 @@ public class ODM {
     @XmlAttribute(name = "FileOID", required = true)
     protected String fileOID;
     @XmlAttribute(name = "CreationDateTime", required = true)
-    @XmlJavaTypeAdapter(IsoDateTimeFormatter.class)
+    @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
     protected ZonedDateTime creationDateTime;
     @XmlAttribute(name = "PriorFileOID")
     protected String priorFileOID;
     @XmlAttribute(name = "AsOfDateTime")
-    @XmlJavaTypeAdapter(IsoDateTimeFormatter.class)
+    @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
     protected ZonedDateTime asOfDateTime;
     @XmlAttribute(name = "ODMVersion")
     protected String odmVersion;

@@ -76,6 +76,12 @@
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
+		
+		<xs:attributeGroup name="ItemDataAttributeExtension">
+			<xs:attributeGroup ref="ItemDataAttributeExtension"/>
+			<xs:attribute name="ItemRepeatKey" type="repeatKey"/>
+		</xs:attributeGroup>
+		
 	
 		<xs:complexType name="ODMcomplexTypeDefinition-ItemData">
 			<xs:complexContent>

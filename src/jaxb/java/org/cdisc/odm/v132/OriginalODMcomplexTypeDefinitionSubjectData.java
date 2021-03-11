@@ -38,12 +38,12 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "StudyEventData")
     protected List<ODMcomplexTypeDefinitionStudyEventData> studyEventData;
-    @XmlAttribute(name = "SubjectName")
-    protected String subjectName;
     @XmlAttribute(name = "SubjectKey", required = true)
     protected String subjectKey;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+    @XmlAttribute(name = "SubjectName")
+    protected String subjectName;
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -102,16 +102,6 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     }
 
     
-    public String getSubjectName() {
-        return subjectName;
-    }
-
-    
-    public void setSubjectName(String value) {
-        this.subjectName = value;
-    }
-
-    
     public String getSubjectKey() {
         return subjectKey;
     }
@@ -129,6 +119,16 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     
     public void setTransactionType(TransactionType value) {
         this.transactionType = value;
+    }
+
+    
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    
+    public void setSubjectName(String value) {
+        this.subjectName = value;
     }
 
 }

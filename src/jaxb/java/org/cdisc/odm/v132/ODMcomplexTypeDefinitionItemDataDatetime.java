@@ -2,7 +2,7 @@
 package org.cdisc.odm.v132;
 
 import java.time.ZonedDateTime;
-import javax.xml.bind.IsoDateTimeFormatter;
+import javax.xml.bind.LooseIsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -21,12 +21,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class ODMcomplexTypeDefinitionItemDataDatetime {
 
     @XmlValue
-    @XmlJavaTypeAdapter(IsoDateTimeFormatter.class)
+    @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
     protected ZonedDateTime value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -41,6 +37,10 @@ public class ODMcomplexTypeDefinitionItemDataDatetime {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
 
     
     public ZonedDateTime getValue() {
@@ -50,26 +50,6 @@ public class ODMcomplexTypeDefinitionItemDataDatetime {
     
     public void setValue(ZonedDateTime value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     
@@ -110,6 +90,26 @@ public class ODMcomplexTypeDefinitionItemDataDatetime {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

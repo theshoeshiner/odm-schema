@@ -40,6 +40,8 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     @XmlAttribute(name = "IsNull")
     @XmlJavaTypeAdapter(YesOnlyAdapter.class)
     protected Boolean isNull;
+    @XmlAttribute(name = "ItemRepeatKey")
+    protected String itemRepeatKey;
     @XmlAttribute(name = "Value")
     protected String value;
 
@@ -109,6 +111,16 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     
     public void setIsNull(Boolean value) {
         this.isNull = value;
+    }
+
+    
+    public String getItemRepeatKey() {
+        return itemRepeatKey;
+    }
+
+    
+    public void setItemRepeatKey(String value) {
+        this.itemRepeatKey = value;
     }
 
     

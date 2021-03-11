@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<ODM Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularity="All" FileOID="987-654-321" CreationDateTime="2002-04-29T11:07:23-05:00" xmlns="http://www.cdisc.org/ns/odm/v1.3">
-	<DNE/>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" 
+xmlns:q="http://www.cdisc.org/ns/odm/v1.3/query"
+xmlns:s="http://www.cdisc.org/ns/odm/v1.3/status"  
+Description="CDISC ODM version 1.1.0 format" FileType="Transactional" Granularity="All" FileOID="987-654-321" CreationDateTime="2002-04-29T11:07:23-05:00" >
 	<Study OID = "123-456-789">
+		<DNE/>
 		<GlobalVariables>
 			<StudyName>CDISC Connect-A-Thon Test Study III</StudyName>
 			<StudyDescription>This file contains test data for the CDISC Connect-A-Thon event scheduled for the DIA 38th annual meeting in Chicago.</StudyDescription>
@@ -198,7 +201,7 @@
 				<ItemRef ItemOID = "IT.REF1" OrderNumber = "1" Mandatory = "Yes"/>
 				<ItemRef ItemOID = "IT.REF2" OrderNumber = "2" Mandatory = "No"/>
 			</ItemGroupDef>
-			<ItemDef OID = "IT.ABNORM" Name = "Normal/Abnormal/Not Done" DataType = "integer" Length = "1" SASFieldName = "ABNORM" SDSVarName = "ABNORM SDS Variable Name" Origin = "ABNORM Origin" Comment = "ABNORM Comment">
+			<ItemDef OID = "IT.ABNORM" Name = "Normal/Abnormal/Not Done" DataType = "integer" Length = "1" SASFieldName = "ABNORM" SDSVarName = "ABNORM" Origin = "ABNORM Origin" Comment = "ABNORM Comment">
 				<Question>
 					<TranslatedText xml:lang = "en">English: Normal/Abnormal/Not Done?</TranslatedText>
 					<TranslatedText xml:lang = "fr">French: Normal/Abnormal/Not Done?</TranslatedText>
@@ -231,7 +234,7 @@
 				<CodeListRef CodeListOID = "CL.N_A_ND"/>
 				<Role>ABNORM Role</Role>
 			</ItemDef>
-			<ItemDef OID = "IT.AEACTTRT" Name = "Actions taken re study drug" DataType = "text" Length = "1" SASFieldName = "AEACTTRT">
+			<ItemDef OID = "IT.AEACTTRT" Name = "Actions taken re study drug" DataType = "text" Length = "1" SASFieldName = "AEACTTRT" Repeating="Yes">
 				<Question>
 					<TranslatedText xml:lang = "en">Actions taken re study drug?</TranslatedText>
 				</Question>
@@ -736,13 +739,13 @@
 			<LocationRef LocationOID = "LOC.site001"/>
 		</User>
 		<Location OID = "LOC.CDISCHome" Name = "CDISC Headquarters" LocationType = "Other">
-			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "20011019T10:45:57-05:00"/>
+			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "2001-10-19"/>
 		</Location>
 		<Location OID = "LOC.site001" Name = "Fred Hutchinson" LocationType = "Site">
-			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "20011019T10:45:57-05:00"/>
+			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "2001-10-19"/>
 		</Location>
 		<Location OID = "LOC.site002" Name = "Roswell Park" LocationType = "Site">
-			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "20011019T10:45:57-05:00"/>
+			<MetaDataVersionRef StudyOID = "123-456-789" MetaDataVersionOID = "v1.1.0" EffectiveDate = "2001-10-19"/>
 		</Location>
 		<SignatureDef OID = "SD.cdisc001-es" Methodology = "Electronic">
 			<Meaning>Signature Meaning</Meaning>
@@ -6076,8 +6079,13 @@
 						<ItemData ItemOID = "IT.SCTRY" Value = "USA"/>
 						<ItemData ItemOID = "IT.F_STATUS" Value = "V"/>
 						<ItemData ItemOID = "IT.BODY_SYS" Value = "13"/>
-						<ItemData ItemOID = "IT.ABNORM" Value = "1"/>
+						<ItemData ItemOID = "IT.ABNORM" Value = "1">
+							<q:QueryData QueryKey="123" Text="This is a problem." Status="Open" />
+							
+						</ItemData>
+						
 					</ItemGroupData>
+					<s:StatusData Entered="Yes" Conformant="No"/>
 				</FormData>
 			</StudyEventData>
 			<StudyEventData StudyEventOID = "SE.VISIT1">

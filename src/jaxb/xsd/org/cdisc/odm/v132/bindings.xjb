@@ -9,7 +9,7 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 	<!-- global changes -->
 	
 	<jxb:globalBindings>
-		<xjc:javaType adapter="javax.xml.bind.IsoDateTimeFormatter" name="java.time.ZonedDateTime" xmlType="xs:dateTime"/>
+		<xjc:javaType adapter="javax.xml.bind.LooseIsoDateTimeAdapter" name="java.time.ZonedDateTime" xmlType="xs:dateTime"/>
 		<xjc:javaType adapter="javax.xml.bind.IsoLocalDateAdapter" name="java.time.LocalDate" xmlType="xs:date"/>
 		<xjc:javaType adapter="javax.xml.bind.IsoOffsetTimeAdapter" name="java.time.OffsetTime" xmlType="xs:time"/>
 		<xjc:javaType adapter="org.cdisc.odm.v132.YesOrNoAdapter" name="java.lang.Boolean" xmlType="odm:YesOrNo"/>
