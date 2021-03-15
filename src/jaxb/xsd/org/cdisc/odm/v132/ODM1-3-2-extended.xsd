@@ -94,23 +94,14 @@
 			</xs:complexContent>
 		</xs:complexType>
 		
-		<!-- <xs:complexType name="ODMcomplexTypeDefinition-AuditRecord">
-			<xs:sequence>
-				<xs:element ref="UserRef"/>
-				<xs:element ref="LocationRef"/>
-				<xs:element ref="DateTimeStamp"/>
-				<xs:element ref="ReasonForChange" minOccurs="0"/>
-				<xs:element ref="SourceID" minOccurs="0"/>
-				<xs:group ref="AuditRecordElementExtension" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-			<xs:attributeGroup ref="AuditRecordAttributeDefinition"/>
-			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
-		</xs:complexType> -->
+		<!-- We are extending audit record to have an order number since timestamps often collide -->
 		
 		<xs:attributeGroup name="AuditRecordAttributeExtension">
 			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
 			<xs:attribute name="OrderNumber" type="integer"/>
 		</xs:attributeGroup>
+		
+		<!-- We are adding a new transaction type "Revert" to indicate that the last up/inserted value should be used -->
 		
 		<xs:simpleType name="TransactionType">
 			<xs:restriction base="odm:TransactionType" >
@@ -119,7 +110,7 @@
 				<xs:enumeration value="Remove"/>
 				<xs:enumeration value="Upsert"/>
 				<xs:enumeration value="Context"/>
-				<xs:enumeration value="Restore" />
+				<xs:enumeration value="Revert" />
 			</xs:restriction>
 		</xs:simpleType>
 		
