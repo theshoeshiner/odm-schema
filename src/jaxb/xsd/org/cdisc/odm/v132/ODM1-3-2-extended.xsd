@@ -94,6 +94,34 @@
 			</xs:complexContent>
 		</xs:complexType>
 		
+		<!-- <xs:complexType name="ODMcomplexTypeDefinition-AuditRecord">
+			<xs:sequence>
+				<xs:element ref="UserRef"/>
+				<xs:element ref="LocationRef"/>
+				<xs:element ref="DateTimeStamp"/>
+				<xs:element ref="ReasonForChange" minOccurs="0"/>
+				<xs:element ref="SourceID" minOccurs="0"/>
+				<xs:group ref="AuditRecordElementExtension" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="AuditRecordAttributeDefinition"/>
+			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
+		</xs:complexType> -->
+		
+		<xs:attributeGroup name="AuditRecordAttributeExtension">
+			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
+			<xs:attribute name="OrderNumber" type="integer"/>
+		</xs:attributeGroup>
+		
+		<xs:simpleType name="TransactionType">
+			<xs:restriction base="odm:TransactionType" >
+				<xs:enumeration value="Insert"/>
+				<xs:enumeration value="Update"/>
+				<xs:enumeration value="Remove"/>
+				<xs:enumeration value="Upsert"/>
+				<xs:enumeration value="Context"/>
+				<xs:enumeration value="Restore" />
+			</xs:restriction>
+		</xs:simpleType>
 		
 	</xs:redefine>
 

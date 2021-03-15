@@ -1,6 +1,7 @@
 
 package org.cdisc.odm.v132;
 
+import javax.xml.bind.BigIntegerIntegerAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -43,6 +44,9 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
+    @XmlAttribute(name = "OrderNumber")
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer orderNumber;
 
     
     public ODMcomplexTypeDefinitionUserRef getUserRef() {
@@ -122,6 +126,16 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     
     public void setID(String value) {
         this.id = value;
+    }
+
+    
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    
+    public void setOrderNumber(Integer value) {
+        this.orderNumber = value;
     }
 
 }

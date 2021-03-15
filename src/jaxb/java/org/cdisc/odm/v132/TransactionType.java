@@ -20,7 +20,9 @@ public enum TransactionType {
     @XmlEnumValue("Upsert")
     UPSERT("Upsert"),
     @XmlEnumValue("Context")
-    CONTEXT("Context");
+    CONTEXT("Context"),
+    @XmlEnumValue("Restore")
+    RESTORE("Restore");
     private final String value;
 
     TransactionType(String v) {
