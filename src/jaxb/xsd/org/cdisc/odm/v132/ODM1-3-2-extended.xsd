@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:odm="http://www.cdisc.org/ns/odm/v1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.cdisc.org/ns/odm/v1.3" xmlns:query="http://www.cdisc.org/ns/odm/v1.3/query"
+	xmlns:status="http://www.cdisc.org/ns/odm/v1.3/status" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+
+	<!-- <xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="query/ODM-Query.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/subject" schemaLocation="subject/ODM-Subject.xsd" /> -->
+
+<!-- 	<xs:include schemaLocation="query/ODM-redefine-Query.xsd" />
+	
+	<xs:include schemaLocation="subject/ODM-redefine-Subject.xsd" /> -->
+
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd" />
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="ODM-Query.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/subject" schemaLocation="ODM-Subject.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/status" schemaLocation="ODM-Status.xsd" />
+
+	<xs:include schemaLocation="ODM1-3-2-foundation.xsd" />
+
+
+	<xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
+	
+		<xs:attributeGroup name="SubjectDataAttributeExtension">
+	    	<xs:attributeGroup ref="SubjectDataAttributeExtension"/>
+	    	<xs:attribute name="SubjectName" type="odm:text" />
+		</xs:attributeGroup>
+   
+   
+		<xs:attributeGroup name="ItemDefAttributeExtension">
+			<xs:attributeGroup ref="ItemDefAttributeExtension"/>
+			<xs:attribute name="Repeating" type="YesOrNo" use="optional"/>
+		</xs:attributeGroup>
+	
+		<xs:complexType name="ODMcomplexTypeDefinition-SubjectData">
+			<xs:complexContent>
+				<xs:extension base="ODMcomplexTypeDefinition-SubjectData">
+					<xs:sequence>
+						<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="status:StatusData" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+		
+		<xs:complexType name="ODMcomplexTypeDefinition-StudyEventData">
+			<xs:complexContent>
+				<xs:extension base="ODMcomplexTypeDefinition-StudyEventData">
+					<xs:sequence>
+						<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="status:StatusData" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+		
+		<xs:complexType name="ODMcomplexTypeDefinition-FormData">
+			<xs:complexContent>
+				<xs:extension base="ODMcomplexTypeDefinition-FormData">
+					<xs:sequence>
+						<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="status:StatusData" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+		
+		<xs:complexType name="ODMcomplexTypeDefinition-ItemGroupData">
+			<xs:complexContent>
+				<xs:extension base="ODMcomplexTypeDefinition-ItemGroupData">
+					<xs:sequence>
+						<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="status:StatusData" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+		
+		<xs:attributeGroup name="ItemDataAttributeExtension">
+			<xs:attributeGroup ref="ItemDataAttributeExtension"/>
+			<xs:attribute name="ItemRepeatKey" type="repeatKey"/>
+		</xs:attributeGroup>
+		
+	
+		<xs:complexType name="ODMcomplexTypeDefinition-ItemData">
+			<xs:complexContent>
+				<xs:extension base="ODMcomplexTypeDefinition-ItemData">
+					<xs:sequence>
+						<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
+						<xs:element ref="status:StatusData" minOccurs="0" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+		
+		<!-- We are extending audit record to have an order number since timestamps often collide, often this can be copied / created from the sourceid -->
+		
+		<xs:attributeGroup name="AuditRecordAttributeExtension">
+			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
+			<xs:attribute name="OrderNumber" type="integer"/>
+			<xs:attribute name="SourceType" type="xs:string"/>
+		</xs:attributeGroup>
+		
+	
+	</xs:redefine>
+
+
+</xs:schema>

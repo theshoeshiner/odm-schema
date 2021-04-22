@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.cdisc.org/ns/odm/v1.3/query" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:odm="http://www.cdisc.org/ns/odm/v1.3" 
+	xmlns:def="http://www.cdisc.org/ns/def/v2.1" 
+	xmlns:query="http://www.cdisc.org/ns/odm/v1.3/query"
+	xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1">
+
+
+	<!-- This should contain the actual elements necessary for queries -->
+
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="ODM1-3-2-foundation.xsd" />
+
+	<xs:simpleType name="queryStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Open"/>
+			<xs:enumeration value="Answered"/>
+			<xs:enumeration value="Cancelled"/>
+			<xs:enumeration value="Closed"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="QueryData" type="query:QueryData" />
+
+	<xs:complexType name="QueryData">
+		<xs:attribute name="QueryKey" type="odm:subjectKey" use="required"/>
+		<xs:attribute name="Text" type="odm:text" />
+		<xs:attribute name="Response" type="odm:text" />
+		<xs:attribute name="Recipient" type="odm:text" />
+		<xs:attribute name="Status" type="query:queryStatus" />
+	</xs:complexType>
+
+
+</xs:schema>
