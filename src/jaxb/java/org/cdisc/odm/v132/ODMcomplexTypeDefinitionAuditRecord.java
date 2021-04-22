@@ -34,6 +34,11 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     protected ODMcomplexTypeDefinitionReasonForChange reasonForChange;
     @XmlElement(name = "SourceID")
     protected ODMcomplexTypeDefinitionSourceID sourceID;
+    @XmlAttribute(name = "OrderNumber")
+    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
+    protected Integer orderNumber;
+    @XmlAttribute(name = "SourceType")
+    protected String sourceType;
     @XmlAttribute(name = "EditPoint")
     protected EditPointType editPoint;
     @XmlAttribute(name = "UsedImputationMethod")
@@ -44,9 +49,6 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
-    @XmlAttribute(name = "OrderNumber")
-    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
-    protected Integer orderNumber;
 
     
     public ODMcomplexTypeDefinitionUserRef getUserRef() {
@@ -99,6 +101,26 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     }
 
     
+    public Integer getOrderNumber() {
+        return orderNumber;
+    }
+
+    
+    public void setOrderNumber(Integer value) {
+        this.orderNumber = value;
+    }
+
+    
+    public String getSourceType() {
+        return sourceType;
+    }
+
+    
+    public void setSourceType(String value) {
+        this.sourceType = value;
+    }
+
+    
     public EditPointType getEditPoint() {
         return editPoint;
     }
@@ -126,16 +148,6 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     
     public void setID(String value) {
         this.id = value;
-    }
-
-    
-    public Integer getOrderNumber() {
-        return orderNumber;
-    }
-
-    
-    public void setOrderNumber(Integer value) {
-        this.orderNumber = value;
     }
 
 }

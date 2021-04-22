@@ -16,6 +16,10 @@ public class QueryData {
     protected String queryKey;
     @XmlAttribute(name = "Text")
     protected String text;
+    @XmlAttribute(name = "Response")
+    protected String response;
+    @XmlAttribute(name = "Recipient")
+    protected String recipient;
     @XmlAttribute(name = "Status")
     protected QueryStatus status;
 
@@ -37,6 +41,26 @@ public class QueryData {
     
     public void setText(String value) {
         this.text = value;
+    }
+
+    
+    public String getResponse() {
+        return response;
+    }
+
+    
+    public void setResponse(String value) {
+        this.response = value;
+    }
+
+    
+    public String getRecipient() {
+        return recipient;
+    }
+
+    
+    public void setRecipient(String value) {
+        this.recipient = value;
     }
 
     

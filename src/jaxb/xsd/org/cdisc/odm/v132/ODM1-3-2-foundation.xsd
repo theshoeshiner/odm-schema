@@ -406,7 +406,20 @@
 			<xs:enumeration value="Hard"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
+	
 	<xs:simpleType name="TransactionType">
+		 <xs:restriction base="xs:string">
+			<xs:enumeration value="Insert"/>
+			<xs:enumeration value="Update"/>
+			<xs:enumeration value="Remove"/>
+			<xs:enumeration value="Upsert"/>
+			<xs:enumeration value="Context"/>
+			<xs:enumeration value="Revert"/>
+		</xs:restriction> 
+	</xs:simpleType>
+	
+	<xs:simpleType name="TransactionTypeEnum">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Insert"/>
 			<xs:enumeration value="Update"/>

@@ -15,6 +15,8 @@ public enum QueryStatus {
     OPEN("Open"),
     @XmlEnumValue("Answered")
     ANSWERED("Answered"),
+    @XmlEnumValue("Cancelled")
+    CANCELLED("Cancelled"),
     @XmlEnumValue("Closed")
     CLOSED("Closed");
     private final String value;

@@ -94,42 +94,16 @@
 			</xs:complexContent>
 		</xs:complexType>
 		
-		<!-- We are extending audit record to have an order number since timestamps often collide -->
+		<!-- We are extending audit record to have an order number since timestamps often collide, often this can be copied / created from the sourceid -->
 		
 		<xs:attributeGroup name="AuditRecordAttributeExtension">
 			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
 			<xs:attribute name="OrderNumber" type="integer"/>
+			<xs:attribute name="SourceType" type="xs:string"/>
 		</xs:attributeGroup>
 		
-		<!-- We are adding a new transaction type "Revert" to indicate that the last up/inserted value should be used -->
-		
-		<xs:simpleType name="TransactionType">
-			<xs:restriction base="odm:TransactionType" >
-				<xs:enumeration value="Insert"/>
-				<xs:enumeration value="Update"/>
-				<xs:enumeration value="Remove"/>
-				<xs:enumeration value="Upsert"/>
-				<xs:enumeration value="Context"/>
-				<xs:enumeration value="Revert" />
-			</xs:restriction>
-		</xs:simpleType>
-		
+	
 	</xs:redefine>
 
-	<!-- <xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
-		<xs:group name="ItemDataElementExtension">
-			<xs:sequence>
-				<xs:group ref="ItemDataElementExtension" />
-				<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
-			</xs:sequence>
-		</xs:group>
-	</xs:redefine>
-
-	<xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
-		<xs:attributeGroup name="SubjectDataAttributeExtension">
-			<xs:attributeGroup ref="SubjectDataAttributeExtension" />
-			<xs:attribute name="SubjectName" type="odm:text" />
-		</xs:attributeGroup>
-	</xs:redefine> -->
 
 </xs:schema>
