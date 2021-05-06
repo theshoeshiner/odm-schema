@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -26,6 +27,11 @@ public class ODMcomplexTypeDefinitionMeasurementUnit {
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
     protected String name;
+    @XmlAttribute(name = "Standard")
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean standard;
+    @XmlAttribute(name = "Group")
+    protected String group;
 
     
     public ODMcomplexTypeDefinitionSymbol getSymbol() {
@@ -63,6 +69,26 @@ public class ODMcomplexTypeDefinitionMeasurementUnit {
     
     public void setName(String value) {
         this.name = value;
+    }
+
+    
+    public Boolean getStandard() {
+        return standard;
+    }
+
+    
+    public void setStandard(Boolean value) {
+        this.standard = value;
+    }
+
+    
+    public String getGroup() {
+        return group;
+    }
+
+    
+    public void setGroup(String value) {
+        this.group = value;
     }
 
 }

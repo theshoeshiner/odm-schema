@@ -102,6 +102,13 @@
 			<xs:attribute name="SourceType" type="xs:string"/>
 		</xs:attributeGroup>
 		
+		
+		<xs:attributeGroup name="MeasurementUnitAttributeExtension">
+			<xs:attributeGroup ref="MeasurementUnitAttributeExtension"/>
+			<xs:attribute name="Standard" type="YesOrNo" use="optional" />
+			<xs:attribute name="Group" type="xs:string" use="optional"/>
+		</xs:attributeGroup>
+		
 	
 	</xs:redefine>
 
