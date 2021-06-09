@@ -9,6 +9,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.ValidationEvent;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
@@ -24,6 +25,9 @@ public class OdmSchema {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(OdmSchema.class);
 
 	private static JAXBContext CONTEXT;
+	
+	private static final String SCHEMA_FILE = "ODM1-3-2-extended.xsd";
+	private static Schema SCHEMA;
 
 	public static JAXBContext getContext() {
 		if (CONTEXT == null) {
@@ -41,16 +45,38 @@ public class OdmSchema {
 		}
 		return CONTEXT;
 	}
+	
+	public static Schema getSchema() {
+		if (SCHEMA == null) {
+			try {
+				generateObjects();
+			} catch (JAXBException e) {
+				throw new RuntimeException("Could not generate Schema object", e);
+			} catch (IOException e) {
+				throw new RuntimeException("Could not generate Schema object", e);
+			} catch (SAXException e) {
+				throw new RuntimeException("Could not generate Schema object", e);
+			} catch (URISyntaxException e) {
+				throw new RuntimeException("Could not generate Schema object", e);
+			}
+		}
+		return SCHEMA;
 
+	}
+	
 	public static ODM parseOdmStream(InputStream stream) throws JAXBException {
-		ODM odm = (ODM) parseStreamInternal(stream);
+		return parseOdmStream(stream, ValidationEvent.FATAL_ERROR);
+	}
+
+	public static ODM parseOdmStream(InputStream stream, int faillevel) throws JAXBException {
+		ODM odm = (ODM) parseStreamInternal(stream,faillevel);
 		return odm;
 	}
 
-	protected static Object parseStreamInternal(InputStream stream) throws JAXBException {
+	protected static Object parseStreamInternal(InputStream stream, int failureLevel) throws JAXBException {
 		Schema schema = getSchema();
 		Unmarshaller um = getContext().createUnmarshaller();
-		um.setEventHandler(new OdmValidationEventHandler());
+		um.setEventHandler(new OdmValidationEventHandler(failureLevel));
 		um.setSchema(schema);
 		StreamSource source = new StreamSource(stream);
 		Object object = um.unmarshal(source);
@@ -70,26 +96,9 @@ public class OdmSchema {
 		return JAXBContext.newInstance(ODM.class);
 	}
 
-	private static final String SCHEMA_FILE = "ODM1-3-2-extended.xsd";
-	private static Schema SCHEMA;
+	
 
-	public static Schema getSchema() {
-		if (SCHEMA == null) {
-			try {
-				generateObjects();
-			} catch (JAXBException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (IOException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (SAXException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (URISyntaxException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			}
-		}
-		return SCHEMA;
-
-	}
+	
 
 	protected static Schema generateSchemaObject() throws JAXBException, IOException, SAXException, URISyntaxException {
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
