@@ -13,22 +13,29 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(OdmValidationEventHandler.class);
 	
-	protected int failureLevel = 2;
+	protected int allowEventSeverity = ValidationEvent.ERROR;
 	protected List<ValidationEvent> events = new ArrayList<>();
 	
 	public OdmValidationEventHandler() {}
 	
-	public OdmValidationEventHandler(int faillevel) {
-		this.failureLevel = faillevel;
+	public OdmValidationEventHandler(int allowSeverity) {
+		this.allowEventSeverity = allowSeverity;
 	}
 	
 	@Override
 	public boolean handleEvent(ValidationEvent event) {
 		events.add(event);
 		
-		LOGGER.error("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage(),event.getLinkedException());
 		
-		return event.getSeverity() < failureLevel;
+		
+		if (event.getSeverity() <= allowEventSeverity) {
+			LOGGER.warn("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage());
+			return true;
+		}
+		else {
+			LOGGER.error("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage(),event.getLinkedException());
+			return false;
+		}
 
 	}
 

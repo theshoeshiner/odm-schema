@@ -94,7 +94,10 @@
 			</xs:complexContent>
 		</xs:complexType>
 		
-		<!-- We are extending audit record to have an order number since timestamps often collide, often this can be copied / created from the sourceid -->
+		<!-- 
+		We are extending audit record to have an order number since timestamps often collide, often this can be copied / created from the sourceid 
+		Also adding SourceType, which holds a free text "Type" from the source.
+		-->
 		
 		<xs:attributeGroup name="AuditRecordAttributeExtension">
 			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
