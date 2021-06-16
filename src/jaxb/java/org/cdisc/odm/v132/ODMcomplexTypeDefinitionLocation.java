@@ -25,6 +25,8 @@ public class ODMcomplexTypeDefinitionLocation {
     protected String name;
     @XmlAttribute(name = "LocationType")
     protected LocationType locationType;
+    @XmlAttribute(name = "Number")
+    protected String number;
 
     
     public List<ODMcomplexTypeDefinitionMetaDataVersionRef> getMetaDataVersionRef() {
@@ -62,6 +64,16 @@ public class ODMcomplexTypeDefinitionLocation {
     
     public void setLocationType(LocationType value) {
         this.locationType = value;
+    }
+
+    
+    public String getNumber() {
+        return number;
+    }
+
+    
+    public void setNumber(String value) {
+        this.number = value;
     }
 
 }
