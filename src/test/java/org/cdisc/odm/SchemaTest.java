@@ -20,7 +20,6 @@ public class SchemaTest {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(SchemaTest.class);
 	
-	
 	@Test
 	public void testTest2Snapshot1() throws JAXBException{
 		javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter a;
@@ -125,7 +124,7 @@ public class SchemaTest {
 	@Test(expected = UnmarshalException.class )
 	public void testFail() throws JAXBException {
 		InputStream stream = SchemaTest.class.getResourceAsStream("test3-transactional-invalid.xml");
-		ODM odm = OdmSchema.parseOdmStream(stream,1);
+		ODM odm = OdmSchema.parseOdmStream(stream);
 		LOGGER.info("ODM: {}",odm);
 	}
 	
