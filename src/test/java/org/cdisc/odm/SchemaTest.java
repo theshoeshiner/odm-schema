@@ -125,7 +125,7 @@ public class SchemaTest {
 	@Test(expected = UnmarshalException.class )
 	public void testFail() throws JAXBException {
 		InputStream stream = SchemaTest.class.getResourceAsStream("test3-transactional-invalid.xml");
-		ODM odm = OdmSchema.parseOdmStream(stream);
+		ODM odm = OdmSchema.parseOdmStream(stream,1);
 		LOGGER.info("ODM: {}",odm);
 	}
 	
