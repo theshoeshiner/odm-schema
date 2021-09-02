@@ -117,7 +117,7 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>org.w3</groupId>
+			<groupId>org.thshsh</groupId>
 			<artifactId>xmldsig-schema</artifactId>
 			<version>2000.09</version>
 		</dependency>
