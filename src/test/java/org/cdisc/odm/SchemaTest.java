@@ -5,6 +5,7 @@ import java.io.InputStream;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.UnmarshalException;
+import javax.xml.bind.ValidationEvent;
 
 import org.cdisc.odm.v132.ODM;
 import org.cdisc.odm.v132.ODMcomplexTypeDefinitionMetaDataVersion;
@@ -124,7 +125,7 @@ public class SchemaTest {
 	@Test(expected = UnmarshalException.class )
 	public void testFail() throws JAXBException {
 		InputStream stream = SchemaTest.class.getResourceAsStream("test3-transactional-invalid.xml");
-		ODM odm = OdmSchema.parseOdmStream(stream);
+		ODM odm = OdmSchema.parseOdmStream(stream,ValidationEvent.ERROR);
 		LOGGER.info("ODM: {}",odm);
 	}
 	
