@@ -33,6 +33,10 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     protected ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef;
     @XmlElement(name = "Annotation")
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
+    @XmlAttribute(name = "ItemRepeatKey")
+    protected String itemRepeatKey;
+    @XmlAttribute(name = "Value")
+    protected String value;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
@@ -40,10 +44,6 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     @XmlAttribute(name = "IsNull")
     @XmlJavaTypeAdapter(YesOnlyAdapter.class)
     protected Boolean isNull;
-    @XmlAttribute(name = "Value")
-    protected String value;
-    @XmlAttribute(name = "ItemRepeatKey")
-    protected String itemRepeatKey;
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -84,6 +84,26 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     }
 
     
+    public String getItemRepeatKey() {
+        return itemRepeatKey;
+    }
+
+    
+    public void setItemRepeatKey(String value) {
+        this.itemRepeatKey = value;
+    }
+
+    
+    public String getValue() {
+        return value;
+    }
+
+    
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    
     public String getItemOID() {
         return itemOID;
     }
@@ -111,26 +131,6 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     
     public void setIsNull(Boolean value) {
         this.isNull = value;
-    }
-
-    
-    public String getValue() {
-        return value;
-    }
-
-    
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    
-    public String getItemRepeatKey() {
-        return itemRepeatKey;
-    }
-
-    
-    public void setItemRepeatKey(String value) {
-        this.itemRepeatKey = value;
     }
 
 }

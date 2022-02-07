@@ -755,6 +755,11 @@ public class ObjectFactory {
     }
 
     
+    public OriginalODMcomplexTypeDefinitionUser createOriginalODMcomplexTypeDefinitionUser() {
+        return new OriginalODMcomplexTypeDefinitionUser();
+    }
+
+    
     @XmlElementDecl(namespace = "http://www.cdisc.org/ns/odm/v1.3", name = "FormalExpression")
     public JAXBElement<ODMcomplexTypeDefinitionFormalExpression> createFormalExpression(ODMcomplexTypeDefinitionFormalExpression value) {
         return new JAXBElement<ODMcomplexTypeDefinitionFormalExpression>(_FormalExpression_QNAME, ODMcomplexTypeDefinitionFormalExpression.class, null, value);

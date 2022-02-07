@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.cdisc.org/ns/odm/v1.3/review" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:odm="http://www.cdisc.org/ns/odm/v1.3" 
+	xmlns:def="http://www.cdisc.org/ns/def/v2.1" 
+	xmlns:review="http://www.cdisc.org/ns/odm/v1.3/review"
+	xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1">
+
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="ODM1-3-2-foundation.xsd" /> 
+
+	<!-- 
+	Reviews can be linked to a user or a group. e.g. in Rave reviews are flagged based on a ReviewGroup
+	 -->
+
+	<xs:complexType name="ReviewData">
+		<xs:attribute name="Reviewed" type="odm:YesOrNo" />
+		<xs:attribute name="UserGroupOID" type="odm:oid" />
+		<xs:attribute name="UserOID" type="odm:oid" />
+	</xs:complexType>
+
+	<xs:element name="ReviewData" type="review:ReviewData" />
+
+</xs:schema>

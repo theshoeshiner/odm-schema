@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.cdisc.org/ns/odm/v1.3/user" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:odm="http://www.cdisc.org/ns/odm/v1.3" 
+	xmlns:def="http://www.cdisc.org/ns/def/v2.1" 
+	xmlns:user="http://www.cdisc.org/ns/odm/v1.3/user"
+	xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1">
+
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd" />
+	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3" schemaLocation="ODM1-3-2-foundation.xsd" /> 
+
+	<xs:complexType name="UserGroup">
+		<xs:attribute name="Name" type="odm:text" />
+		<xs:attribute name="OID" type="odm:oid" />
+	</xs:complexType>
+	
+	<xs:complexType name="UserGroupRef">
+		<xs:attribute name="UserGroupOID" type="odm:oid" />
+	</xs:complexType>
+
+	<xs:element name="UserGroup" type="user:UserGroup" />
+	<xs:element name="UserGroupRef" type="user:UserGroupRef" />
+
+</xs:schema>

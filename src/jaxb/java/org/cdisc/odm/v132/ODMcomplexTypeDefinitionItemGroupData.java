@@ -8,6 +8,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import org.cdisc.odm.v132.query.QueryData;
+import org.cdisc.odm.v132.review.ReviewData;
 import org.cdisc.odm.v132.status.StatusData;
 
 
@@ -15,6 +16,7 @@ import org.cdisc.odm.v132.status.StatusData;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ODMcomplexTypeDefinition-ItemGroupData", propOrder = {
     "queryData",
+    "reviewData",
     "statusData"
 })
 public class ODMcomplexTypeDefinitionItemGroupData
@@ -23,8 +25,10 @@ public class ODMcomplexTypeDefinitionItemGroupData
 
     @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query")
     protected List<QueryData> queryData;
+    @XmlElement(name = "ReviewData", namespace = "http://www.cdisc.org/ns/odm/v1.3/review")
+    protected List<ReviewData> reviewData;
     @XmlElement(name = "StatusData", namespace = "http://www.cdisc.org/ns/odm/v1.3/status")
-    protected List<StatusData> statusData;
+    protected StatusData statusData;
 
     
     public List<QueryData> getQueryData() {
@@ -35,11 +39,21 @@ public class ODMcomplexTypeDefinitionItemGroupData
     }
 
     
-    public List<StatusData> getStatusData() {
-        if (statusData == null) {
-            statusData = new ArrayList<StatusData>();
+    public List<ReviewData> getReviewData() {
+        if (reviewData == null) {
+            reviewData = new ArrayList<ReviewData>();
         }
-        return this.statusData;
+        return this.reviewData;
+    }
+
+    
+    public StatusData getStatusData() {
+        return statusData;
+    }
+
+    
+    public void setStatusData(StatusData value) {
+        this.statusData = value;
     }
 
 }

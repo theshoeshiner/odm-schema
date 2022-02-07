@@ -14,24 +14,27 @@ import org.cdisc.odm.v132.YesOrNoAdapter;
 @XmlType(name = "StatusData")
 public class StatusData {
 
-    @XmlAttribute(name = "Entered")
+    @XmlAttribute(name = "Verified")
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
-    protected Boolean entered;
+    protected Boolean verified;
     @XmlAttribute(name = "Frozen")
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean frozen;
+    @XmlAttribute(name = "Locked")
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean locked;
     @XmlAttribute(name = "Conformant")
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean conformant;
 
     
-    public Boolean getEntered() {
-        return entered;
+    public Boolean getVerified() {
+        return verified;
     }
 
     
-    public void setEntered(Boolean value) {
-        this.entered = value;
+    public void setVerified(Boolean value) {
+        this.verified = value;
     }
 
     
@@ -42,6 +45,16 @@ public class StatusData {
     
     public void setFrozen(Boolean value) {
         this.frozen = value;
+    }
+
+    
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    
+    public void setLocked(Boolean value) {
+        this.locked = value;
     }
 
     
