@@ -14,6 +14,8 @@ import org.cdisc.odm.v132.YesOrNoAdapter;
 @XmlType(name = "ReviewData")
 public class ReviewData {
 
+    @XmlAttribute(name = "ReviewKey")
+    protected String reviewKey;
     @XmlAttribute(name = "Reviewed")
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean reviewed;
@@ -21,6 +23,16 @@ public class ReviewData {
     protected String userGroupOID;
     @XmlAttribute(name = "UserOID")
     protected String userOID;
+
+    
+    public String getReviewKey() {
+        return reviewKey;
+    }
+
+    
+    public void setReviewKey(String value) {
+        this.reviewKey = value;
+    }
 
     
     public Boolean getReviewed() {

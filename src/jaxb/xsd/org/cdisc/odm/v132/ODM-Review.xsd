@@ -14,6 +14,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	 -->
 
 	<xs:complexType name="ReviewData">
+		<xs:attribute name="ReviewKey" type="odm:subjectKey"/>
 		<xs:attribute name="Reviewed" type="odm:YesOrNo" />
 		<xs:attribute name="UserGroupOID" type="odm:oid" />
 		<xs:attribute name="UserOID" type="odm:oid" />
