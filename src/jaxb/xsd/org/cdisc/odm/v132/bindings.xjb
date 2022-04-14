@@ -7,6 +7,7 @@ xmlns:odm="http://www.cdisc.org/ns/odm/v1.3"
 >
 
 	<!-- global changes -->
+	<!-- Map XML types to more reasonable java types -->
 	
 	<jxb:globalBindings>
 		<xjc:javaType adapter="javax.xml.bind.LooseIsoDateTimeAdapter" name="java.time.ZonedDateTime" xmlType="xs:dateTime"/>

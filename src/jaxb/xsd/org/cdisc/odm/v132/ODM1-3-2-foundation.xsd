@@ -408,6 +408,7 @@
 	</xs:simpleType>
 	
 	
+	
 	<xs:simpleType name="TransactionType">
 		 <xs:restriction base="xs:string">
 			<xs:enumeration value="Insert"/>
@@ -415,6 +416,11 @@
 			<xs:enumeration value="Remove"/>
 			<xs:enumeration value="Upsert"/>
 			<xs:enumeration value="Context"/>
+			<!-- 
+			CUSTOM-EXTENSION
+			We added the "Revert" transaction type for systems (Rave) that send an undo operation which tells
+			us to replace the current value with the prior value, without having to send the prior value a second time
+			 -->
 			<xs:enumeration value="Revert"/>
 		</xs:restriction> 
 	</xs:simpleType>
@@ -2377,6 +2383,13 @@
 			<xs:selector xpath="odm:MethodDef"/>
 			<xs:field xpath="@OID"/>
 		</xs:unique>
+	
+	<!-- 
+		CUSTOM-EXTENSION
+		We are removing the Unique OID restriction because OIDs theoretically only really need to be unique 
+		among their siblings not within the entire document. We should eventually update this to enforce that
+		sibling uniqueness
+	 -->
 
    <!--  <xs:unique name="UC-MDV-OID-unique">
       <xs:selector xpath="*"/>
