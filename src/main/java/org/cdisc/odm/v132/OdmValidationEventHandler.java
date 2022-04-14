@@ -25,11 +25,10 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 	@Override
 	public boolean handleEvent(ValidationEvent event) {
 		events.add(event);
-		
-		
-		
+
 		if (event.getSeverity() <= allowEventSeverity) {
 			LOGGER.warn("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage());
+			LOGGER.debug("Validation Error Exception",event.getLinkedException());
 			return true;
 		}
 		else {
