@@ -1,6 +1,5 @@
 package org.cdisc.odm;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 import javax.xml.bind.JAXBException;
@@ -8,13 +7,10 @@ import javax.xml.bind.UnmarshalException;
 import javax.xml.bind.ValidationEvent;
 
 import org.cdisc.odm.v132.ODM;
-import org.cdisc.odm.v132.ODMcomplexTypeDefinitionMetaDataVersion;
 import org.cdisc.odm.v132.OdmSchema;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @SuppressWarnings("unused")
 public class SchemaTest {
