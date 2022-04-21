@@ -1,13 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.cdisc</groupId>
 	<artifactId>odm-schema</artifactId>
 	<version>1.3.2.2-SNAPSHOT</version>
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 	<profiles>
 		<profile>
@@ -24,6 +24,11 @@
 									<goal>generate</goal>
 								</goals>
 								<configuration>
+									<extension>true</extension>
+									<args>
+										<arg>-Xinheritance</arg>
+										<arg>-Xannotate</arg>
+									</args>
 									<schemaDirectory>src/jaxb/xsd/org/cdisc/odm/v132</schemaDirectory>
 									<schemaIncludes>
 										<schemaInclude>**\*.xsd</schemaInclude>
@@ -34,6 +39,18 @@
 									<cleanPackageDirectories>false</cleanPackageDirectories>
 									<forceRegenerate>true</forceRegenerate>
 									<enableIntrospection>true</enableIntrospection>
+									<plugins>
+										<plugin>
+											<groupId>org.jvnet.jaxb2_commons</groupId>
+											<artifactId>jaxb2-basics-annotate</artifactId>
+											<version>1.1.0</version>
+										</plugin>
+										<plugin>
+											<groupId>org.jvnet.jaxb2_commons</groupId>
+											<artifactId>jaxb2-basics</artifactId>
+											<version>1.11.1</version>
+										</plugin>
+									</plugins>
 								</configuration>
 							</execution>
 						</executions>
@@ -147,7 +164,12 @@
 		<dependency>
 			<groupId>org.thshsh</groupId>
 			<artifactId>commons-xml</artifactId>
-			<version>0.0.3</version>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.3</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -155,23 +177,5 @@
 			<version>5.3.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-core</artifactId>
-			<version>2.3.0.1</version>
-			<scope>test</scope>
-		</dependency> 
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.1</version>
-			<scope>test</scope>
-		</dependency>
-		 <dependency>
-			<groupId>com.sun.xml.bind</groupId>
-			<artifactId>jaxb-impl</artifactId>
-			<version>2.3.1</version>
-			<scope>test</scope>
-		</dependency> 
 	</dependencies>
 </project>

@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataURI", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataURI {
+public class ODMcomplexTypeDefinitionItemDataURI implements ItemDataStar
+{
 
     @XmlValue
     @XmlSchemaType(name = "anyURI")

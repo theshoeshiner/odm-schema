@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataDurationDatetime", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataDurationDatetime {
+public class ODMcomplexTypeDefinitionItemDataDurationDatetime implements ItemDataStar
+{
 
     @XmlValue
     protected String value;

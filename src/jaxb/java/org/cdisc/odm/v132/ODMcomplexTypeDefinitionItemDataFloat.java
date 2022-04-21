@@ -16,14 +16,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataFloat", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataFloat {
+public class ODMcomplexTypeDefinitionItemDataFloat implements ItemDataStar
+{
 
     @XmlValue
     protected BigDecimal value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -38,6 +35,10 @@ public class ODMcomplexTypeDefinitionItemDataFloat {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
 
     
     public BigDecimal getValue() {
@@ -47,26 +48,6 @@ public class ODMcomplexTypeDefinitionItemDataFloat {
     
     public void setValue(BigDecimal value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     
@@ -107,6 +88,26 @@ public class ODMcomplexTypeDefinitionItemDataFloat {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

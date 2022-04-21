@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataBase64Float", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataBase64Float {
+public class ODMcomplexTypeDefinitionItemDataBase64Float implements ItemDataStar
+{
 
     @XmlValue
     protected byte[] value;

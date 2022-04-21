@@ -15,10 +15,15 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataIncompleteDate", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataIncompleteDate {
+public class ODMcomplexTypeDefinitionItemDataIncompleteDate implements ItemDataStar
+{
 
     @XmlValue
     protected String value;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -33,10 +38,6 @@ public class ODMcomplexTypeDefinitionItemDataIncompleteDate {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
 
     
     public String getValue() {
@@ -46,6 +47,26 @@ public class ODMcomplexTypeDefinitionItemDataIncompleteDate {
     
     public void setValue(String value) {
         this.value = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
     
@@ -86,26 +107,6 @@ public class ODMcomplexTypeDefinitionItemDataIncompleteDate {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
 }

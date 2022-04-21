@@ -18,7 +18,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataDate", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataDate {
+public class ODMcomplexTypeDefinitionItemDataDate implements ItemDataStar
+{
 
     @XmlValue
     @XmlJavaTypeAdapter(IsoLocalDateAdapter.class)

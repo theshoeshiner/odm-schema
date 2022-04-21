@@ -17,7 +17,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataHexFloat", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataHexFloat {
+public class ODMcomplexTypeDefinitionItemDataHexFloat implements ItemDataStar
+{
 
     @XmlValue
     @XmlJavaTypeAdapter(HexBinaryAdapter.class)
