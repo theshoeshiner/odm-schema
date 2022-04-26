@@ -14,6 +14,7 @@
 		<xjc:javaType adapter="javax.xml.bind.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:positiveInteger" />
 		<xjc:javaType adapter="javax.xml.bind.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:nonNegativeInteger" />
 		<xjc:javaType adapter="javax.xml.bind.BigIntegerIntegerAdapter" name="java.lang.Integer" xmlType="xs:integer" />
+		<xjc:javaType adapter="javax.xml.bind.BigIntegerLongAdapter" name="java.lang.Long" xmlType="xs:long" />
 		<xjc:javaType adapter="javax.xml.bind.BooleanBooleanAdapter" name="java.lang.Boolean" xmlType="xs:boolean" />
 	</jxb:globalBindings>
 

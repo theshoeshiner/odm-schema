@@ -142,7 +142,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		
 		<xs:attributeGroup name="AuditRecordAttributeExtension">
 			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
-			<xs:attribute name="OrderNumber" type="integer"/>
+			<xs:attribute name="OrderNumber" type="xs:long"/>
 			<xs:attribute name="SourceType" type="xs:string"/>
 		</xs:attributeGroup>
 		
