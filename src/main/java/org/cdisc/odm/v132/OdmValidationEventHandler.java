@@ -14,6 +14,7 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 	protected static final Logger LOGGER = LoggerFactory.getLogger(OdmValidationEventHandler.class);
 	
 	protected int allowEventSeverity = ValidationEvent.ERROR;
+	protected int stackEventSeverity = ValidationEvent.ERROR;
 	protected List<ValidationEvent> events = new ArrayList<>();
 	
 	public OdmValidationEventHandler() {}
@@ -25,17 +26,15 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 	@Override
 	public boolean handleEvent(ValidationEvent event) {
 		events.add(event);
-
-		if (event.getSeverity() <= allowEventSeverity) {
-			LOGGER.warn("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage());
-			LOGGER.debug("Validation Error Exception",event.getLinkedException());
-			return true;
+		
+		if (event.getSeverity() >= stackEventSeverity) {
+			LOGGER.error("Level {} Validation Error Line: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getLinkedException());
 		}
 		else {
-			LOGGER.error("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage(),event.getLinkedException());
-			return false;
+			LOGGER.warn("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage());
 		}
 
+		return event.getSeverity() <= allowEventSeverity);
 	}
 
 }
