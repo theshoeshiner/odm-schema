@@ -13,6 +13,10 @@ public interface ItemDataStar {
     public void setTransactionType(TransactionType value);
 
     public Object getAuditRecordID();
+    
+    public default ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
+    	return (ODMcomplexTypeDefinitionAuditRecord) getAuditRecordID();
+    }
 
     public void setAuditRecordID(Object value);
     
