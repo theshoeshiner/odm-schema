@@ -34,7 +34,7 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 			LOGGER.warn("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage());
 		}
 
-		return event.getSeverity() <= allowEventSeverity);
+		return event.getSeverity() <= allowEventSeverity;
 	}
 
 }
