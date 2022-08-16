@@ -164,7 +164,7 @@
 		<dependency>
 			<groupId>org.thshsh</groupId>
 			<artifactId>commons-xml</artifactId>
-			<version>0.0.4-SNAPSHOT</version>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
