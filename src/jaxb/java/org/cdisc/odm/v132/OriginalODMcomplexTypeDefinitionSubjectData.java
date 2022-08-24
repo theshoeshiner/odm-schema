@@ -44,6 +44,8 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     protected TransactionType transactionType;
     @XmlAttribute(name = "SubjectName")
     protected String subjectName;
+    @XmlAttribute(name = "SubjectNumber")
+    protected String subjectNumber;
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -129,6 +131,16 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     
     public void setSubjectName(String value) {
         this.subjectName = value;
+    }
+
+    
+    public String getSubjectNumber() {
+        return subjectNumber;
+    }
+
+    
+    public void setSubjectNumber(String value) {
+        this.subjectNumber = value;
     }
 
 }

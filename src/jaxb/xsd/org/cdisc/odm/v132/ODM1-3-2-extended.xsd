@@ -25,12 +25,13 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	
 		<!-- 
 		CUSTOM-EXTENSION
-		Extending SubjectData to allow subject name to be passes separately from key
+		Extending SubjectData to allow subject name and number to be passed separately from key
 		 -->
 	
 		<xs:attributeGroup name="SubjectDataAttributeExtension">
 	    	<xs:attributeGroup ref="SubjectDataAttributeExtension"/>
 	    	<xs:attribute name="SubjectName" type="odm:text" />
+	    	<xs:attribute name="SubjectNumber" type="odm:text" />
 		</xs:attributeGroup>
    
    
