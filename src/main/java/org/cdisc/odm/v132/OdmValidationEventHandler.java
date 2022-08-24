@@ -21,13 +21,14 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 	
 	public OdmValidationEventHandler(int allowSeverity) {
 		this.allowEventSeverity = allowSeverity;
+		this.stackEventSeverity = allowSeverity;
 	}
 	
 	@Override
 	public boolean handleEvent(ValidationEvent event) {
 		events.add(event);
 		
-		if (event.getSeverity() >= stackEventSeverity) {
+		if (event.getSeverity() > stackEventSeverity) {
 			LOGGER.error("Level {} Validation Error Line: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getLinkedException());
 		}
 		else {
