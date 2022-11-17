@@ -43,6 +43,23 @@ public class OriginalODMcomplexTypeDefinitionFormData {
     protected TransactionType transactionType;
 
     
+    public OriginalODMcomplexTypeDefinitionFormData() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionFormData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionArchiveLayoutRef archiveLayoutRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData, final String formOID, final String formRepeatKey, final TransactionType transactionType) {
+        this.auditRecord = auditRecord;
+        this.signature = signature;
+        this.archiveLayoutRef = archiveLayoutRef;
+        this.annotation = annotation;
+        this.itemGroupData = itemGroupData;
+        this.formOID = formOID;
+        this.formRepeatKey = formRepeatKey;
+        this.transactionType = transactionType;
+    }
+
+    
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
         return auditRecord;
     }

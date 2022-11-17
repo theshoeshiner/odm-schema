@@ -21,6 +21,13 @@ public class ODMcomplexTypeDefinitionItemDataAny implements ItemDataStar
 
     @XmlValue
     protected String value;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+    @XmlAttribute(name = "IsNull")
+    @XmlJavaTypeAdapter(YesOnlyAdapter.class)
+    protected Boolean isNull;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -35,13 +42,23 @@ public class ODMcomplexTypeDefinitionItemDataAny implements ItemDataStar
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
-    @XmlAttribute(name = "IsNull")
-    @XmlJavaTypeAdapter(YesOnlyAdapter.class)
-    protected Boolean isNull;
+
+    
+    public ODMcomplexTypeDefinitionItemDataAny() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataAny(final String value, final String itemOID, final TransactionType transactionType, final Boolean isNull, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.isNull = isNull;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
 
     
     public String getValue() {
@@ -51,6 +68,36 @@ public class ODMcomplexTypeDefinitionItemDataAny implements ItemDataStar
     
     public void setValue(String value) {
         this.value = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
+    }
+
+    
+    public Boolean getIsNull() {
+        return isNull;
+    }
+
+    
+    public void setIsNull(Boolean value) {
+        this.isNull = value;
     }
 
     
@@ -91,36 +138,6 @@ public class ODMcomplexTypeDefinitionItemDataAny implements ItemDataStar
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
-    }
-
-    
-    public Boolean getIsNull() {
-        return isNull;
-    }
-
-    
-    public void setIsNull(Boolean value) {
-        this.isNull = value;
     }
 
 }

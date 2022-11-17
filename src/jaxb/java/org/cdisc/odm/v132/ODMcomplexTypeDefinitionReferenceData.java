@@ -34,6 +34,21 @@ public class ODMcomplexTypeDefinitionReferenceData {
     protected String metaDataVersionOID;
 
     
+    public ODMcomplexTypeDefinitionReferenceData() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionReferenceData(final List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData, final List<ODMcomplexTypeDefinitionAuditRecords> auditRecords, final List<ODMcomplexTypeDefinitionSignatures> signatures, final List<ODMcomplexTypeDefinitionAnnotations> annotations, final String studyOID, final String metaDataVersionOID) {
+        this.itemGroupData = itemGroupData;
+        this.auditRecords = auditRecords;
+        this.signatures = signatures;
+        this.annotations = annotations;
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionItemGroupData> getItemGroupData() {
         if (itemGroupData == null) {
             itemGroupData = new ArrayList<ODMcomplexTypeDefinitionItemGroupData>();

@@ -31,6 +31,19 @@ public class ODMcomplexTypeDefinitionStudyEventData
     protected StatusData statusData;
 
     
+    public ODMcomplexTypeDefinitionStudyEventData() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, annotation, formData, studyEventOID, studyEventRepeatKey, transactionType);
+        this.queryData = queryData;
+        this.reviewData = reviewData;
+        this.statusData = statusData;
+    }
+
+    
     public List<QueryData> getQueryData() {
         if (queryData == null) {
             queryData = new ArrayList<QueryData>();

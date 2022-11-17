@@ -24,6 +24,18 @@ public class ODMcomplexTypeDefinitionMetaDataVersionRef {
     protected LocalDate effectiveDate;
 
     
+    public ODMcomplexTypeDefinitionMetaDataVersionRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionMetaDataVersionRef(final String studyOID, final String metaDataVersionOID, final LocalDate effectiveDate) {
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+        this.effectiveDate = effectiveDate;
+    }
+
+    
     public String getStudyOID() {
         return studyOID;
     }

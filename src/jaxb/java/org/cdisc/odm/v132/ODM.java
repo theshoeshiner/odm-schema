@@ -77,6 +77,34 @@ public class ODM {
     protected String id;
 
     
+    public ODM() {
+        super();
+    }
+
+    
+    public ODM(final List<ODMcomplexTypeDefinitionStudy> study, final List<ODMcomplexTypeDefinitionAdminData> adminData, final List<ODMcomplexTypeDefinitionReferenceData> referenceData, final List<ODMcomplexTypeDefinitionClinicalData> clinicalData, final List<ODMcomplexTypeDefinitionAssociation> association, final List<SignatureType> signature, final String description, final FileType fileType, final Granularity granularity, final Boolean archival, final String fileOID, final ZonedDateTime creationDateTime, final String priorFileOID, final ZonedDateTime asOfDateTime, final String odmVersion, final String originator, final String sourceSystem, final String sourceSystemVersion, final String id) {
+        this.study = study;
+        this.adminData = adminData;
+        this.referenceData = referenceData;
+        this.clinicalData = clinicalData;
+        this.association = association;
+        this.signature = signature;
+        this.description = description;
+        this.fileType = fileType;
+        this.granularity = granularity;
+        this.archival = archival;
+        this.fileOID = fileOID;
+        this.creationDateTime = creationDateTime;
+        this.priorFileOID = priorFileOID;
+        this.asOfDateTime = asOfDateTime;
+        this.odmVersion = odmVersion;
+        this.originator = originator;
+        this.sourceSystem = sourceSystem;
+        this.sourceSystemVersion = sourceSystemVersion;
+        this.id = id;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionStudy> getStudy() {
         if (study == null) {
             study = new ArrayList<ODMcomplexTypeDefinitionStudy>();

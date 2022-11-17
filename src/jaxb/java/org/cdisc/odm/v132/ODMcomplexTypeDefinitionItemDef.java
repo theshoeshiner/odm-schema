@@ -67,6 +67,33 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected Boolean repeating;
 
     
+    public ODMcomplexTypeDefinitionItemDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDef(final ODMcomplexTypeDefinitionDescription description, final ODMcomplexTypeDefinitionQuestion question, final ODMcomplexTypeDefinitionExternalQuestion externalQuestion, final List<ODMcomplexTypeDefinitionMeasurementUnitRef> measurementUnitRef, final List<ODMcomplexTypeDefinitionRangeCheck> rangeCheck, final ODMcomplexTypeDefinitionCodeListRef codeListRef, final List<ODMcomplexTypeDefinitionRole> role, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final DataType dataType, final Integer length, final Integer significantDigits, final String sasFieldName, final String sdsVarName, final String origin, final String comment, final Boolean repeating) {
+        this.description = description;
+        this.question = question;
+        this.externalQuestion = externalQuestion;
+        this.measurementUnitRef = measurementUnitRef;
+        this.rangeCheck = rangeCheck;
+        this.codeListRef = codeListRef;
+        this.role = role;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.dataType = dataType;
+        this.length = length;
+        this.significantDigits = significantDigits;
+        this.sasFieldName = sasFieldName;
+        this.sdsVarName = sdsVarName;
+        this.origin = origin;
+        this.comment = comment;
+        this.repeating = repeating;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

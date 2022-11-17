@@ -31,6 +31,20 @@ public class ODMcomplexTypeDefinitionConditionDef {
     protected String name;
 
     
+    public ODMcomplexTypeDefinitionConditionDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionConditionDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormalExpression> formalExpression, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name) {
+        this.description = description;
+        this.formalExpression = formalExpression;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

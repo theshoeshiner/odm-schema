@@ -29,6 +29,19 @@ public class ODMcomplexTypeDefinitionStudy {
     protected String oid;
 
     
+    public ODMcomplexTypeDefinitionStudy() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudy(final ODMcomplexTypeDefinitionGlobalVariables globalVariables, final ODMcomplexTypeDefinitionBasicDefinitions basicDefinitions, final List<ODMcomplexTypeDefinitionMetaDataVersion> metaDataVersion, final String oid) {
+        this.globalVariables = globalVariables;
+        this.basicDefinitions = basicDefinitions;
+        this.metaDataVersion = metaDataVersion;
+        this.oid = oid;
+    }
+
+    
     public ODMcomplexTypeDefinitionGlobalVariables getGlobalVariables() {
         return globalVariables;
     }

@@ -18,6 +18,17 @@ public class ODMcomplexTypeDefinitionInclude {
     protected String metaDataVersionOID;
 
     
+    public ODMcomplexTypeDefinitionInclude() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionInclude(final String studyOID, final String metaDataVersionOID) {
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+    }
+
+    
     public String getStudyOID() {
         return studyOID;
     }

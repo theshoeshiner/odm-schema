@@ -21,6 +21,17 @@ public class ODMcomplexTypeDefinitionComment {
     protected CommentType sponsorOrSite;
 
     
+    public ODMcomplexTypeDefinitionComment() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionComment(final String value, final CommentType sponsorOrSite) {
+        this.value = value;
+        this.sponsorOrSite = sponsorOrSite;
+    }
+
+    
     public String getValue() {
         return value;
     }

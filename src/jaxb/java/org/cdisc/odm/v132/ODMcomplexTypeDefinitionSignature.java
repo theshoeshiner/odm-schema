@@ -40,6 +40,21 @@ public class ODMcomplexTypeDefinitionSignature {
     protected String id;
 
     
+    public ODMcomplexTypeDefinitionSignature() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionSignature(final ODMcomplexTypeDefinitionUserRef userRef, final ODMcomplexTypeDefinitionLocationRef locationRef, final ODMcomplexTypeDefinitionSignatureRef signatureRef, final ODMcomplexTypeDefinitionDateTimeStamp dateTimeStamp, final ODMcomplexTypeDefinitionCryptoBindingManifest cryptoBindingManifest, final String id) {
+        this.userRef = userRef;
+        this.locationRef = locationRef;
+        this.signatureRef = signatureRef;
+        this.dateTimeStamp = dateTimeStamp;
+        this.cryptoBindingManifest = cryptoBindingManifest;
+        this.id = id;
+    }
+
+    
     public ODMcomplexTypeDefinitionUserRef getUserRef() {
         return userRef;
     }

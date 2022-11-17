@@ -18,6 +18,17 @@ public class ODMcomplexTypeDefinitionPicture {
     protected String imageType;
 
     
+    public ODMcomplexTypeDefinitionPicture() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionPicture(final String pictureFileName, final String imageType) {
+        this.pictureFileName = pictureFileName;
+        this.imageType = imageType;
+    }
+
+    
     public String getPictureFileName() {
         return pictureFileName;
     }

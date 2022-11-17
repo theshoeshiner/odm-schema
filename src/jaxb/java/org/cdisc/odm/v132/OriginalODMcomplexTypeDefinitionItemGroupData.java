@@ -67,6 +67,23 @@ public class OriginalODMcomplexTypeDefinitionItemGroupData {
     protected TransactionType transactionType;
 
     
+    public OriginalODMcomplexTypeDefinitionItemGroupData() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionItemGroupData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemData> itemDataGroup, final List<Object> itemDataStarGroup, final String itemGroupOID, final String itemGroupRepeatKey, final TransactionType transactionType) {
+        this.auditRecord = auditRecord;
+        this.signature = signature;
+        this.annotation = annotation;
+        this.itemDataGroup = itemDataGroup;
+        this.itemDataStarGroup = itemDataStarGroup;
+        this.itemGroupOID = itemGroupOID;
+        this.itemGroupRepeatKey = itemGroupRepeatKey;
+        this.transactionType = transactionType;
+    }
+
+    
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
         return auditRecord;
     }

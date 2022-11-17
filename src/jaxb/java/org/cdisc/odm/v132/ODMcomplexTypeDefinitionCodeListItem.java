@@ -34,6 +34,20 @@ public class ODMcomplexTypeDefinitionCodeListItem {
     protected Integer orderNumber;
 
     
+    public ODMcomplexTypeDefinitionCodeListItem() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCodeListItem(final ODMcomplexTypeDefinitionDecode decode, final List<ODMcomplexTypeDefinitionAlias> alias, final String codedValue, final BigDecimal rank, final Integer orderNumber) {
+        this.decode = decode;
+        this.alias = alias;
+        this.codedValue = codedValue;
+        this.rank = rank;
+        this.orderNumber = orderNumber;
+    }
+
+    
     public ODMcomplexTypeDefinitionDecode getDecode() {
         return decode;
     }

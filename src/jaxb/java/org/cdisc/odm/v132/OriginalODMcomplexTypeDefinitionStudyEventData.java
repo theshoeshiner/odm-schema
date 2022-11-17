@@ -40,6 +40,22 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData {
     protected TransactionType transactionType;
 
     
+    public OriginalODMcomplexTypeDefinitionStudyEventData() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType) {
+        this.auditRecord = auditRecord;
+        this.signature = signature;
+        this.annotation = annotation;
+        this.formData = formData;
+        this.studyEventOID = studyEventOID;
+        this.studyEventRepeatKey = studyEventRepeatKey;
+        this.transactionType = transactionType;
+    }
+
+    
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
         return auditRecord;
     }

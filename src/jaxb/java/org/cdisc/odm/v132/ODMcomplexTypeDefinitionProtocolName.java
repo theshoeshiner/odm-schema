@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionProtocolName {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionProtocolName() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionProtocolName(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

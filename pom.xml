@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.cdisc</groupId>
 	<artifactId>odm-schema</artifactId>
@@ -28,6 +27,7 @@
 									<args>
 										<arg>-Xinheritance</arg>
 										<arg>-Xannotate</arg>
+										<arg>-Xvalue-constructor</arg>
 									</args>
 									<schemaDirectory>src/jaxb/xsd/org/cdisc/odm/v132</schemaDirectory>
 									<schemaIncludes>
@@ -49,6 +49,11 @@
 											<groupId>org.jvnet.jaxb2_commons</groupId>
 											<artifactId>jaxb2-basics</artifactId>
 											<version>1.11.1</version>
+										</plugin>
+										<plugin>
+											<groupId>org.jvnet.jaxb2_commons</groupId>
+											<artifactId>jaxb2-value-constructor</artifactId>
+											<version>3.0</version>
 										</plugin>
 									</plugins>
 								</configuration>
@@ -90,9 +95,7 @@
 								<phase>generate-sources</phase>
 								<configuration>
 									<tasks>
-										<delete dir="src/jaxb/java/org/w3">
-
-										</delete>
+										<delete dir="src/jaxb/java/org/w3"></delete>
 									</tasks>
 								</configuration>
 								<goals>

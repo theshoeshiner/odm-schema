@@ -16,6 +16,16 @@ public class ODMcomplexTypeDefinitionCodeListRef {
     protected String codeListOID;
 
     
+    public ODMcomplexTypeDefinitionCodeListRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCodeListRef(final String codeListOID) {
+        this.codeListOID = codeListOID;
+    }
+
+    
     public String getCodeListOID() {
         return codeListOID;
     }

@@ -26,6 +26,18 @@ public class ODMcomplexTypeDefinitionProtocol {
     protected List<ODMcomplexTypeDefinitionAlias> alias;
 
     
+    public ODMcomplexTypeDefinitionProtocol() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionProtocol(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionStudyEventRef> studyEventRef, final List<ODMcomplexTypeDefinitionAlias> alias) {
+        this.description = description;
+        this.studyEventRef = studyEventRef;
+        this.alias = alias;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

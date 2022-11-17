@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionStudyDescription {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionStudyDescription() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudyDescription(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

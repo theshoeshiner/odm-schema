@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionCity {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionCity() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCity(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

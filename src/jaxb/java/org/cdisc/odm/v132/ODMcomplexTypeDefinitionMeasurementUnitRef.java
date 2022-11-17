@@ -16,6 +16,16 @@ public class ODMcomplexTypeDefinitionMeasurementUnitRef {
     protected String measurementUnitOID;
 
     
+    public ODMcomplexTypeDefinitionMeasurementUnitRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionMeasurementUnitRef(final String measurementUnitOID) {
+        this.measurementUnitOID = measurementUnitOID;
+    }
+
+    
     public String getMeasurementUnitOID() {
         return measurementUnitOID;
     }

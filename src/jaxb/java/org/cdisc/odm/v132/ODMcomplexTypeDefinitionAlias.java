@@ -18,6 +18,17 @@ public class ODMcomplexTypeDefinitionAlias {
     protected String name;
 
     
+    public ODMcomplexTypeDefinitionAlias() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAlias(final String context, final String name) {
+        this.context = context;
+        this.name = name;
+    }
+
+    
     public String getContext() {
         return context;
     }

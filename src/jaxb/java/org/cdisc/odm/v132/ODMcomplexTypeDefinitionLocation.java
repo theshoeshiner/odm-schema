@@ -29,6 +29,20 @@ public class ODMcomplexTypeDefinitionLocation {
     protected String number;
 
     
+    public ODMcomplexTypeDefinitionLocation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionLocation(final List<ODMcomplexTypeDefinitionMetaDataVersionRef> metaDataVersionRef, final String oid, final String name, final LocationType locationType, final String number) {
+        this.metaDataVersionRef = metaDataVersionRef;
+        this.oid = oid;
+        this.name = name;
+        this.locationType = locationType;
+        this.number = number;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionMetaDataVersionRef> getMetaDataVersionRef() {
         if (metaDataVersionRef == null) {
             metaDataVersionRef = new ArrayList<ODMcomplexTypeDefinitionMetaDataVersionRef>();

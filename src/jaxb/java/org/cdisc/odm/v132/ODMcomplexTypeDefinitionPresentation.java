@@ -28,6 +28,18 @@ public class ODMcomplexTypeDefinitionPresentation {
     protected String lang;
 
     
+    public ODMcomplexTypeDefinitionPresentation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionPresentation(final String value, final String oid, final String lang) {
+        this.value = value;
+        this.oid = oid;
+        this.lang = lang;
+    }
+
+    
     public String getValue() {
         return value;
     }

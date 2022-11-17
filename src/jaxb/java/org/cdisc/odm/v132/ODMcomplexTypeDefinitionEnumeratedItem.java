@@ -31,6 +31,19 @@ public class ODMcomplexTypeDefinitionEnumeratedItem {
     protected Integer orderNumber;
 
     
+    public ODMcomplexTypeDefinitionEnumeratedItem() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionEnumeratedItem(final List<ODMcomplexTypeDefinitionAlias> alias, final String codedValue, final BigDecimal rank, final Integer orderNumber) {
+        this.alias = alias;
+        this.codedValue = codedValue;
+        this.rank = rank;
+        this.orderNumber = orderNumber;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionAlias> getAlias() {
         if (alias == null) {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();

@@ -2,12 +2,14 @@ package org.cdisc.odm.v132;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URISyntaxException;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.ValidationEvent;
 import javax.xml.transform.Source;
@@ -72,6 +74,10 @@ public class OdmSchema {
 		ODM odm = (ODM) parseStreamInternal(stream,faillevel);
 		return odm;
 	}
+	
+	public static void marshalOdm(ODM odm,OutputStream stream, int faillevel) throws JAXBException {
+		marshalStreamInternal(odm, stream, faillevel);
+	}
 
 	protected static Object parseStreamInternal(InputStream stream, int failureLevel) throws JAXBException {
 		Schema schema = getSchema();
@@ -85,6 +91,14 @@ public class OdmSchema {
 			object = element.getValue();
 		}
 		return object;
+	}
+	
+	protected static void marshalStreamInternal(Object object,OutputStream stream, int failureLevel) throws JAXBException {
+		Schema schema = getSchema();
+		Marshaller mar = getContext().createMarshaller();
+		mar.setSchema(schema);
+		mar.setEventHandler(new OdmValidationEventHandler(failureLevel));
+		mar.marshal(object, stream);
 	}
 
 	protected static void generateObjects() throws JAXBException, IOException, SAXException, URISyntaxException {

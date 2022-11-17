@@ -24,6 +24,19 @@ public class ODMcomplexTypeDefinitionExternalCodeList {
     protected String ref;
 
     
+    public ODMcomplexTypeDefinitionExternalCodeList() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionExternalCodeList(final String dictionary, final String version, final String href, final String ref) {
+        this.dictionary = dictionary;
+        this.version = version;
+        this.href = href;
+        this.ref = ref;
+    }
+
+    
     public String getDictionary() {
         return dictionary;
     }

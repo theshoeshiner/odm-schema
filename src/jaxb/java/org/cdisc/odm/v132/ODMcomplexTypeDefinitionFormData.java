@@ -31,6 +31,19 @@ public class ODMcomplexTypeDefinitionFormData
     protected StatusData statusData;
 
     
+    public ODMcomplexTypeDefinitionFormData() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFormData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionArchiveLayoutRef archiveLayoutRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData, final String formOID, final String formRepeatKey, final TransactionType transactionType, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, archiveLayoutRef, annotation, itemGroupData, formOID, formRepeatKey, transactionType);
+        this.queryData = queryData;
+        this.reviewData = reviewData;
+        this.statusData = statusData;
+    }
+
+    
     public List<QueryData> getQueryData() {
         if (queryData == null) {
             queryData = new ArrayList<QueryData>();

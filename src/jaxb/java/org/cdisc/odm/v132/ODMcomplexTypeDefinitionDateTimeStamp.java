@@ -22,6 +22,16 @@ public class ODMcomplexTypeDefinitionDateTimeStamp {
     protected ZonedDateTime value;
 
     
+    public ODMcomplexTypeDefinitionDateTimeStamp() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionDateTimeStamp(final ZonedDateTime value) {
+        this.value = value;
+    }
+
+    
     public ZonedDateTime getValue() {
         return value;
     }

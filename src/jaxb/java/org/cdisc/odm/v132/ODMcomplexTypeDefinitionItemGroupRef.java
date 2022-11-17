@@ -26,6 +26,19 @@ public class ODMcomplexTypeDefinitionItemGroupRef {
     protected String collectionExceptionConditionOID;
 
     
+    public ODMcomplexTypeDefinitionItemGroupRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemGroupRef(final String itemGroupOID, final Integer orderNumber, final Boolean mandatory, final String collectionExceptionConditionOID) {
+        this.itemGroupOID = itemGroupOID;
+        this.orderNumber = orderNumber;
+        this.mandatory = mandatory;
+        this.collectionExceptionConditionOID = collectionExceptionConditionOID;
+    }
+
+    
     public String getItemGroupOID() {
         return itemGroupOID;
     }

@@ -16,6 +16,16 @@ public class UserGroupRef {
     protected String userGroupOID;
 
     
+    public UserGroupRef() {
+        super();
+    }
+
+    
+    public UserGroupRef(final String userGroupOID) {
+        this.userGroupOID = userGroupOID;
+    }
+
+    
     public String getUserGroupOID() {
         return userGroupOID;
     }

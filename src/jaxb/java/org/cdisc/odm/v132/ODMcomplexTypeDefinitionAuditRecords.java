@@ -20,6 +20,16 @@ public class ODMcomplexTypeDefinitionAuditRecords {
     protected List<ODMcomplexTypeDefinitionAuditRecord> auditRecord;
 
     
+    public ODMcomplexTypeDefinitionAuditRecords() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAuditRecords(final List<ODMcomplexTypeDefinitionAuditRecord> auditRecord) {
+        this.auditRecord = auditRecord;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionAuditRecord> getAuditRecord() {
         if (auditRecord == null) {
             auditRecord = new ArrayList<ODMcomplexTypeDefinitionAuditRecord>();

@@ -26,6 +26,19 @@ public class ODMcomplexTypeDefinitionSignatureDef {
     protected SignMethod methodology;
 
     
+    public ODMcomplexTypeDefinitionSignatureDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionSignatureDef(final ODMcomplexTypeDefinitionMeaning meaning, final ODMcomplexTypeDefinitionLegalReason legalReason, final String oid, final SignMethod methodology) {
+        this.meaning = meaning;
+        this.legalReason = legalReason;
+        this.oid = oid;
+        this.methodology = methodology;
+    }
+
+    
     public ODMcomplexTypeDefinitionMeaning getMeaning() {
         return meaning;
     }

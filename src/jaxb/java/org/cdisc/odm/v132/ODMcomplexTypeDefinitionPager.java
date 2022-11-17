@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionPager {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionPager() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionPager(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

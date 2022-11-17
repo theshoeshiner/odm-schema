@@ -20,6 +20,16 @@ public class ODMcomplexTypeDefinitionSymbol {
     protected List<ODMcomplexTypeDefinitionTranslatedText> translatedText;
 
     
+    public ODMcomplexTypeDefinitionSymbol() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionSymbol(final List<ODMcomplexTypeDefinitionTranslatedText> translatedText) {
+        this.translatedText = translatedText;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionTranslatedText> getTranslatedText() {
         if (translatedText == null) {
             translatedText = new ArrayList<ODMcomplexTypeDefinitionTranslatedText>();

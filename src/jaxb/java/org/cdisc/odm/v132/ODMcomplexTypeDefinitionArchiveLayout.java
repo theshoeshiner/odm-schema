@@ -20,6 +20,18 @@ public class ODMcomplexTypeDefinitionArchiveLayout {
     protected String presentationOID;
 
     
+    public ODMcomplexTypeDefinitionArchiveLayout() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionArchiveLayout(final String oid, final String pdfFileName, final String presentationOID) {
+        this.oid = oid;
+        this.pdfFileName = pdfFileName;
+        this.presentationOID = presentationOID;
+    }
+
+    
     public String getOID() {
         return oid;
     }

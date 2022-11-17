@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionSourceID {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionSourceID() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionSourceID(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

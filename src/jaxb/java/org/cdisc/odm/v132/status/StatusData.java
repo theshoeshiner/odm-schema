@@ -28,6 +28,19 @@ public class StatusData {
     protected Boolean conformant;
 
     
+    public StatusData() {
+        super();
+    }
+
+    
+    public StatusData(final Boolean verified, final Boolean frozen, final Boolean locked, final Boolean conformant) {
+        this.verified = verified;
+        this.frozen = frozen;
+        this.locked = locked;
+        this.conformant = conformant;
+    }
+
+    
     public Boolean getVerified() {
         return verified;
     }

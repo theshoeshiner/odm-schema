@@ -34,6 +34,25 @@ public class ODMcomplexTypeDefinitionKeySet {
     protected String oid;
 
     
+    public ODMcomplexTypeDefinitionKeySet() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionKeySet(final String studyOID, final String subjectKey, final String studyEventOID, final String studyEventRepeatKey, final String formOID, final String formRepeatKey, final String itemGroupOID, final String itemGroupRepeatKey, final String itemOID, final String oid) {
+        this.studyOID = studyOID;
+        this.subjectKey = subjectKey;
+        this.studyEventOID = studyEventOID;
+        this.studyEventRepeatKey = studyEventRepeatKey;
+        this.formOID = formOID;
+        this.formRepeatKey = formRepeatKey;
+        this.itemGroupOID = itemGroupOID;
+        this.itemGroupRepeatKey = itemGroupRepeatKey;
+        this.itemOID = itemOID;
+        this.oid = oid;
+    }
+
+    
     public String getStudyOID() {
         return studyOID;
     }

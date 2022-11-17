@@ -68,6 +68,31 @@ public class OriginalODMcomplexTypeDefinitionUser {
     protected UserType userType;
 
     
+    public OriginalODMcomplexTypeDefinitionUser() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionUser(final ODMcomplexTypeDefinitionLoginName loginName, final ODMcomplexTypeDefinitionDisplayName displayName, final ODMcomplexTypeDefinitionFullName fullName, final ODMcomplexTypeDefinitionFirstName firstName, final ODMcomplexTypeDefinitionLastName lastName, final ODMcomplexTypeDefinitionOrganization organization, final List<ODMcomplexTypeDefinitionAddress> address, final List<ODMcomplexTypeDefinitionEmail> email, final ODMcomplexTypeDefinitionPicture picture, final ODMcomplexTypeDefinitionPager pager, final List<ODMcomplexTypeDefinitionFax> fax, final List<ODMcomplexTypeDefinitionPhone> phone, final List<ODMcomplexTypeDefinitionLocationRef> locationRef, final List<ODMcomplexTypeDefinitionCertificate> certificate, final String oid, final UserType userType) {
+        this.loginName = loginName;
+        this.displayName = displayName;
+        this.fullName = fullName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.organization = organization;
+        this.address = address;
+        this.email = email;
+        this.picture = picture;
+        this.pager = pager;
+        this.fax = fax;
+        this.phone = phone;
+        this.locationRef = locationRef;
+        this.certificate = certificate;
+        this.oid = oid;
+        this.userType = userType;
+    }
+
+    
     public ODMcomplexTypeDefinitionLoginName getLoginName() {
         return loginName;
     }

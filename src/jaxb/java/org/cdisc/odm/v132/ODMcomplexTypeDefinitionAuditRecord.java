@@ -52,6 +52,25 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     protected String id;
 
     
+    public ODMcomplexTypeDefinitionAuditRecord() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAuditRecord(final ODMcomplexTypeDefinitionUserRef userRef, final ODMcomplexTypeDefinitionLocationRef locationRef, final ODMcomplexTypeDefinitionDateTimeStamp dateTimeStamp, final ODMcomplexTypeDefinitionReasonForChange reasonForChange, final ODMcomplexTypeDefinitionSourceID sourceID, final Long orderNumber, final String sourceType, final EditPointType editPoint, final Boolean usedImputationMethod, final String id) {
+        this.userRef = userRef;
+        this.locationRef = locationRef;
+        this.dateTimeStamp = dateTimeStamp;
+        this.reasonForChange = reasonForChange;
+        this.sourceID = sourceID;
+        this.orderNumber = orderNumber;
+        this.sourceType = sourceType;
+        this.editPoint = editPoint;
+        this.usedImputationMethod = usedImputationMethod;
+        this.id = id;
+    }
+
+    
     public ODMcomplexTypeDefinitionUserRef getUserRef() {
         return userRef;
     }

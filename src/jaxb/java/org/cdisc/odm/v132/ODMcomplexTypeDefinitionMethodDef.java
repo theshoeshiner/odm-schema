@@ -33,6 +33,21 @@ public class ODMcomplexTypeDefinitionMethodDef {
     protected MethodType type;
 
     
+    public ODMcomplexTypeDefinitionMethodDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionMethodDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormalExpression> formalExpression, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final MethodType type) {
+        this.description = description;
+        this.formalExpression = formalExpression;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.type = type;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

@@ -21,6 +21,17 @@ public class ODMcomplexTypeDefinitionFlagValue {
     protected String codeListOID;
 
     
+    public ODMcomplexTypeDefinitionFlagValue() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFlagValue(final String value, final String codeListOID) {
+        this.value = value;
+        this.codeListOID = codeListOID;
+    }
+
+    
     public String getValue() {
         return value;
     }

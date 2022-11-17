@@ -50,6 +50,28 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     protected String comment;
 
     
+    public ODMcomplexTypeDefinitionItemGroupDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemGroupDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionItemRef> itemRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final Boolean repeating, final Boolean isReferenceData, final String sasDatasetName, final String domain, final String origin, final String role, final String purpose, final String comment) {
+        this.description = description;
+        this.itemRef = itemRef;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.repeating = repeating;
+        this.isReferenceData = isReferenceData;
+        this.sasDatasetName = sasDatasetName;
+        this.domain = domain;
+        this.origin = origin;
+        this.role = role;
+        this.purpose = purpose;
+        this.comment = comment;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

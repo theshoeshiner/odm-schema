@@ -16,6 +16,16 @@ public class ODMcomplexTypeDefinitionInvestigatorRef {
     protected String userOID;
 
     
+    public ODMcomplexTypeDefinitionInvestigatorRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionInvestigatorRef(final String userOID) {
+        this.userOID = userOID;
+    }
+
+    
     public String getUserOID() {
         return userOID;
     }

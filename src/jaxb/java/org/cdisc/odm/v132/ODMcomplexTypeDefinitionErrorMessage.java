@@ -20,6 +20,16 @@ public class ODMcomplexTypeDefinitionErrorMessage {
     protected List<ODMcomplexTypeDefinitionTranslatedText> translatedText;
 
     
+    public ODMcomplexTypeDefinitionErrorMessage() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionErrorMessage(final List<ODMcomplexTypeDefinitionTranslatedText> translatedText) {
+        this.translatedText = translatedText;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionTranslatedText> getTranslatedText() {
         if (translatedText == null) {
             translatedText = new ArrayList<ODMcomplexTypeDefinitionTranslatedText>();

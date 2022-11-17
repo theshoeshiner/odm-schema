@@ -39,6 +39,20 @@ public class ODMcomplexTypeDefinitionAnnotation {
     protected String id;
 
     
+    public ODMcomplexTypeDefinitionAnnotation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAnnotation(final ODMcomplexTypeDefinitionComment comment, final List<ODMcomplexTypeDefinitionFlag> flag, final Integer seqNum, final TransactionType transactionType, final String id) {
+        this.comment = comment;
+        this.flag = flag;
+        this.seqNum = seqNum;
+        this.transactionType = transactionType;
+        this.id = id;
+    }
+
+    
     public ODMcomplexTypeDefinitionComment getComment() {
         return comment;
     }

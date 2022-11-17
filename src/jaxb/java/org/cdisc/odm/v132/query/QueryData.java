@@ -24,6 +24,20 @@ public class QueryData {
     protected QueryStatus status;
 
     
+    public QueryData() {
+        super();
+    }
+
+    
+    public QueryData(final String queryKey, final String text, final String response, final String recipient, final QueryStatus status) {
+        this.queryKey = queryKey;
+        this.text = text;
+        this.response = response;
+        this.recipient = recipient;
+        this.status = status;
+    }
+
+    
     public String getQueryKey() {
         return queryKey;
     }

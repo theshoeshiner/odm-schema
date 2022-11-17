@@ -21,6 +21,17 @@ public class ODMcomplexTypeDefinitionFlag {
     protected ODMcomplexTypeDefinitionFlagType flagType;
 
     
+    public ODMcomplexTypeDefinitionFlag() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFlag(final ODMcomplexTypeDefinitionFlagValue flagValue, final ODMcomplexTypeDefinitionFlagType flagType) {
+        this.flagValue = flagValue;
+        this.flagType = flagType;
+    }
+
+    
     public ODMcomplexTypeDefinitionFlagValue getFlagValue() {
         return flagValue;
     }

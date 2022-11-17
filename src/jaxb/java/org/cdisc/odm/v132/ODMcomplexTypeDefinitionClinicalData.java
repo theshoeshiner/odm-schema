@@ -34,6 +34,21 @@ public class ODMcomplexTypeDefinitionClinicalData {
     protected String metaDataVersionOID;
 
     
+    public ODMcomplexTypeDefinitionClinicalData() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionClinicalData(final List<ODMcomplexTypeDefinitionSubjectData> subjectData, final List<ODMcomplexTypeDefinitionAuditRecords> auditRecords, final List<ODMcomplexTypeDefinitionSignatures> signatures, final List<ODMcomplexTypeDefinitionAnnotations> annotations, final String studyOID, final String metaDataVersionOID) {
+        this.subjectData = subjectData;
+        this.auditRecords = auditRecords;
+        this.signatures = signatures;
+        this.annotations = annotations;
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionSubjectData> getSubjectData() {
         if (subjectData == null) {
             subjectData = new ArrayList<ODMcomplexTypeDefinitionSubjectData>();

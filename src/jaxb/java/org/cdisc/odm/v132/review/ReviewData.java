@@ -25,6 +25,19 @@ public class ReviewData {
     protected String userOID;
 
     
+    public ReviewData() {
+        super();
+    }
+
+    
+    public ReviewData(final String reviewKey, final Boolean reviewed, final String userGroupOID, final String userOID) {
+        this.reviewKey = reviewKey;
+        this.reviewed = reviewed;
+        this.userGroupOID = userGroupOID;
+        this.userOID = userOID;
+    }
+
+    
     public String getReviewKey() {
         return reviewKey;
     }

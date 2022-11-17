@@ -20,6 +20,16 @@ public class ODMcomplexTypeDefinitionSignatures {
     protected List<ODMcomplexTypeDefinitionSignature> signature;
 
     
+    public ODMcomplexTypeDefinitionSignatures() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionSignatures(final List<ODMcomplexTypeDefinitionSignature> signature) {
+        this.signature = signature;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionSignature> getSignature() {
         if (signature == null) {
             signature = new ArrayList<ODMcomplexTypeDefinitionSignature>();

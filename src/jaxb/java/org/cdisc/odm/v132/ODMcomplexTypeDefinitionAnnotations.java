@@ -20,6 +20,16 @@ public class ODMcomplexTypeDefinitionAnnotations {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
 
     
+    public ODMcomplexTypeDefinitionAnnotations() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAnnotations(final List<ODMcomplexTypeDefinitionAnnotation> annotation) {
+        this.annotation = annotation;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionAnnotation> getAnnotation() {
         if (annotation == null) {
             annotation = new ArrayList<ODMcomplexTypeDefinitionAnnotation>();

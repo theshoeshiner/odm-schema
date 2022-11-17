@@ -24,10 +24,6 @@ public class ODMcomplexTypeDefinitionItemDataDatetime implements ItemDataStar
     @XmlValue
     @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
     protected ZonedDateTime value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -42,6 +38,26 @@ public class ODMcomplexTypeDefinitionItemDataDatetime implements ItemDataStar
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataDatetime() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataDatetime(final ZonedDateTime value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
 
     
     public ZonedDateTime getValue() {
@@ -51,26 +67,6 @@ public class ODMcomplexTypeDefinitionItemDataDatetime implements ItemDataStar
     
     public void setValue(ZonedDateTime value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     
@@ -111,6 +107,26 @@ public class ODMcomplexTypeDefinitionItemDataDatetime implements ItemDataStar
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

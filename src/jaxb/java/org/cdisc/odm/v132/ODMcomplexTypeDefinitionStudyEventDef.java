@@ -39,6 +39,23 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
     protected String category;
 
     
+    public ODMcomplexTypeDefinitionStudyEventDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudyEventDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormRef> formRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final Boolean repeating, final EventType type, final String category) {
+        this.description = description;
+        this.formRef = formRef;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.repeating = repeating;
+        this.type = type;
+        this.category = category;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

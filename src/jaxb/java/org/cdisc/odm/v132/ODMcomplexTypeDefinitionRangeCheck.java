@@ -34,6 +34,21 @@ public class ODMcomplexTypeDefinitionRangeCheck {
     protected SoftOrHard softHard;
 
     
+    public ODMcomplexTypeDefinitionRangeCheck() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionRangeCheck(final List<ODMcomplexTypeDefinitionCheckValue> checkValue, final List<ODMcomplexTypeDefinitionFormalExpression> formalExpression, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final ODMcomplexTypeDefinitionErrorMessage errorMessage, final Comparator comparator, final SoftOrHard softHard) {
+        this.checkValue = checkValue;
+        this.formalExpression = formalExpression;
+        this.measurementUnitRef = measurementUnitRef;
+        this.errorMessage = errorMessage;
+        this.comparator = comparator;
+        this.softHard = softHard;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionCheckValue> getCheckValue() {
         if (checkValue == null) {
             checkValue = new ArrayList<ODMcomplexTypeDefinitionCheckValue>();

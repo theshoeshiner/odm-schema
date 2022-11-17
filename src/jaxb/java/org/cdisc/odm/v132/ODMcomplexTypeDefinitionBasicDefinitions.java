@@ -20,6 +20,16 @@ public class ODMcomplexTypeDefinitionBasicDefinitions {
     protected List<ODMcomplexTypeDefinitionMeasurementUnit> measurementUnit;
 
     
+    public ODMcomplexTypeDefinitionBasicDefinitions() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionBasicDefinitions(final List<ODMcomplexTypeDefinitionMeasurementUnit> measurementUnit) {
+        this.measurementUnit = measurementUnit;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionMeasurementUnit> getMeasurementUnit() {
         if (measurementUnit == null) {
             measurementUnit = new ArrayList<ODMcomplexTypeDefinitionMeasurementUnit>();

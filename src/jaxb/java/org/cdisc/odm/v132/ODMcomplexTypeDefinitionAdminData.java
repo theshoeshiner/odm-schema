@@ -29,6 +29,19 @@ public class ODMcomplexTypeDefinitionAdminData {
     protected String studyOID;
 
     
+    public ODMcomplexTypeDefinitionAdminData() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAdminData(final List<ODMcomplexTypeDefinitionUser> user, final List<ODMcomplexTypeDefinitionLocation> location, final List<ODMcomplexTypeDefinitionSignatureDef> signatureDef, final String studyOID) {
+        this.user = user;
+        this.location = location;
+        this.signatureDef = signatureDef;
+        this.studyOID = studyOID;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionUser> getUser() {
         if (user == null) {
             user = new ArrayList<ODMcomplexTypeDefinitionUser>();

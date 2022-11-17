@@ -21,6 +21,17 @@ public class ODMcomplexTypeDefinitionFormalExpression {
     protected String context;
 
     
+    public ODMcomplexTypeDefinitionFormalExpression() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFormalExpression(final String value, final String context) {
+        this.value = value;
+        this.context = context;
+    }
+
+    
     public String getValue() {
         return value;
     }

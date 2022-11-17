@@ -30,6 +30,18 @@ public class ODMcomplexTypeDefinitionAssociation {
     protected String metaDataVersionOID;
 
     
+    public ODMcomplexTypeDefinitionAssociation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAssociation(final List<JAXBElement<?>> content, final String studyOID, final String metaDataVersionOID) {
+        this.content = content;
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+    }
+
+    
     public List<JAXBElement<?>> getContent() {
         if (content == null) {
             content = new ArrayList<JAXBElement<?>>();

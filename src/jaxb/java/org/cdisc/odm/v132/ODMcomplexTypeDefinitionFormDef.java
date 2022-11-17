@@ -38,6 +38,22 @@ public class ODMcomplexTypeDefinitionFormDef {
     protected Boolean repeating;
 
     
+    public ODMcomplexTypeDefinitionFormDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFormDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionItemGroupRef> itemGroupRef, final List<ODMcomplexTypeDefinitionArchiveLayout> archiveLayout, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final Boolean repeating) {
+        this.description = description;
+        this.itemGroupRef = itemGroupRef;
+        this.archiveLayout = archiveLayout;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.repeating = repeating;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

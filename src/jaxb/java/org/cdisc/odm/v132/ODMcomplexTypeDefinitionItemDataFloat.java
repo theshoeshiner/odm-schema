@@ -21,6 +21,10 @@ public class ODMcomplexTypeDefinitionItemDataFloat implements ItemDataStar
 
     @XmlValue
     protected BigDecimal value;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -35,10 +39,22 @@ public class ODMcomplexTypeDefinitionItemDataFloat implements ItemDataStar
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataFloat() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataFloat(final BigDecimal value, final String itemOID, final TransactionType transactionType, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
 
     
     public BigDecimal getValue() {
@@ -48,6 +64,26 @@ public class ODMcomplexTypeDefinitionItemDataFloat implements ItemDataStar
     
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
     
@@ -88,26 +124,6 @@ public class ODMcomplexTypeDefinitionItemDataFloat implements ItemDataStar
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
 }

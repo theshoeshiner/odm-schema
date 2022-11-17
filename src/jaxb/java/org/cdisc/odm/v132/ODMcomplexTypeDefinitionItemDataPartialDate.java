@@ -40,6 +40,22 @@ public class ODMcomplexTypeDefinitionItemDataPartialDate implements ItemDataStar
     protected TransactionType transactionType;
 
     
+    public ODMcomplexTypeDefinitionItemDataPartialDate() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataPartialDate(final String value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
+
+    
     public String getValue() {
         return value;
     }

@@ -21,6 +21,17 @@ public class ODMcomplexTypeDefinitionImputationMethod {
     protected String oid;
 
     
+    public ODMcomplexTypeDefinitionImputationMethod() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionImputationMethod(final String value, final String oid) {
+        this.value = value;
+        this.oid = oid;
+    }
+
+    
     public String getValue() {
         return value;
     }

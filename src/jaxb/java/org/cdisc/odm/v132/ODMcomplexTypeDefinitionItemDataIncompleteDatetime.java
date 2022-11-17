@@ -40,6 +40,22 @@ public class ODMcomplexTypeDefinitionItemDataIncompleteDatetime implements ItemD
     protected TransactionType transactionType;
 
     
+    public ODMcomplexTypeDefinitionItemDataIncompleteDatetime() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataIncompleteDatetime(final String value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
+
+    
     public String getValue() {
         return value;
     }

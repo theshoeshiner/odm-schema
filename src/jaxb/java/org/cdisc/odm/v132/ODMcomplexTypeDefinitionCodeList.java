@@ -41,6 +41,24 @@ public class ODMcomplexTypeDefinitionCodeList {
     protected String sasFormatName;
 
     
+    public ODMcomplexTypeDefinitionCodeList() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCodeList(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionCodeListItem> codeListItem, final ODMcomplexTypeDefinitionExternalCodeList externalCodeList, final List<ODMcomplexTypeDefinitionEnumeratedItem> enumeratedItem, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final CLDataType dataType, final String sasFormatName) {
+        this.description = description;
+        this.codeListItem = codeListItem;
+        this.externalCodeList = externalCodeList;
+        this.enumeratedItem = enumeratedItem;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.dataType = dataType;
+        this.sasFormatName = sasFormatName;
+    }
+
+    
     public ODMcomplexTypeDefinitionDescription getDescription() {
         return description;
     }

@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionLegalReason {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionLegalReason() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionLegalReason(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

@@ -43,6 +43,22 @@ public class ODMcomplexTypeDefinitionItemDataBoolean implements ItemDataStar
     protected TransactionType transactionType;
 
     
+    public ODMcomplexTypeDefinitionItemDataBoolean() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataBoolean(final Boolean value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
+
+    
     public Boolean getValue() {
         return value;
     }

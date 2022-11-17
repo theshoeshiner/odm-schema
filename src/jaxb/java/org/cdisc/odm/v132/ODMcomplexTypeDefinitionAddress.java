@@ -35,6 +35,21 @@ public class ODMcomplexTypeDefinitionAddress {
     protected ODMcomplexTypeDefinitionOtherText otherText;
 
     
+    public ODMcomplexTypeDefinitionAddress() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAddress(final List<ODMcomplexTypeDefinitionStreetName> streetName, final ODMcomplexTypeDefinitionCity city, final ODMcomplexTypeDefinitionStateProv stateProv, final ODMcomplexTypeDefinitionCountry country, final ODMcomplexTypeDefinitionPostalCode postalCode, final ODMcomplexTypeDefinitionOtherText otherText) {
+        this.streetName = streetName;
+        this.city = city;
+        this.stateProv = stateProv;
+        this.country = country;
+        this.postalCode = postalCode;
+        this.otherText = otherText;
+    }
+
+    
     public List<ODMcomplexTypeDefinitionStreetName> getStreetName() {
         if (streetName == null) {
             streetName = new ArrayList<ODMcomplexTypeDefinitionStreetName>();

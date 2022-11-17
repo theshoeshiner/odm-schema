@@ -38,14 +38,33 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "StudyEventData")
     protected List<ODMcomplexTypeDefinitionStudyEventData> studyEventData;
-    @XmlAttribute(name = "SubjectKey", required = true)
-    protected String subjectKey;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "SubjectName")
     protected String subjectName;
     @XmlAttribute(name = "SubjectNumber")
     protected String subjectNumber;
+    @XmlAttribute(name = "SubjectKey", required = true)
+    protected String subjectKey;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+
+    
+    public OriginalODMcomplexTypeDefinitionSubjectData() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionSubjectData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionInvestigatorRef investigatorRef, final ODMcomplexTypeDefinitionSiteRef siteRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionStudyEventData> studyEventData, final String subjectName, final String subjectNumber, final String subjectKey, final TransactionType transactionType) {
+        this.auditRecord = auditRecord;
+        this.signature = signature;
+        this.investigatorRef = investigatorRef;
+        this.siteRef = siteRef;
+        this.annotation = annotation;
+        this.studyEventData = studyEventData;
+        this.subjectName = subjectName;
+        this.subjectNumber = subjectNumber;
+        this.subjectKey = subjectKey;
+        this.transactionType = transactionType;
+    }
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -104,26 +123,6 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     }
 
     
-    public String getSubjectKey() {
-        return subjectKey;
-    }
-
-    
-    public void setSubjectKey(String value) {
-        this.subjectKey = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
-    }
-
-    
     public String getSubjectName() {
         return subjectName;
     }
@@ -141,6 +140,26 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     
     public void setSubjectNumber(String value) {
         this.subjectNumber = value;
+    }
+
+    
+    public String getSubjectKey() {
+        return subjectKey;
+    }
+
+    
+    public void setSubjectKey(String value) {
+        this.subjectKey = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }
