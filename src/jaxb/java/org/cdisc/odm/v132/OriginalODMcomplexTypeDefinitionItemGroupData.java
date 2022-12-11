@@ -8,6 +8,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     ODMcomplexTypeDefinitionItemGroupData.class
 })
-public class OriginalODMcomplexTypeDefinitionItemGroupData {
+public class OriginalODMcomplexTypeDefinitionItemGroupData implements HasAuditRecordOrId
+{
 
     @XmlElement(name = "AuditRecord")
     protected ODMcomplexTypeDefinitionAuditRecord auditRecord;
@@ -65,6 +68,10 @@ public class OriginalODMcomplexTypeDefinitionItemGroupData {
     protected String itemGroupRepeatKey;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
 
     
     public OriginalODMcomplexTypeDefinitionItemGroupData() {
@@ -72,7 +79,7 @@ public class OriginalODMcomplexTypeDefinitionItemGroupData {
     }
 
     
-    public OriginalODMcomplexTypeDefinitionItemGroupData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemData> itemDataGroup, final List<Object> itemDataStarGroup, final String itemGroupOID, final String itemGroupRepeatKey, final TransactionType transactionType) {
+    public OriginalODMcomplexTypeDefinitionItemGroupData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemData> itemDataGroup, final List<Object> itemDataStarGroup, final String itemGroupOID, final String itemGroupRepeatKey, final TransactionType transactionType, final Object auditRecordID) {
         this.auditRecord = auditRecord;
         this.signature = signature;
         this.annotation = annotation;
@@ -81,6 +88,7 @@ public class OriginalODMcomplexTypeDefinitionItemGroupData {
         this.itemGroupOID = itemGroupOID;
         this.itemGroupRepeatKey = itemGroupRepeatKey;
         this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
     }
 
     
@@ -155,6 +163,16 @@ public class OriginalODMcomplexTypeDefinitionItemGroupData {
     
     public void setTransactionType(TransactionType value) {
         this.transactionType = value;
+    }
+
+    
+    public Object getAuditRecordID() {
+        return auditRecordID;
+    }
+
+    
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
     }
 
 }

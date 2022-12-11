@@ -36,8 +36,8 @@ public class ODMcomplexTypeDefinitionFormData
     }
 
     
-    public ODMcomplexTypeDefinitionFormData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionArchiveLayoutRef archiveLayoutRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData, final String formOID, final String formRepeatKey, final TransactionType transactionType, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
-        super(auditRecord, signature, archiveLayoutRef, annotation, itemGroupData, formOID, formRepeatKey, transactionType);
+    public ODMcomplexTypeDefinitionFormData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionArchiveLayoutRef archiveLayoutRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData, final String formOID, final String formRepeatKey, final TransactionType transactionType, final Object auditRecordID, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, archiveLayoutRef, annotation, itemGroupData, formOID, formRepeatKey, transactionType, auditRecordID);
         this.queryData = queryData;
         this.reviewData = reviewData;
         this.statusData = statusData;

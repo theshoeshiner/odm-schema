@@ -36,8 +36,8 @@ public class ODMcomplexTypeDefinitionItemData
     }
 
     
-    public ODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String itemOID, final TransactionType transactionType, final Boolean isNull, final String value, final String itemRepeatKey, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
-        super(auditRecord, signature, measurementUnitRef, annotation, itemOID, transactionType, isNull, value, itemRepeatKey);
+    public ODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String value, final String itemOID, final TransactionType transactionType, final Boolean isNull, final String itemRepeatKey, final Object auditRecordID, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, measurementUnitRef, annotation, value, itemOID, transactionType, isNull, itemRepeatKey, auditRecordID);
         this.queryData = queryData;
         this.reviewData = reviewData;
         this.statusData = statusData;

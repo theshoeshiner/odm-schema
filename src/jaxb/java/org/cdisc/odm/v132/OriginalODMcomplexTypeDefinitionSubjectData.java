@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     ODMcomplexTypeDefinitionSubjectData.class
 })
-public class OriginalODMcomplexTypeDefinitionSubjectData {
+public class OriginalODMcomplexTypeDefinitionSubjectData implements HasAuditRecordOrId
+{
 
     @XmlElement(name = "AuditRecord")
     protected ODMcomplexTypeDefinitionAuditRecord auditRecord;
@@ -38,14 +41,18 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "StudyEventData")
     protected List<ODMcomplexTypeDefinitionStudyEventData> studyEventData;
-    @XmlAttribute(name = "SubjectName")
-    protected String subjectName;
-    @XmlAttribute(name = "SubjectNumber")
-    protected String subjectNumber;
     @XmlAttribute(name = "SubjectKey", required = true)
     protected String subjectKey;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+    @XmlAttribute(name = "SubjectName")
+    protected String subjectName;
+    @XmlAttribute(name = "SubjectNumber")
+    protected String subjectNumber;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
 
     
     public OriginalODMcomplexTypeDefinitionSubjectData() {
@@ -53,17 +60,18 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     }
 
     
-    public OriginalODMcomplexTypeDefinitionSubjectData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionInvestigatorRef investigatorRef, final ODMcomplexTypeDefinitionSiteRef siteRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionStudyEventData> studyEventData, final String subjectName, final String subjectNumber, final String subjectKey, final TransactionType transactionType) {
+    public OriginalODMcomplexTypeDefinitionSubjectData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionInvestigatorRef investigatorRef, final ODMcomplexTypeDefinitionSiteRef siteRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionStudyEventData> studyEventData, final String subjectKey, final TransactionType transactionType, final String subjectName, final String subjectNumber, final Object auditRecordID) {
         this.auditRecord = auditRecord;
         this.signature = signature;
         this.investigatorRef = investigatorRef;
         this.siteRef = siteRef;
         this.annotation = annotation;
         this.studyEventData = studyEventData;
-        this.subjectName = subjectName;
-        this.subjectNumber = subjectNumber;
         this.subjectKey = subjectKey;
         this.transactionType = transactionType;
+        this.subjectName = subjectName;
+        this.subjectNumber = subjectNumber;
+        this.auditRecordID = auditRecordID;
     }
 
     
@@ -123,6 +131,26 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     }
 
     
+    public String getSubjectKey() {
+        return subjectKey;
+    }
+
+    
+    public void setSubjectKey(String value) {
+        this.subjectKey = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
+    }
+
+    
     public String getSubjectName() {
         return subjectName;
     }
@@ -143,23 +171,13 @@ public class OriginalODMcomplexTypeDefinitionSubjectData {
     }
 
     
-    public String getSubjectKey() {
-        return subjectKey;
+    public Object getAuditRecordID() {
+        return auditRecordID;
     }
 
     
-    public void setSubjectKey(String value) {
-        this.subjectKey = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
     }
 
 }

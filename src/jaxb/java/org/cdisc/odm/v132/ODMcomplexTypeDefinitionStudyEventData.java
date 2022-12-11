@@ -36,8 +36,8 @@ public class ODMcomplexTypeDefinitionStudyEventData
     }
 
     
-    public ODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
-        super(auditRecord, signature, annotation, formData, studyEventOID, studyEventRepeatKey, transactionType);
+    public ODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final Object auditRecordID, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, annotation, formData, auditRecordID, studyEventOID, studyEventRepeatKey, transactionType);
         this.queryData = queryData;
         this.reviewData = reviewData;
         this.statusData = statusData;

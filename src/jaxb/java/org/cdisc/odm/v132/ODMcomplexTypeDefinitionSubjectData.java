@@ -36,8 +36,8 @@ public class ODMcomplexTypeDefinitionSubjectData
     }
 
     
-    public ODMcomplexTypeDefinitionSubjectData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionInvestigatorRef investigatorRef, final ODMcomplexTypeDefinitionSiteRef siteRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionStudyEventData> studyEventData, final String subjectName, final String subjectNumber, final String subjectKey, final TransactionType transactionType, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
-        super(auditRecord, signature, investigatorRef, siteRef, annotation, studyEventData, subjectName, subjectNumber, subjectKey, transactionType);
+    public ODMcomplexTypeDefinitionSubjectData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionInvestigatorRef investigatorRef, final ODMcomplexTypeDefinitionSiteRef siteRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionStudyEventData> studyEventData, final String subjectKey, final TransactionType transactionType, final String subjectName, final String subjectNumber, final Object auditRecordID, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, investigatorRef, siteRef, annotation, studyEventData, subjectKey, transactionType, subjectName, subjectNumber, auditRecordID);
         this.queryData = queryData;
         this.reviewData = reviewData;
         this.statusData = statusData;

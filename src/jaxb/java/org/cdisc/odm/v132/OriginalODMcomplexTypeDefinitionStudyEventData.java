@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -22,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     ODMcomplexTypeDefinitionStudyEventData.class
 })
-public class OriginalODMcomplexTypeDefinitionStudyEventData {
+public class OriginalODMcomplexTypeDefinitionStudyEventData implements HasAuditRecordOrId
+{
 
     @XmlElement(name = "AuditRecord")
     protected ODMcomplexTypeDefinitionAuditRecord auditRecord;
@@ -32,6 +35,10 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData {
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "FormData")
     protected List<ODMcomplexTypeDefinitionFormData> formData;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
     @XmlAttribute(name = "StudyEventOID", required = true)
     protected String studyEventOID;
     @XmlAttribute(name = "StudyEventRepeatKey")
@@ -45,11 +52,12 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData {
     }
 
     
-    public OriginalODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType) {
+    public OriginalODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final Object auditRecordID, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType) {
         this.auditRecord = auditRecord;
         this.signature = signature;
         this.annotation = annotation;
         this.formData = formData;
+        this.auditRecordID = auditRecordID;
         this.studyEventOID = studyEventOID;
         this.studyEventRepeatKey = studyEventRepeatKey;
         this.transactionType = transactionType;
@@ -89,6 +97,16 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData {
             formData = new ArrayList<ODMcomplexTypeDefinitionFormData>();
         }
         return this.formData;
+    }
+
+    
+    public Object getAuditRecordID() {
+        return auditRecordID;
+    }
+
+    
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
     }
 
     
