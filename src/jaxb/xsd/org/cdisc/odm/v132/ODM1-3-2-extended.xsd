@@ -26,18 +26,21 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		<!-- 
 		CUSTOM-EXTENSION
 		Extending SubjectData to allow subject name and number to be passed separately from key
+		allow auditrecordid
 		 -->
 	
 		<xs:attributeGroup name="SubjectDataAttributeExtension">
 	    	<xs:attributeGroup ref="SubjectDataAttributeExtension"/>
 	    	<xs:attribute name="SubjectName" type="odm:text" />
 	    	<xs:attribute name="SubjectNumber" type="odm:text" />
+	    	<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
 		</xs:attributeGroup>
    
    
    		<!-- 
 		CUSTOM-EXTENSION
 		Extending item def to add repeating attribute which essentially allows items to be repeating
+		allow auditrecordid
 		 -->
    
 		<xs:attributeGroup name="ItemDefAttributeExtension">
@@ -127,11 +130,43 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		<!-- 
 		CUSTOM-EXTENSION
 		Extending item data to add a repeat key attribute which essentially allows items to be repeating
+		allow auditrecordid
 		 -->
 		
 		<xs:attributeGroup name="ItemDataAttributeExtension">
 			<xs:attributeGroup ref="ItemDataAttributeExtension"/>
 			<xs:attribute name="ItemRepeatKey" type="repeatKey"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="ItemGroupDataAttributeExtension">
+			<xs:attributeGroup ref="ItemGroupDataAttributeExtension"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="FormDataAttributeExtension">
+			<xs:attributeGroup ref="FormDataAttributeExtension"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="StudyEventDataAttributeExtension">
+			<xs:attributeGroup ref="StudyEventDataAttributeExtension"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
 		</xs:attributeGroup>
 		
 		<!-- 
