@@ -418,8 +418,8 @@
 			<xs:enumeration value="Context"/>
 			<!-- 
 			CUSTOM-EXTENSION
-			We added the "Revert" transaction type for systems (Rave) that send an undo operation which tells
-			us to replace the current value with the prior value, without having to send the prior value a second time
+			We added the "Revert" transaction type for systems (Rave) that send inactivated/activated operation which tells
+			us to replace the current value with the prior value, without sending the prior value a second time
 			 -->
 			<xs:enumeration value="Revert"/>
 		</xs:restriction> 
