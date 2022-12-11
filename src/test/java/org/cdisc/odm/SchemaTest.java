@@ -54,6 +54,20 @@ public class SchemaTest {
 		Object object = OdmSchema.parseOdmStream(stream);
 	}
 	
+
+	@Test
+	public void testAuditRecordID() throws JAXBException{
+		InputStream stream = SchemaTest.class.getResourceAsStream("auditrecordid-test.xml");
+		ODM odm = OdmSchema.parseOdmStream(stream);
+		odm.getClinicalData().forEach(cd -> {
+			cd.getSubjectData().forEach(sd -> {
+				LOGGER.info("subject data: {}",sd.getSubjectKey());
+				LOGGER.info("getAuditRecord: {}",sd.getAuditRecord());
+				LOGGER.info("getAuditRecordID: {}",sd.getAuditRecordID());
+			});
+		});
+	}
+	
 	/*@Test
 	public void testSnapshot2() throws JAXBException{
 		InputStream stream = SchemaTest.class.getResourceAsStream("odm-snapshot-2.xml");
