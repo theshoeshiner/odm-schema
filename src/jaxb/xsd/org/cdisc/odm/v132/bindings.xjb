@@ -57,6 +57,19 @@
 			<inheritance:implements>org.cdisc.odm.v132.ItemDataStar</inheritance:implements>
 		</jxb:bindings>
 	</jxb:bindings>
+	
+	<!-- Add interface to * elements -->
+	<jxb:bindings schemaLocation="ODM1-3-2-foundation.xsd">
+		<jxb:bindings multiple="true" node="//xs:complexType[
+		@name='ODMcomplexTypeDefinition-SubjectData' 
+		or @name='ODMcomplexTypeDefinition-StudyEventData'
+		or @name='ODMcomplexTypeDefinition-FormData'
+		or @name='ODMcomplexTypeDefinition-ItemGroupData'
+		or @name='ODMcomplexTypeDefinition-ItemData'
+		]">
+			<inheritance:implements>org.cdisc.odm.v132.HasAuditRecordOrId</inheritance:implements>
+		</jxb:bindings>
+	</jxb:bindings>
 
 	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" schemaLocation="ODM-Query.xsd" node="/xs:schema">
 		<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" node="//xs:schema">

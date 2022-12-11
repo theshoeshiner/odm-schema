@@ -1,6 +1,6 @@
 package org.cdisc.odm.v132;
 
-public interface ItemDataStar {
+public interface ItemDataStar extends HasAuditRecordOrId {
 	
 	public Object getValue();
 
