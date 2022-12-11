@@ -205,6 +205,19 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			<xs:attribute name="Number" type="xs:string" use="optional" />
 		</xs:attributeGroup>
 		
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		Add order number so that we can determine which metadata versions are newest
+		-->
+		
+		<xs:attributeGroup name="MetaDataVersionAttributeExtension">
+			<xs:attributeGroup ref="MetaDataVersionAttributeExtension"/>
+			<xs:attribute name="OrderNumber" type="xs:string" use="optional" />
+		</xs:attributeGroup>
+		
+
+
 
 	</xs:redefine>
 
