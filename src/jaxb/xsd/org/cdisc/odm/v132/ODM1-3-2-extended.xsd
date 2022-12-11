@@ -213,7 +213,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		
 		<xs:attributeGroup name="MetaDataVersionAttributeExtension">
 			<xs:attributeGroup ref="MetaDataVersionAttributeExtension"/>
-			<xs:attribute name="OrderNumber" type="xs:string" use="optional" />
+			<xs:attribute name="OrderNumber" type="xs:long" use="optional" />
 		</xs:attributeGroup>
 		
 

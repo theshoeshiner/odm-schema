@@ -3,11 +3,14 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.BigIntegerLongAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -50,7 +53,9 @@ public class ODMcomplexTypeDefinitionMetaDataVersion {
     @XmlElement(name = "MethodDef")
     protected List<ODMcomplexTypeDefinitionMethodDef> methodDef;
     @XmlAttribute(name = "OrderNumber")
-    protected String orderNumber;
+    @XmlJavaTypeAdapter(BigIntegerLongAdapter.class)
+    @XmlSchemaType(name = "long")
+    protected Long orderNumber;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -64,7 +69,7 @@ public class ODMcomplexTypeDefinitionMetaDataVersion {
     }
 
     
-    public ODMcomplexTypeDefinitionMetaDataVersion(final ODMcomplexTypeDefinitionInclude include, final ODMcomplexTypeDefinitionProtocol protocol, final List<ODMcomplexTypeDefinitionStudyEventDef> studyEventDef, final List<ODMcomplexTypeDefinitionFormDef> formDef, final List<ODMcomplexTypeDefinitionItemGroupDef> itemGroupDef, final List<ODMcomplexTypeDefinitionItemDef> itemDef, final List<ODMcomplexTypeDefinitionCodeList> codeList, final List<ODMcomplexTypeDefinitionImputationMethod> imputationMethod, final List<ODMcomplexTypeDefinitionPresentation> presentation, final List<ODMcomplexTypeDefinitionConditionDef> conditionDef, final List<ODMcomplexTypeDefinitionMethodDef> methodDef, final String orderNumber, final String oid, final String name, final String description) {
+    public ODMcomplexTypeDefinitionMetaDataVersion(final ODMcomplexTypeDefinitionInclude include, final ODMcomplexTypeDefinitionProtocol protocol, final List<ODMcomplexTypeDefinitionStudyEventDef> studyEventDef, final List<ODMcomplexTypeDefinitionFormDef> formDef, final List<ODMcomplexTypeDefinitionItemGroupDef> itemGroupDef, final List<ODMcomplexTypeDefinitionItemDef> itemDef, final List<ODMcomplexTypeDefinitionCodeList> codeList, final List<ODMcomplexTypeDefinitionImputationMethod> imputationMethod, final List<ODMcomplexTypeDefinitionPresentation> presentation, final List<ODMcomplexTypeDefinitionConditionDef> conditionDef, final List<ODMcomplexTypeDefinitionMethodDef> methodDef, final Long orderNumber, final String oid, final String name, final String description) {
         this.include = include;
         this.protocol = protocol;
         this.studyEventDef = studyEventDef;
@@ -175,12 +180,12 @@ public class ODMcomplexTypeDefinitionMetaDataVersion {
     }
 
     
-    public String getOrderNumber() {
+    public Long getOrderNumber() {
         return orderNumber;
     }
 
     
-    public void setOrderNumber(String value) {
+    public void setOrderNumber(Long value) {
         this.orderNumber = value;
     }
 
