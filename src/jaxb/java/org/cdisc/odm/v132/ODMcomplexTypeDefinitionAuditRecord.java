@@ -24,22 +24,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 })
 public class ODMcomplexTypeDefinitionAuditRecord {
 
-    @XmlElement(name = "UserRef", required = true)
+    @XmlElement(name = "UserRef")
     protected ODMcomplexTypeDefinitionUserRef userRef;
-    @XmlElement(name = "LocationRef", required = true)
+    @XmlElement(name = "LocationRef")
     protected ODMcomplexTypeDefinitionLocationRef locationRef;
-    @XmlElement(name = "DateTimeStamp", required = true)
+    @XmlElement(name = "DateTimeStamp")
     protected ODMcomplexTypeDefinitionDateTimeStamp dateTimeStamp;
     @XmlElement(name = "ReasonForChange")
     protected ODMcomplexTypeDefinitionReasonForChange reasonForChange;
     @XmlElement(name = "SourceID")
     protected ODMcomplexTypeDefinitionSourceID sourceID;
-    @XmlAttribute(name = "OrderNumber")
-    @XmlJavaTypeAdapter(BigIntegerLongAdapter.class)
-    @XmlSchemaType(name = "long")
-    protected Long orderNumber;
-    @XmlAttribute(name = "SourceType")
-    protected String sourceType;
     @XmlAttribute(name = "EditPoint")
     protected EditPointType editPoint;
     @XmlAttribute(name = "UsedImputationMethod")
@@ -50,6 +44,12 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
+    @XmlAttribute(name = "OrderNumber")
+    @XmlJavaTypeAdapter(BigIntegerLongAdapter.class)
+    @XmlSchemaType(name = "long")
+    protected Long orderNumber;
+    @XmlAttribute(name = "SourceType")
+    protected String sourceType;
 
     
     public ODMcomplexTypeDefinitionAuditRecord() {
@@ -57,17 +57,17 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     }
 
     
-    public ODMcomplexTypeDefinitionAuditRecord(final ODMcomplexTypeDefinitionUserRef userRef, final ODMcomplexTypeDefinitionLocationRef locationRef, final ODMcomplexTypeDefinitionDateTimeStamp dateTimeStamp, final ODMcomplexTypeDefinitionReasonForChange reasonForChange, final ODMcomplexTypeDefinitionSourceID sourceID, final Long orderNumber, final String sourceType, final EditPointType editPoint, final Boolean usedImputationMethod, final String id) {
+    public ODMcomplexTypeDefinitionAuditRecord(final ODMcomplexTypeDefinitionUserRef userRef, final ODMcomplexTypeDefinitionLocationRef locationRef, final ODMcomplexTypeDefinitionDateTimeStamp dateTimeStamp, final ODMcomplexTypeDefinitionReasonForChange reasonForChange, final ODMcomplexTypeDefinitionSourceID sourceID, final EditPointType editPoint, final Boolean usedImputationMethod, final String id, final Long orderNumber, final String sourceType) {
         this.userRef = userRef;
         this.locationRef = locationRef;
         this.dateTimeStamp = dateTimeStamp;
         this.reasonForChange = reasonForChange;
         this.sourceID = sourceID;
-        this.orderNumber = orderNumber;
-        this.sourceType = sourceType;
         this.editPoint = editPoint;
         this.usedImputationMethod = usedImputationMethod;
         this.id = id;
+        this.orderNumber = orderNumber;
+        this.sourceType = sourceType;
     }
 
     
@@ -121,26 +121,6 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     }
 
     
-    public Long getOrderNumber() {
-        return orderNumber;
-    }
-
-    
-    public void setOrderNumber(Long value) {
-        this.orderNumber = value;
-    }
-
-    
-    public String getSourceType() {
-        return sourceType;
-    }
-
-    
-    public void setSourceType(String value) {
-        this.sourceType = value;
-    }
-
-    
     public EditPointType getEditPoint() {
         return editPoint;
     }
@@ -168,6 +148,26 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     
     public void setID(String value) {
         this.id = value;
+    }
+
+    
+    public Long getOrderNumber() {
+        return orderNumber;
+    }
+
+    
+    public void setOrderNumber(Long value) {
+        this.orderNumber = value;
+    }
+
+    
+    public String getSourceType() {
+        return sourceType;
+    }
+
+    
+    public void setSourceType(String value) {
+        this.sourceType = value;
     }
 
 }
