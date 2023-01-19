@@ -40,12 +40,14 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
    		<!-- 
 		CUSTOM-EXTENSION
 		Extending item def to add repeating attribute which essentially allows items to be repeating
-		allow auditrecordid
+		
+		
 		 -->
    
 		<xs:attributeGroup name="ItemDefAttributeExtension">
 			<xs:attributeGroup ref="ItemDefAttributeExtension"/>
 			<xs:attribute name="Repeating" type="YesOrNo" use="optional"/>
+			<xs:attribute name="DefaultMeasurementUnitOID" type="oidref" use="optional"/>
 		</xs:attributeGroup>
 		
 		<!-- 
@@ -195,9 +197,10 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			<xs:attribute name="Group" type="xs:string" use="optional"/>
 		</xs:attributeGroup>
 		
+		
 		<!-- 
 		CUSTOM-EXTENSION
-		Extending location to allow sources to specific name and number seperately
+		Extending location to allow sources to specific name and number separately
 		-->
 		
 		<xs:attributeGroup name="LocationAttributeExtension">
@@ -209,11 +212,13 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		<!-- 
 		CUSTOM-EXTENSION
 		Add order number so that we can determine which metadata versions are newest
+		Add Active attribute so that EDCs can indicate versions which are not used or referenced - so far this is just for tabular conversions that need to inactive old duplicate versions
 		-->
 		
 		<xs:attributeGroup name="MetaDataVersionAttributeExtension">
 			<xs:attributeGroup ref="MetaDataVersionAttributeExtension"/>
 			<xs:attribute name="OrderNumber" type="xs:long" use="optional" />
+			<xs:attribute name="Active" type="odm:YesOrNo" use="optional" />
 		</xs:attributeGroup>
 		
 
