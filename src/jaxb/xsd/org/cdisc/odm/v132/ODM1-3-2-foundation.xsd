@@ -1873,12 +1873,9 @@
 	</xs:complexType>
 	<xs:complexType name="ODMcomplexTypeDefinition-AuditRecord">
 		<xs:sequence>
-			<!-- CUSTOM-EXTENSION 
-			Allow userref, locationref, and datetimestamp to be optional
-			-->
-			<xs:element ref="UserRef" minOccurs="0"/>
-			<xs:element ref="LocationRef" minOccurs="0"/>
-			<xs:element ref="DateTimeStamp" minOccurs="0"/>
+			<xs:element ref="UserRef"/>
+			<xs:element ref="LocationRef"/>
+			<xs:element ref="DateTimeStamp"/>
 			<xs:element ref="ReasonForChange" minOccurs="0"/>
 			<xs:element ref="SourceID" minOccurs="0"/>
 			<xs:group ref="AuditRecordElementExtension" minOccurs="0" maxOccurs="unbounded"/>
