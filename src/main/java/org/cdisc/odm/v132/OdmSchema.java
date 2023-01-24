@@ -11,7 +11,6 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.ValidationEvent;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
@@ -67,22 +66,30 @@ public class OdmSchema {
 	}
 	
 	public static ODM parseOdmStream(InputStream stream) throws JAXBException {
-		return parseOdmStream(stream, ValidationEvent.FATAL_ERROR);
+		return parseOdmStream(stream, -1);
+	}
+	
+	public static ODM parseOdmStream(InputStream stream, int failOnSeverity,int stackOn,int logOn) throws JAXBException {
+		return (ODM) parseStreamInternal(stream,failOnSeverity,stackOn,logOn);
 	}
 
-	public static ODM parseOdmStream(InputStream stream, int faillevel) throws JAXBException {
-		ODM odm = (ODM) parseStreamInternal(stream,faillevel);
+	public static ODM parseOdmStream(InputStream stream, int failOnSeverity) throws JAXBException {
+		ODM odm = (ODM) parseStreamInternal(stream,failOnSeverity,-1,-1);
 		return odm;
 	}
 	
-	public static void marshalOdm(ODM odm,OutputStream stream, int faillevel) throws JAXBException {
-		marshalStreamInternal(odm, stream, faillevel);
+	public static void marshalOdm(ODM odm,OutputStream stream) throws JAXBException {
+		marshalOdm(odm, stream, -1);
+	}
+	
+	public static void marshalOdm(ODM odm,OutputStream stream, int failOnSeverity) throws JAXBException {
+		marshalStreamInternal(odm, stream, failOnSeverity,-1,-1);
 	}
 
-	protected static Object parseStreamInternal(InputStream stream, int failureLevel) throws JAXBException {
+	protected static Object parseStreamInternal(InputStream stream, int failOnSeverity,int stackOn,int logOn) throws JAXBException {
 		Schema schema = getSchema();
 		Unmarshaller um = getContext().createUnmarshaller();
-		um.setEventHandler(new OdmValidationEventHandler(failureLevel));
+		um.setEventHandler(new OdmValidationEventHandler(failOnSeverity,stackOn,logOn));
 		um.setSchema(schema);
 		StreamSource source = new StreamSource(stream);
 		Object object = um.unmarshal(source);
@@ -93,11 +100,11 @@ public class OdmSchema {
 		return object;
 	}
 	
-	protected static void marshalStreamInternal(Object object,OutputStream stream, int failureLevel) throws JAXBException {
+	protected static void marshalStreamInternal(Object object,OutputStream stream, int failOnSeverity,int stackOn,int logOn) throws JAXBException {
 		Schema schema = getSchema();
 		Marshaller mar = getContext().createMarshaller();
 		mar.setSchema(schema);
-		mar.setEventHandler(new OdmValidationEventHandler(failureLevel));
+		mar.setEventHandler(new OdmValidationEventHandler(failOnSeverity,stackOn,logOn));
 		mar.marshal(object, stream);
 	}
 
