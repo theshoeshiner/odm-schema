@@ -34,15 +34,9 @@ public class OdmSchema {
 		if (CONTEXT == null) {
 			try {
 				generateObjects();
-			} catch (JAXBException e) {
+			} catch (JAXBException | IOException | SAXException | URISyntaxException e) {
 				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (IOException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (SAXException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (URISyntaxException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			}
+			} 
 		}
 		return CONTEXT;
 	}
@@ -51,15 +45,9 @@ public class OdmSchema {
 		if (SCHEMA == null) {
 			try {
 				generateObjects();
-			} catch (JAXBException e) {
+			} catch (JAXBException | IOException | SAXException | URISyntaxException e) {
 				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (IOException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (SAXException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (URISyntaxException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			}
+			} 
 		}
 		return SCHEMA;
 
@@ -124,14 +112,8 @@ public class OdmSchema {
 	protected static Schema generateSchemaObject() throws JAXBException, IOException, SAXException, URISyntaxException {
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		schemaFactory.setResourceResolver(new ClasspathResourceResolver(OdmSchema.class));
-
-
 		InputStream is = OdmSchema.class.getResourceAsStream(SCHEMA_FILE);
-		LOGGER.info("stream: {}", is);
-
 		Schema schema = schemaFactory.newSchema(new Source[] { new StreamSource(is)});
-
-		LOGGER.info("Schema: {}", schema);
 		return schema;
 	}
 }

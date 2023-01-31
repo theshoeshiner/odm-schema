@@ -160,14 +160,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-text</artifactId>
-			<version>1.8</version>
-		</dependency>
-		<dependency>
 			<groupId>org.thshsh</groupId>
 			<artifactId>commons-xml</artifactId>
-			<version>0.0.4</version>
+			<version>0.0.6-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
