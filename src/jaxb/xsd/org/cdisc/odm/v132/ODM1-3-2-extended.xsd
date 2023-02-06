@@ -50,11 +50,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		
 		<!-- 
 		CUSTOM-EXTENSION
-		We have to extend the complex elements directly because using the *ElementExtension
-		puts all the new elements in a generic <Object> collection with no way to access them
-		by type (eq query, status, review)
-		We could work around that by implementing interfaces in each class, but that is also problematic 
-		because the <Object> collection has a different name in each *Data element
+		Users can be part of groups
 		 -->
 		 
 		 <xs:complexType name="ODMcomplexTypeDefinition-User">
@@ -66,6 +62,27 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
+		
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		We have to extend the complex elements directly because using the *ElementExtension
+		puts all the new elements in a generic <Object> collection with no way to access them
+		by type (eq query, status, review)
+		We could work around that by implementing interfaces in each class, but that is also problematic 
+		because the <Object> collection has a different name in each *Data element
+		
+		TODO this means that ItemData* elements cannot hold references to these items because the value for those types
+		is represented by the element text content, thus they can have no child elements. 
+		This would have to be compensated for by sending status/query/review data in a separate block and either
+		1) referencing from ItemData* -> <Query/Review/Status> or 
+		2) referencing from <Query/Status/Review> back to the ItemData*
+		3) sending the items in separate ItemData blocks with no value attribute
+		
+		#1 implies only 1 query/review item per block (which is incompatible)
+		#2 is difficult because it must reference the entire data point key structure
+		#3 may be confusing since ItemData elements would be duplicated, but this is the best option
+		 -->
 		
 		<!-- Data elements -->
 	
