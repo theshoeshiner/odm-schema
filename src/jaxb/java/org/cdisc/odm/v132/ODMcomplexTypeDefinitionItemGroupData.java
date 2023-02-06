@@ -21,6 +21,7 @@ import org.cdisc.odm.v132.status.StatusData;
 })
 public class ODMcomplexTypeDefinitionItemGroupData
     extends OriginalODMcomplexTypeDefinitionItemGroupData
+    implements HasStatusQueryReviewData
 {
 
     @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query")

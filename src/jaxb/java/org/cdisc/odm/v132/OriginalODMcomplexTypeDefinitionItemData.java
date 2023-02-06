@@ -38,6 +38,12 @@ public class OriginalODMcomplexTypeDefinitionItemData implements HasAuditRecordO
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlAttribute(name = "Value")
     protected String value;
+    @XmlAttribute(name = "ItemRepeatKey")
+    protected String itemRepeatKey;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
@@ -45,12 +51,6 @@ public class OriginalODMcomplexTypeDefinitionItemData implements HasAuditRecordO
     @XmlAttribute(name = "IsNull")
     @XmlJavaTypeAdapter(YesOnlyAdapter.class)
     protected Boolean isNull;
-    @XmlAttribute(name = "ItemRepeatKey")
-    protected String itemRepeatKey;
-    @XmlAttribute(name = "AuditRecordID")
-    @XmlIDREF
-    @XmlSchemaType(name = "IDREF")
-    protected Object auditRecordID;
 
     
     public OriginalODMcomplexTypeDefinitionItemData() {
@@ -58,17 +58,17 @@ public class OriginalODMcomplexTypeDefinitionItemData implements HasAuditRecordO
     }
 
     
-    public OriginalODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String value, final String itemOID, final TransactionType transactionType, final Boolean isNull, final String itemRepeatKey, final Object auditRecordID) {
+    public OriginalODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String value, final String itemRepeatKey, final Object auditRecordID, final String itemOID, final TransactionType transactionType, final Boolean isNull) {
         this.auditRecord = auditRecord;
         this.signature = signature;
         this.measurementUnitRef = measurementUnitRef;
         this.annotation = annotation;
         this.value = value;
+        this.itemRepeatKey = itemRepeatKey;
+        this.auditRecordID = auditRecordID;
         this.itemOID = itemOID;
         this.transactionType = transactionType;
         this.isNull = isNull;
-        this.itemRepeatKey = itemRepeatKey;
-        this.auditRecordID = auditRecordID;
     }
 
     
@@ -120,6 +120,26 @@ public class OriginalODMcomplexTypeDefinitionItemData implements HasAuditRecordO
     }
 
     
+    public String getItemRepeatKey() {
+        return itemRepeatKey;
+    }
+
+    
+    public void setItemRepeatKey(String value) {
+        this.itemRepeatKey = value;
+    }
+
+    
+    public Object getAuditRecordID() {
+        return auditRecordID;
+    }
+
+    
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
+    }
+
+    
     public String getItemOID() {
         return itemOID;
     }
@@ -147,26 +167,6 @@ public class OriginalODMcomplexTypeDefinitionItemData implements HasAuditRecordO
     
     public void setIsNull(Boolean value) {
         this.isNull = value;
-    }
-
-    
-    public String getItemRepeatKey() {
-        return itemRepeatKey;
-    }
-
-    
-    public void setItemRepeatKey(String value) {
-        this.itemRepeatKey = value;
-    }
-
-    
-    public Object getAuditRecordID() {
-        return auditRecordID;
-    }
-
-    
-    public void setAuditRecordID(Object value) {
-        this.auditRecordID = value;
     }
 
 }

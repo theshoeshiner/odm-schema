@@ -21,6 +21,7 @@ import org.cdisc.odm.v132.status.StatusData;
 })
 public class ODMcomplexTypeDefinitionItemData
     extends OriginalODMcomplexTypeDefinitionItemData
+    implements HasStatusQueryReviewData
 {
 
     @XmlElement(name = "QueryData", namespace = "http://www.cdisc.org/ns/odm/v1.3/query")
@@ -36,8 +37,8 @@ public class ODMcomplexTypeDefinitionItemData
     }
 
     
-    public ODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String value, final String itemOID, final TransactionType transactionType, final Boolean isNull, final String itemRepeatKey, final Object auditRecordID, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
-        super(auditRecord, signature, measurementUnitRef, annotation, value, itemOID, transactionType, isNull, itemRepeatKey, auditRecordID);
+    public ODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String value, final String itemRepeatKey, final Object auditRecordID, final String itemOID, final TransactionType transactionType, final Boolean isNull, final List<QueryData> queryData, final List<ReviewData> reviewData, final StatusData statusData) {
+        super(auditRecord, signature, measurementUnitRef, annotation, value, itemRepeatKey, auditRecordID, itemOID, transactionType, isNull);
         this.queryData = queryData;
         this.reviewData = reviewData;
         this.statusData = statusData;

@@ -35,16 +35,16 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData implements HasAuditR
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
     @XmlElement(name = "FormData")
     protected List<ODMcomplexTypeDefinitionFormData> formData;
-    @XmlAttribute(name = "AuditRecordID")
-    @XmlIDREF
-    @XmlSchemaType(name = "IDREF")
-    protected Object auditRecordID;
     @XmlAttribute(name = "StudyEventOID", required = true)
     protected String studyEventOID;
     @XmlAttribute(name = "StudyEventRepeatKey")
     protected String studyEventRepeatKey;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
 
     
     public OriginalODMcomplexTypeDefinitionStudyEventData() {
@@ -52,15 +52,15 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData implements HasAuditR
     }
 
     
-    public OriginalODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final Object auditRecordID, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType) {
+    public OriginalODMcomplexTypeDefinitionStudyEventData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionFormData> formData, final String studyEventOID, final String studyEventRepeatKey, final TransactionType transactionType, final Object auditRecordID) {
         this.auditRecord = auditRecord;
         this.signature = signature;
         this.annotation = annotation;
         this.formData = formData;
-        this.auditRecordID = auditRecordID;
         this.studyEventOID = studyEventOID;
         this.studyEventRepeatKey = studyEventRepeatKey;
         this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
     }
 
     
@@ -100,16 +100,6 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData implements HasAuditR
     }
 
     
-    public Object getAuditRecordID() {
-        return auditRecordID;
-    }
-
-    
-    public void setAuditRecordID(Object value) {
-        this.auditRecordID = value;
-    }
-
-    
     public String getStudyEventOID() {
         return studyEventOID;
     }
@@ -137,6 +127,16 @@ public class OriginalODMcomplexTypeDefinitionStudyEventData implements HasAuditR
     
     public void setTransactionType(TransactionType value) {
         this.transactionType = value;
+    }
+
+    
+    public Object getAuditRecordID() {
+        return auditRecordID;
+    }
+
+    
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
     }
 
 }

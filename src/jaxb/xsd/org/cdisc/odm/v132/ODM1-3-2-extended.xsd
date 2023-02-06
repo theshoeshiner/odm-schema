@@ -40,8 +40,6 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
    		<!-- 
 		CUSTOM-EXTENSION
 		Extending item def to add repeating attribute which essentially allows items to be repeating
-		
-		
 		 -->
    
 		<xs:attributeGroup name="ItemDefAttributeExtension">
@@ -55,6 +53,8 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		We have to extend the complex elements directly because using the *ElementExtension
 		puts all the new elements in a generic <Object> collection with no way to access them
 		by type (eq query, status, review)
+		We could work around that by implementing interfaces in each class, but that is also problematic 
+		because the <Object> collection has a different name in each *Data element
 		 -->
 		 
 		 <xs:complexType name="ODMcomplexTypeDefinition-User">
@@ -128,6 +128,8 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
+		
+	
 		
 		<!-- 
 		CUSTOM-EXTENSION
