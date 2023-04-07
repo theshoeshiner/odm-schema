@@ -2,6 +2,7 @@
 package org.cdisc.odm.v132;
 
 import java.time.LocalDate;
+
 import javax.xml.bind.IsoLocalDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

@@ -2,7 +2,8 @@
 package org.cdisc.odm.v132;
 
 import java.time.OffsetDateTime;
-import javax.xml.bind.LooseIsoDateTimeAdapter;
+
+import javax.xml.bind.LooseIsoOffsetDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -22,7 +23,7 @@ public class ODMcomplexTypeDefinitionItemDataDatetime implements ItemDataStar
 {
 
     @XmlValue
-    @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
+    @XmlJavaTypeAdapter(LooseIsoOffsetDateTimeAdapter.class)
     protected OffsetDateTime value;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
