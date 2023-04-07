@@ -1,7 +1,7 @@
 
 package org.cdisc.odm.v132;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 import javax.xml.bind.LooseIsoDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -19,7 +19,7 @@ public class ODMcomplexTypeDefinitionDateTimeStamp {
 
     @XmlValue
     @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
-    protected ZonedDateTime value;
+    protected OffsetDateTime value;
 
     
     public ODMcomplexTypeDefinitionDateTimeStamp() {
@@ -27,17 +27,17 @@ public class ODMcomplexTypeDefinitionDateTimeStamp {
     }
 
     
-    public ODMcomplexTypeDefinitionDateTimeStamp(final ZonedDateTime value) {
+    public ODMcomplexTypeDefinitionDateTimeStamp(final OffsetDateTime value) {
         this.value = value;
     }
 
     
-    public ZonedDateTime getValue() {
+    public OffsetDateTime getValue() {
         return value;
     }
 
     
-    public void setValue(ZonedDateTime value) {
+    public void setValue(OffsetDateTime value) {
         this.value = value;
     }
 

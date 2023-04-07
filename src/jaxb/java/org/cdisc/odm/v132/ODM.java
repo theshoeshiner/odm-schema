@@ -1,7 +1,7 @@
 
 package org.cdisc.odm.v132;
 
-import java.time.ZonedDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.LooseIsoDateTimeAdapter;
@@ -56,12 +56,12 @@ public class ODM {
     protected String fileOID;
     @XmlAttribute(name = "CreationDateTime", required = true)
     @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
-    protected ZonedDateTime creationDateTime;
+    protected OffsetDateTime creationDateTime;
     @XmlAttribute(name = "PriorFileOID")
     protected String priorFileOID;
     @XmlAttribute(name = "AsOfDateTime")
     @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
-    protected ZonedDateTime asOfDateTime;
+    protected OffsetDateTime asOfDateTime;
     @XmlAttribute(name = "ODMVersion")
     protected String odmVersion;
     @XmlAttribute(name = "Originator")
@@ -82,7 +82,7 @@ public class ODM {
     }
 
     
-    public ODM(final List<ODMcomplexTypeDefinitionStudy> study, final List<ODMcomplexTypeDefinitionAdminData> adminData, final List<ODMcomplexTypeDefinitionReferenceData> referenceData, final List<ODMcomplexTypeDefinitionClinicalData> clinicalData, final List<ODMcomplexTypeDefinitionAssociation> association, final List<SignatureType> signature, final String description, final FileType fileType, final Granularity granularity, final Boolean archival, final String fileOID, final ZonedDateTime creationDateTime, final String priorFileOID, final ZonedDateTime asOfDateTime, final String odmVersion, final String originator, final String sourceSystem, final String sourceSystemVersion, final String id) {
+    public ODM(final List<ODMcomplexTypeDefinitionStudy> study, final List<ODMcomplexTypeDefinitionAdminData> adminData, final List<ODMcomplexTypeDefinitionReferenceData> referenceData, final List<ODMcomplexTypeDefinitionClinicalData> clinicalData, final List<ODMcomplexTypeDefinitionAssociation> association, final List<SignatureType> signature, final String description, final FileType fileType, final Granularity granularity, final Boolean archival, final String fileOID, final OffsetDateTime creationDateTime, final String priorFileOID, final OffsetDateTime asOfDateTime, final String odmVersion, final String originator, final String sourceSystem, final String sourceSystemVersion, final String id) {
         this.study = study;
         this.adminData = adminData;
         this.referenceData = referenceData;
@@ -203,12 +203,12 @@ public class ODM {
     }
 
     
-    public ZonedDateTime getCreationDateTime() {
+    public OffsetDateTime getCreationDateTime() {
         return creationDateTime;
     }
 
     
-    public void setCreationDateTime(ZonedDateTime value) {
+    public void setCreationDateTime(OffsetDateTime value) {
         this.creationDateTime = value;
     }
 
@@ -223,12 +223,12 @@ public class ODM {
     }
 
     
-    public ZonedDateTime getAsOfDateTime() {
+    public OffsetDateTime getAsOfDateTime() {
         return asOfDateTime;
     }
 
     
-    public void setAsOfDateTime(ZonedDateTime value) {
+    public void setAsOfDateTime(OffsetDateTime value) {
         this.asOfDateTime = value;
     }
 
