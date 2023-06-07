@@ -3,7 +3,6 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,6 +26,8 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     protected List<ODMcomplexTypeDefinitionItemRef> itemRef;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+    @XmlAttribute(name = "SourceDatasetName")
+    protected String sourceDatasetName;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -56,10 +57,11 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     }
 
     
-    public ODMcomplexTypeDefinitionItemGroupDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionItemRef> itemRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final Boolean repeating, final Boolean isReferenceData, final String sasDatasetName, final String domain, final String origin, final String role, final String purpose, final String comment) {
+    public ODMcomplexTypeDefinitionItemGroupDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionItemRef> itemRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String sourceDatasetName, final String oid, final String name, final Boolean repeating, final Boolean isReferenceData, final String sasDatasetName, final String domain, final String origin, final String role, final String purpose, final String comment) {
         this.description = description;
         this.itemRef = itemRef;
         this.alias = alias;
+        this.sourceDatasetName = sourceDatasetName;
         this.oid = oid;
         this.name = name;
         this.repeating = repeating;
@@ -96,6 +98,16 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();
         }
         return this.alias;
+    }
+
+    
+    public String getSourceDatasetName() {
+        return sourceDatasetName;
+    }
+
+    
+    public void setSourceDatasetName(String value) {
+        this.sourceDatasetName = value;
     }
 
     

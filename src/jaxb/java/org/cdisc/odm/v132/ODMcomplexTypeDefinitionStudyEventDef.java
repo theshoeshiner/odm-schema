@@ -3,7 +3,6 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,6 +26,8 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
     protected List<ODMcomplexTypeDefinitionFormRef> formRef;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+    @XmlAttribute(name = "SourceDatasetName")
+    protected String sourceDatasetName;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -45,10 +46,11 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
     }
 
     
-    public ODMcomplexTypeDefinitionStudyEventDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormRef> formRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final Boolean repeating, final EventType type, final String category) {
+    public ODMcomplexTypeDefinitionStudyEventDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormRef> formRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String sourceDatasetName, final String oid, final String name, final Boolean repeating, final EventType type, final String category) {
         this.description = description;
         this.formRef = formRef;
         this.alias = alias;
+        this.sourceDatasetName = sourceDatasetName;
         this.oid = oid;
         this.name = name;
         this.repeating = repeating;
@@ -80,6 +82,16 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();
         }
         return this.alias;
+    }
+
+    
+    public String getSourceDatasetName() {
+        return sourceDatasetName;
+    }
+
+    
+    public void setSourceDatasetName(String value) {
+        this.sourceDatasetName = value;
     }
 
     

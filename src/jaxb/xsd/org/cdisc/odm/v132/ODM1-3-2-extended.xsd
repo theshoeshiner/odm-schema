@@ -22,30 +22,42 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
 
 	<xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
-	
-		<!-- 
-		CUSTOM-EXTENSION
-		Extending SubjectData to allow subject name and number to be passed separately from key
-		allow auditrecordid
-		 -->
-	
+
 		<xs:attributeGroup name="SubjectDataAttributeExtension">
 	    	<xs:attributeGroup ref="SubjectDataAttributeExtension"/>
+	    	<!-- Extending SubjectData to allow subject name and number to be passed separately from key -->
 	    	<xs:attribute name="SubjectName" type="odm:text" />
 	    	<xs:attribute name="SubjectNumber" type="odm:text" />
+	    	<!-- allow auditrecordid -->
 	    	<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
 		</xs:attributeGroup>
    
+   		<xs:attributeGroup name="StudyEventDefAttributeExtension">
+			<xs:attributeGroup ref="StudyEventDefAttributeExtension"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
+		</xs:attributeGroup>
    
-   		<!-- 
-		CUSTOM-EXTENSION
-		Extending item def to add repeating attribute which essentially allows items to be repeating
-		 -->
+   		<xs:attributeGroup name="FormDefAttributeExtension">
+			<xs:attributeGroup ref="FormDefAttributeExtension"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
+		</xs:attributeGroup>
+		
+		<xs:attributeGroup name="ItemGroupDefAttributeExtension">
+			<xs:attributeGroup ref="ItemGroupDefAttributeExtension"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
+		</xs:attributeGroup>
    
 		<xs:attributeGroup name="ItemDefAttributeExtension">
 			<xs:attributeGroup ref="ItemDefAttributeExtension"/>
+			<!-- repeating attribute which essentially allows items to be repeating -->
 			<xs:attribute name="Repeating" type="YesOrNo" use="optional"/>
+			<!-- specify a default unit -->
 			<xs:attribute name="DefaultMeasurementUnitOID" type="oidref" use="optional"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
 		</xs:attributeGroup>
 		
 		<!-- 
@@ -66,7 +78,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		
 		<!-- 
 		CUSTOM-EXTENSION
-		We have to extend the complex elements directly because using the *ElementExtension
+		To add new child elements We have to extend the complex elements directly because using the *ElementExtension
 		puts all the new elements in a generic <Object> collection with no way to access them
 		by type (eq query, status, review)
 		We could work around that by implementing interfaces in each class, but that is also problematic 

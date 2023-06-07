@@ -3,7 +3,6 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.BigIntegerIntegerAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -48,6 +47,8 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected Boolean repeating;
     @XmlAttribute(name = "DefaultMeasurementUnitOID")
     protected String defaultMeasurementUnitOID;
+    @XmlAttribute(name = "SourceDatasetName")
+    protected String sourceDatasetName;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -75,7 +76,7 @@ public class ODMcomplexTypeDefinitionItemDef {
     }
 
     
-    public ODMcomplexTypeDefinitionItemDef(final ODMcomplexTypeDefinitionDescription description, final ODMcomplexTypeDefinitionQuestion question, final ODMcomplexTypeDefinitionExternalQuestion externalQuestion, final List<ODMcomplexTypeDefinitionMeasurementUnitRef> measurementUnitRef, final List<ODMcomplexTypeDefinitionRangeCheck> rangeCheck, final ODMcomplexTypeDefinitionCodeListRef codeListRef, final List<ODMcomplexTypeDefinitionRole> role, final List<ODMcomplexTypeDefinitionAlias> alias, final Boolean repeating, final String defaultMeasurementUnitOID, final String oid, final String name, final DataType dataType, final Integer length, final Integer significantDigits, final String sasFieldName, final String sdsVarName, final String origin, final String comment) {
+    public ODMcomplexTypeDefinitionItemDef(final ODMcomplexTypeDefinitionDescription description, final ODMcomplexTypeDefinitionQuestion question, final ODMcomplexTypeDefinitionExternalQuestion externalQuestion, final List<ODMcomplexTypeDefinitionMeasurementUnitRef> measurementUnitRef, final List<ODMcomplexTypeDefinitionRangeCheck> rangeCheck, final ODMcomplexTypeDefinitionCodeListRef codeListRef, final List<ODMcomplexTypeDefinitionRole> role, final List<ODMcomplexTypeDefinitionAlias> alias, final Boolean repeating, final String defaultMeasurementUnitOID, final String sourceDatasetName, final String oid, final String name, final DataType dataType, final Integer length, final Integer significantDigits, final String sasFieldName, final String sdsVarName, final String origin, final String comment) {
         this.description = description;
         this.question = question;
         this.externalQuestion = externalQuestion;
@@ -86,6 +87,7 @@ public class ODMcomplexTypeDefinitionItemDef {
         this.alias = alias;
         this.repeating = repeating;
         this.defaultMeasurementUnitOID = defaultMeasurementUnitOID;
+        this.sourceDatasetName = sourceDatasetName;
         this.oid = oid;
         this.name = name;
         this.dataType = dataType;
@@ -187,6 +189,16 @@ public class ODMcomplexTypeDefinitionItemDef {
     
     public void setDefaultMeasurementUnitOID(String value) {
         this.defaultMeasurementUnitOID = value;
+    }
+
+    
+    public String getSourceDatasetName() {
+        return sourceDatasetName;
+    }
+
+    
+    public void setSourceDatasetName(String value) {
+        this.sourceDatasetName = value;
     }
 
     
