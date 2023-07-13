@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -33,6 +34,21 @@ public class ODMcomplexTypeDefinitionAddress {
     protected ODMcomplexTypeDefinitionPostalCode postalCode;
     @XmlElement(name = "OtherText")
     protected ODMcomplexTypeDefinitionOtherText otherText;
+
+    
+    public ODMcomplexTypeDefinitionAddress() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAddress(final List<ODMcomplexTypeDefinitionStreetName> streetName, final ODMcomplexTypeDefinitionCity city, final ODMcomplexTypeDefinitionStateProv stateProv, final ODMcomplexTypeDefinitionCountry country, final ODMcomplexTypeDefinitionPostalCode postalCode, final ODMcomplexTypeDefinitionOtherText otherText) {
+        this.streetName = streetName;
+        this.city = city;
+        this.stateProv = stateProv;
+        this.country = country;
+        this.postalCode = postalCode;
+        this.otherText = otherText;
+    }
 
     
     public List<ODMcomplexTypeDefinitionStreetName> getStreetName() {

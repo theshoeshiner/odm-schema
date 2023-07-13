@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataBase64Float", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataBase64Float {
+public class ODMcomplexTypeDefinitionItemDataBase64Float implements ItemDataStar
+{
 
     @XmlValue
     protected byte[] value;
@@ -37,6 +38,22 @@ public class ODMcomplexTypeDefinitionItemDataBase64Float {
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataBase64Float() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataBase64Float(final byte[] value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
 
     
     public byte[] getValue() {

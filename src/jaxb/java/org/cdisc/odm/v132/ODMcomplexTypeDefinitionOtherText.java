@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionOtherText {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionOtherText() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionOtherText(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

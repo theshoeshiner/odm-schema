@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionLastName {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionLastName() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionLastName(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

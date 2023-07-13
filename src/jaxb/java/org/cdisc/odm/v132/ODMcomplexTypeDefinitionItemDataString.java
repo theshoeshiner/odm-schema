@@ -15,14 +15,11 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataString", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataString {
+public class ODMcomplexTypeDefinitionItemDataString implements ItemDataStar
+{
 
     @XmlValue
     protected String value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -37,6 +34,26 @@ public class ODMcomplexTypeDefinitionItemDataString {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataString() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataString(final String value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
 
     
     public String getValue() {
@@ -46,26 +63,6 @@ public class ODMcomplexTypeDefinitionItemDataString {
     
     public void setValue(String value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     
@@ -106,6 +103,26 @@ public class ODMcomplexTypeDefinitionItemDataString {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

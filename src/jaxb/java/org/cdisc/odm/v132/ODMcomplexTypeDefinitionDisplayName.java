@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionDisplayName {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionDisplayName() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionDisplayName(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

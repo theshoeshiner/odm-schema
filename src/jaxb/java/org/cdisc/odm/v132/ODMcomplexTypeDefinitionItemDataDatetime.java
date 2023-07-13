@@ -1,8 +1,9 @@
 
 package org.cdisc.odm.v132;
 
-import java.time.ZonedDateTime;
-import javax.xml.bind.LooseIsoDateTimeAdapter;
+import java.time.OffsetDateTime;
+
+import javax.xml.bind.LooseIsoOffsetDateTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -18,11 +19,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataDatetime", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataDatetime {
+public class ODMcomplexTypeDefinitionItemDataDatetime implements ItemDataStar
+{
 
     @XmlValue
-    @XmlJavaTypeAdapter(LooseIsoDateTimeAdapter.class)
-    protected ZonedDateTime value;
+    @XmlJavaTypeAdapter(LooseIsoOffsetDateTimeAdapter.class)
+    protected OffsetDateTime value;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
@@ -43,12 +45,28 @@ public class ODMcomplexTypeDefinitionItemDataDatetime {
     protected String measurementUnitOID;
 
     
-    public ZonedDateTime getValue() {
+    public ODMcomplexTypeDefinitionItemDataDatetime() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataDatetime(final OffsetDateTime value, final String itemOID, final TransactionType transactionType, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
+
+    
+    public OffsetDateTime getValue() {
         return value;
     }
 
     
-    public void setValue(ZonedDateTime value) {
+    public void setValue(OffsetDateTime value) {
         this.value = value;
     }
 

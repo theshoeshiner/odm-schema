@@ -2,6 +2,7 @@
 package org.cdisc.odm.v132;
 
 import java.time.LocalDate;
+
 import javax.xml.bind.IsoLocalDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -22,6 +23,18 @@ public class ODMcomplexTypeDefinitionMetaDataVersionRef {
     @XmlAttribute(name = "EffectiveDate", required = true)
     @XmlJavaTypeAdapter(IsoLocalDateAdapter.class)
     protected LocalDate effectiveDate;
+
+    
+    public ODMcomplexTypeDefinitionMetaDataVersionRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionMetaDataVersionRef(final String studyOID, final String metaDataVersionOID, final LocalDate effectiveDate) {
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+        this.effectiveDate = effectiveDate;
+    }
 
     
     public String getStudyOID() {

@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -31,6 +32,21 @@ public class ODMcomplexTypeDefinitionMethodDef {
     protected String name;
     @XmlAttribute(name = "Type")
     protected MethodType type;
+
+    
+    public ODMcomplexTypeDefinitionMethodDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionMethodDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormalExpression> formalExpression, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name, final MethodType type) {
+        this.description = description;
+        this.formalExpression = formalExpression;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+        this.type = type;
+    }
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {

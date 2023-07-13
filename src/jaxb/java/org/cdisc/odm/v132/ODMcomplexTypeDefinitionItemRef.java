@@ -37,6 +37,24 @@ public class ODMcomplexTypeDefinitionItemRef {
     protected String roleCodeListOID;
 
     
+    public ODMcomplexTypeDefinitionItemRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemRef(final Integer orderNumber, final Boolean mandatory, final String collectionExceptionConditionOID, final String itemOID, final Integer keySequence, final String methodOID, final String imputationMethodOID, final String role, final String roleCodeListOID) {
+        this.orderNumber = orderNumber;
+        this.mandatory = mandatory;
+        this.collectionExceptionConditionOID = collectionExceptionConditionOID;
+        this.itemOID = itemOID;
+        this.keySequence = keySequence;
+        this.methodOID = methodOID;
+        this.imputationMethodOID = imputationMethodOID;
+        this.role = role;
+        this.roleCodeListOID = roleCodeListOID;
+    }
+
+    
     public Integer getOrderNumber() {
         return orderNumber;
     }

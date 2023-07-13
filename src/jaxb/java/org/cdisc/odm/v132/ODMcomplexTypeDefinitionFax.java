@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionFax {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionFax() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFax(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionCryptoBindingManifest {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionCryptoBindingManifest() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCryptoBindingManifest(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

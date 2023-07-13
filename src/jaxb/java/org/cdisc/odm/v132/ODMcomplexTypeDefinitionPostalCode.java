@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionPostalCode {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionPostalCode() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionPostalCode(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -28,6 +29,18 @@ public class ODMcomplexTypeDefinitionAssociation {
     protected String studyOID;
     @XmlAttribute(name = "MetaDataVersionOID", required = true)
     protected String metaDataVersionOID;
+
+    
+    public ODMcomplexTypeDefinitionAssociation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAssociation(final List<JAXBElement<?>> content, final String studyOID, final String metaDataVersionOID) {
+        this.content = content;
+        this.studyOID = studyOID;
+        this.metaDataVersionOID = metaDataVersionOID;
+    }
 
     
     public List<JAXBElement<?>> getContent() {

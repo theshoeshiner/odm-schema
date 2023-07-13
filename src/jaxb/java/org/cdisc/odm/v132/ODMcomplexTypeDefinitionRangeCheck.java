@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -32,6 +33,21 @@ public class ODMcomplexTypeDefinitionRangeCheck {
     protected Comparator comparator;
     @XmlAttribute(name = "SoftHard", required = true)
     protected SoftOrHard softHard;
+
+    
+    public ODMcomplexTypeDefinitionRangeCheck() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionRangeCheck(final List<ODMcomplexTypeDefinitionCheckValue> checkValue, final List<ODMcomplexTypeDefinitionFormalExpression> formalExpression, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final ODMcomplexTypeDefinitionErrorMessage errorMessage, final Comparator comparator, final SoftOrHard softHard) {
+        this.checkValue = checkValue;
+        this.formalExpression = formalExpression;
+        this.measurementUnitRef = measurementUnitRef;
+        this.errorMessage = errorMessage;
+        this.comparator = comparator;
+        this.softHard = softHard;
+    }
 
     
     public List<ODMcomplexTypeDefinitionCheckValue> getCheckValue() {

@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.BigIntegerIntegerAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -37,6 +38,20 @@ public class ODMcomplexTypeDefinitionAnnotation {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
+
+    
+    public ODMcomplexTypeDefinitionAnnotation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAnnotation(final ODMcomplexTypeDefinitionComment comment, final List<ODMcomplexTypeDefinitionFlag> flag, final Integer seqNum, final TransactionType transactionType, final String id) {
+        this.comment = comment;
+        this.flag = flag;
+        this.seqNum = seqNum;
+        this.transactionType = transactionType;
+        this.id = id;
+    }
 
     
     public ODMcomplexTypeDefinitionComment getComment() {

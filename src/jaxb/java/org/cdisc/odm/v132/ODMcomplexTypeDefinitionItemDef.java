@@ -42,6 +42,13 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected List<ODMcomplexTypeDefinitionRole> role;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+    @XmlAttribute(name = "Repeating")
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean repeating;
+    @XmlAttribute(name = "DefaultMeasurementUnitOID")
+    protected String defaultMeasurementUnitOID;
+    @XmlAttribute(name = "SourceDatasetName")
+    protected String sourceDatasetName;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -62,9 +69,35 @@ public class ODMcomplexTypeDefinitionItemDef {
     protected String origin;
     @XmlAttribute(name = "Comment")
     protected String comment;
-    @XmlAttribute(name = "Repeating")
-    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
-    protected Boolean repeating;
+
+    
+    public ODMcomplexTypeDefinitionItemDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDef(final ODMcomplexTypeDefinitionDescription description, final ODMcomplexTypeDefinitionQuestion question, final ODMcomplexTypeDefinitionExternalQuestion externalQuestion, final List<ODMcomplexTypeDefinitionMeasurementUnitRef> measurementUnitRef, final List<ODMcomplexTypeDefinitionRangeCheck> rangeCheck, final ODMcomplexTypeDefinitionCodeListRef codeListRef, final List<ODMcomplexTypeDefinitionRole> role, final List<ODMcomplexTypeDefinitionAlias> alias, final Boolean repeating, final String defaultMeasurementUnitOID, final String sourceDatasetName, final String oid, final String name, final DataType dataType, final Integer length, final Integer significantDigits, final String sasFieldName, final String sdsVarName, final String origin, final String comment) {
+        this.description = description;
+        this.question = question;
+        this.externalQuestion = externalQuestion;
+        this.measurementUnitRef = measurementUnitRef;
+        this.rangeCheck = rangeCheck;
+        this.codeListRef = codeListRef;
+        this.role = role;
+        this.alias = alias;
+        this.repeating = repeating;
+        this.defaultMeasurementUnitOID = defaultMeasurementUnitOID;
+        this.sourceDatasetName = sourceDatasetName;
+        this.oid = oid;
+        this.name = name;
+        this.dataType = dataType;
+        this.length = length;
+        this.significantDigits = significantDigits;
+        this.sasFieldName = sasFieldName;
+        this.sdsVarName = sdsVarName;
+        this.origin = origin;
+        this.comment = comment;
+    }
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {
@@ -136,6 +169,36 @@ public class ODMcomplexTypeDefinitionItemDef {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();
         }
         return this.alias;
+    }
+
+    
+    public Boolean getRepeating() {
+        return repeating;
+    }
+
+    
+    public void setRepeating(Boolean value) {
+        this.repeating = value;
+    }
+
+    
+    public String getDefaultMeasurementUnitOID() {
+        return defaultMeasurementUnitOID;
+    }
+
+    
+    public void setDefaultMeasurementUnitOID(String value) {
+        this.defaultMeasurementUnitOID = value;
+    }
+
+    
+    public String getSourceDatasetName() {
+        return sourceDatasetName;
+    }
+
+    
+    public void setSourceDatasetName(String value) {
+        this.sourceDatasetName = value;
     }
 
     
@@ -226,16 +289,6 @@ public class ODMcomplexTypeDefinitionItemDef {
     
     public void setComment(String value) {
         this.comment = value;
-    }
-
-    
-    public Boolean getRepeating() {
-        return repeating;
-    }
-
-    
-    public void setRepeating(Boolean value) {
-        this.repeating = value;
     }
 
 }

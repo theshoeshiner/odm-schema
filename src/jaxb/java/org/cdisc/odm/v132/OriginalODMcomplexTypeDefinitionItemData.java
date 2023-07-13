@@ -3,10 +3,13 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -23,7 +26,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlSeeAlso({
     ODMcomplexTypeDefinitionItemData.class
 })
-public class OriginalODMcomplexTypeDefinitionItemData {
+public class OriginalODMcomplexTypeDefinitionItemData implements HasAuditRecordOrId
+{
 
     @XmlElement(name = "AuditRecord")
     protected ODMcomplexTypeDefinitionAuditRecord auditRecord;
@@ -33,10 +37,14 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     protected ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef;
     @XmlElement(name = "Annotation")
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
-    @XmlAttribute(name = "ItemRepeatKey")
-    protected String itemRepeatKey;
     @XmlAttribute(name = "Value")
     protected String value;
+    @XmlAttribute(name = "ItemRepeatKey")
+    protected String itemRepeatKey;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
     @XmlAttribute(name = "ItemOID", required = true)
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
@@ -44,6 +52,25 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     @XmlAttribute(name = "IsNull")
     @XmlJavaTypeAdapter(YesOnlyAdapter.class)
     protected Boolean isNull;
+
+    
+    public OriginalODMcomplexTypeDefinitionItemData() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionItemData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionMeasurementUnitRef measurementUnitRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final String value, final String itemRepeatKey, final Object auditRecordID, final String itemOID, final TransactionType transactionType, final Boolean isNull) {
+        this.auditRecord = auditRecord;
+        this.signature = signature;
+        this.measurementUnitRef = measurementUnitRef;
+        this.annotation = annotation;
+        this.value = value;
+        this.itemRepeatKey = itemRepeatKey;
+        this.auditRecordID = auditRecordID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.isNull = isNull;
+    }
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -84,6 +111,16 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     }
 
     
+    public String getValue() {
+        return value;
+    }
+
+    
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    
     public String getItemRepeatKey() {
         return itemRepeatKey;
     }
@@ -94,13 +131,13 @@ public class OriginalODMcomplexTypeDefinitionItemData {
     }
 
     
-    public String getValue() {
-        return value;
+    public Object getAuditRecordID() {
+        return auditRecordID;
     }
 
     
-    public void setValue(String value) {
-        this.value = value;
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
     }
 
     

@@ -10,13 +10,6 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 
-	<!-- <xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="query/ODM-Query.xsd" />
-	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/subject" schemaLocation="subject/ODM-Subject.xsd" /> -->
-
-<!-- 	<xs:include schemaLocation="query/ODM-redefine-Query.xsd" />
-	
-	<xs:include schemaLocation="subject/ODM-redefine-Subject.xsd" /> -->
-
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd" />
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd" />
 	<xs:import namespace="http://www.cdisc.org/ns/odm/v1.3/query" schemaLocation="ODM-Query.xsd" />
@@ -29,24 +22,47 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 
 
 	<xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
-	
-		
-	
+
 		<xs:attributeGroup name="SubjectDataAttributeExtension">
 	    	<xs:attributeGroup ref="SubjectDataAttributeExtension"/>
+	    	<!-- Extending SubjectData to allow subject name and number to be passed separately from key -->
 	    	<xs:attribute name="SubjectName" type="odm:text" />
+	    	<xs:attribute name="SubjectNumber" type="odm:text" />
+	    	<!-- allow auditrecordid -->
+	    	<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
 		</xs:attributeGroup>
    
+   		<xs:attributeGroup name="StudyEventDefAttributeExtension">
+			<xs:attributeGroup ref="StudyEventDefAttributeExtension"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
+		</xs:attributeGroup>
+   
+   		<xs:attributeGroup name="FormDefAttributeExtension">
+			<xs:attributeGroup ref="FormDefAttributeExtension"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
+		</xs:attributeGroup>
+		
+		<xs:attributeGroup name="ItemGroupDefAttributeExtension">
+			<xs:attributeGroup ref="ItemGroupDefAttributeExtension"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
+		</xs:attributeGroup>
    
 		<xs:attributeGroup name="ItemDefAttributeExtension">
 			<xs:attributeGroup ref="ItemDefAttributeExtension"/>
+			<!-- repeating attribute which essentially allows items to be repeating -->
 			<xs:attribute name="Repeating" type="YesOrNo" use="optional"/>
+			<!-- specify a default unit -->
+			<xs:attribute name="DefaultMeasurementUnitOID" type="oidref" use="optional"/>
+			<!-- Source dataset name -->
+			<xs:attribute name="SourceDatasetName" type="odm:text" />
 		</xs:attributeGroup>
 		
 		<!-- 
-		We have to extend the complex elements directly because using the *ElementExtension
-		puts all the new elements in a generic <Object> collection with no way to access them
-		by type 
+		CUSTOM-EXTENSION
+		Users can be part of groups
 		 -->
 		 
 		 <xs:complexType name="ODMcomplexTypeDefinition-User">
@@ -58,6 +74,27 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
+		
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		To add new child elements We have to extend the complex elements directly because using the *ElementExtension
+		puts all the new elements in a generic <Object> collection with no way to access them
+		by type (eq query, status, review)
+		We could work around that by implementing interfaces in each class, but that is also problematic 
+		because the <Object> collection has a different name in each *Data element
+		
+		TODO this means that ItemData* elements cannot hold references to these items because the value for those types
+		is represented by the element text content, thus they can have no child elements. 
+		This would have to be compensated for by sending status/query/review data in a separate block and either
+		1) referencing from ItemData* -> <Query/Review/Status> or 
+		2) referencing from <Query/Status/Review> back to the ItemData*
+		3) sending the items in separate ItemData blocks with no value attribute
+		
+		#1 implies only 1 query/review item per block (which is incompatible)
+		#2 is difficult because it must reference the entire data point key structure
+		#3 may be confusing since ItemData elements would be duplicated, but this is the best option
+		 -->
 		
 		<!-- Data elements -->
 	
@@ -108,13 +145,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 				</xs:extension>
 			</xs:complexContent>
 		</xs:complexType>
-		
-		<xs:attributeGroup name="ItemDataAttributeExtension">
-			<xs:attributeGroup ref="ItemDataAttributeExtension"/>
-			<xs:attribute name="ItemRepeatKey" type="repeatKey"/>
-		</xs:attributeGroup>
-		
-	
+
 		<xs:complexType name="ODMcomplexTypeDefinition-ItemData">
 			<xs:complexContent>
 				<xs:extension base="ODMcomplexTypeDefinition-ItemData">
@@ -127,19 +158,69 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			</xs:complexContent>
 		</xs:complexType>
 		
+	
 		
 		<!-- 
-		We are extending audit record to have an order number since timestamps often collide
+		CUSTOM-EXTENSION
+		Extending item data to add a repeat key attribute which essentially allows items to be repeating
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="ItemDataAttributeExtension">
+			<xs:attributeGroup ref="ItemDataAttributeExtension"/>
+			<xs:attribute name="ItemRepeatKey" type="repeatKey"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="ItemGroupDataAttributeExtension">
+			<xs:attributeGroup ref="ItemGroupDataAttributeExtension"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="FormDataAttributeExtension">
+			<xs:attributeGroup ref="FormDataAttributeExtension"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		allow auditrecordid
+		 -->
+		
+		<xs:attributeGroup name="StudyEventDataAttributeExtension">
+			<xs:attributeGroup ref="StudyEventDataAttributeExtension"/>
+			<xs:attribute name="AuditRecordID" type="xs:IDREF"/>
+		</xs:attributeGroup>
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		Extending audit record to have an order number since timestamps often collide
 		often this can be copied / created from the sourceid 
 		Also adding SourceType, which holds a free text "Type" from the source.
 		-->
 		
 		<xs:attributeGroup name="AuditRecordAttributeExtension">
 			<xs:attributeGroup ref="AuditRecordAttributeExtension"/>
-			<xs:attribute name="OrderNumber" type="integer"/>
+			<xs:attribute name="OrderNumber" type="xs:long"/>
 			<xs:attribute name="SourceType" type="xs:string"/>
 		</xs:attributeGroup>
 		
+	
+		<!-- 
+		CUSTOM-EXTENSION
+		Extending measurement unit so that source systems can mark specific units are standard
+		In addition allows them to assign the unit to a group, which can be used to group similar units
+		-->
 		
 		<xs:attributeGroup name="MeasurementUnitAttributeExtension">
 			<xs:attributeGroup ref="MeasurementUnitAttributeExtension"/>
@@ -147,30 +228,33 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema"
 			<xs:attribute name="Group" type="xs:string" use="optional"/>
 		</xs:attributeGroup>
 		
+		
+		<!-- 
+		CUSTOM-EXTENSION
+		Extending location to allow sources to specific name and number separately
+		-->
+		
 		<xs:attributeGroup name="LocationAttributeExtension">
 			<xs:attributeGroup ref="LocationAttributeExtension"/>
 			<xs:attribute name="Number" type="xs:string" use="optional" />
 		</xs:attributeGroup>
 		
 		
+		<!-- 
+		CUSTOM-EXTENSION
+		Add order number so that we can determine which metadata versions are newest
+		Add Active attribute so that EDCs can indicate versions which are not used or referenced - so far this is just for tabular conversions that need to inactive old duplicate versions
+		-->
 		
-	
+		<xs:attributeGroup name="MetaDataVersionAttributeExtension">
+			<xs:attributeGroup ref="MetaDataVersionAttributeExtension"/>
+			<xs:attribute name="OrderNumber" type="xs:long" use="optional" />
+			<xs:attribute name="Active" type="odm:YesOrNo" use="optional" />
+		</xs:attributeGroup>
+		
+
+
+
 	</xs:redefine>
-	
-	<!-- <xs:redefine schemaLocation="ODM1-3-2-foundation.xsd">
-	
-		<xs:group name="ItemDataElementExtension" >
-			<xs:sequence>
-				<xs:sequence>
-					<xs:element ref="query:QueryData" minOccurs="0" maxOccurs="unbounded" />
-					<xs:element ref="status:StatusData" minOccurs="0" maxOccurs="unbounded" />
-				</xs:sequence>
-				<xs:group ref="ItemDataElementExtension" />
-			</xs:sequence>
-	
-		</xs:group>
-	
-	</xs:redefine>
- -->
 
 </xs:schema>

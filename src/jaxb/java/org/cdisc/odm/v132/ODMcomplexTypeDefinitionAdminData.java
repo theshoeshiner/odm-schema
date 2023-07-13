@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,6 +28,19 @@ public class ODMcomplexTypeDefinitionAdminData {
     protected List<ODMcomplexTypeDefinitionSignatureDef> signatureDef;
     @XmlAttribute(name = "StudyOID")
     protected String studyOID;
+
+    
+    public ODMcomplexTypeDefinitionAdminData() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAdminData(final List<ODMcomplexTypeDefinitionUser> user, final List<ODMcomplexTypeDefinitionLocation> location, final List<ODMcomplexTypeDefinitionSignatureDef> signatureDef, final String studyOID) {
+        this.user = user;
+        this.location = location;
+        this.signatureDef = signatureDef;
+        this.studyOID = studyOID;
+    }
 
     
     public List<ODMcomplexTypeDefinitionUser> getUser() {

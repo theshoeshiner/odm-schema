@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionReasonForChange {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionReasonForChange() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionReasonForChange(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

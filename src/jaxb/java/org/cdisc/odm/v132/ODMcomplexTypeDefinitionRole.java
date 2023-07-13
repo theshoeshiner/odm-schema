@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionRole {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionRole() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionRole(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

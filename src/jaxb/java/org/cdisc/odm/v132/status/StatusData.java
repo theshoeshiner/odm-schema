@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.cdisc.odm.v132.YesOrNoAdapter;
 
 
@@ -26,6 +27,19 @@ public class StatusData {
     @XmlAttribute(name = "Conformant")
     @XmlJavaTypeAdapter(YesOrNoAdapter.class)
     protected Boolean conformant;
+
+    
+    public StatusData() {
+        super();
+    }
+
+    
+    public StatusData(final Boolean verified, final Boolean frozen, final Boolean locked, final Boolean conformant) {
+        this.verified = verified;
+        this.frozen = frozen;
+        this.locked = locked;
+        this.conformant = conformant;
+    }
 
     
     public Boolean getVerified() {

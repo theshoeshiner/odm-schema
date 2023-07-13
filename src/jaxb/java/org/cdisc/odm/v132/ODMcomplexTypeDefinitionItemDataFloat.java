@@ -2,6 +2,7 @@
 package org.cdisc.odm.v132;
 
 import java.math.BigDecimal;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -16,7 +17,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataFloat", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataFloat {
+public class ODMcomplexTypeDefinitionItemDataFloat implements ItemDataStar
+{
 
     @XmlValue
     protected BigDecimal value;
@@ -38,6 +40,22 @@ public class ODMcomplexTypeDefinitionItemDataFloat {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+
+    
+    public ODMcomplexTypeDefinitionItemDataFloat() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataFloat(final BigDecimal value, final String itemOID, final TransactionType transactionType, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
 
     
     public BigDecimal getValue() {

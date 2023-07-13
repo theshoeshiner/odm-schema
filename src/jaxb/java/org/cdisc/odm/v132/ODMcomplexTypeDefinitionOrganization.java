@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionOrganization {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionOrganization() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionOrganization(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

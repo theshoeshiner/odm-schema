@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,6 +28,19 @@ public class ODMcomplexTypeDefinitionStudy {
     protected List<ODMcomplexTypeDefinitionMetaDataVersion> metaDataVersion;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
+
+    
+    public ODMcomplexTypeDefinitionStudy() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudy(final ODMcomplexTypeDefinitionGlobalVariables globalVariables, final ODMcomplexTypeDefinitionBasicDefinitions basicDefinitions, final List<ODMcomplexTypeDefinitionMetaDataVersion> metaDataVersion, final String oid) {
+        this.globalVariables = globalVariables;
+        this.basicDefinitions = basicDefinitions;
+        this.metaDataVersion = metaDataVersion;
+        this.oid = oid;
+    }
 
     
     public ODMcomplexTypeDefinitionGlobalVariables getGlobalVariables() {

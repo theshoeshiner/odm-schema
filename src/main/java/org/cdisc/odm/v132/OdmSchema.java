@@ -2,14 +2,15 @@ package org.cdisc.odm.v132;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URISyntaxException;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.ValidationEvent;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
@@ -33,15 +34,9 @@ public class OdmSchema {
 		if (CONTEXT == null) {
 			try {
 				generateObjects();
-			} catch (JAXBException e) {
+			} catch (JAXBException | IOException | SAXException | URISyntaxException e) {
 				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (IOException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (SAXException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (URISyntaxException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			}
+			} 
 		}
 		return CONTEXT;
 	}
@@ -50,33 +45,39 @@ public class OdmSchema {
 		if (SCHEMA == null) {
 			try {
 				generateObjects();
-			} catch (JAXBException e) {
+			} catch (JAXBException | IOException | SAXException | URISyntaxException e) {
 				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (IOException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (SAXException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			} catch (URISyntaxException e) {
-				throw new RuntimeException("Could not generate Schema object", e);
-			}
+			} 
 		}
 		return SCHEMA;
 
 	}
 	
 	public static ODM parseOdmStream(InputStream stream) throws JAXBException {
-		return parseOdmStream(stream, ValidationEvent.FATAL_ERROR);
+		return parseOdmStream(stream, -1);
+	}
+	
+	public static ODM parseOdmStream(InputStream stream, int failOnSeverity,int stackOn,int logOn) throws JAXBException {
+		return (ODM) parseStreamInternal(stream,failOnSeverity,stackOn,logOn);
 	}
 
-	public static ODM parseOdmStream(InputStream stream, int faillevel) throws JAXBException {
-		ODM odm = (ODM) parseStreamInternal(stream,faillevel);
+	public static ODM parseOdmStream(InputStream stream, int failOnSeverity) throws JAXBException {
+		ODM odm = (ODM) parseStreamInternal(stream,failOnSeverity,-1,-1);
 		return odm;
 	}
+	
+	public static void marshalOdm(ODM odm,OutputStream stream) throws JAXBException {
+		marshalOdm(odm, stream, -1);
+	}
+	
+	public static void marshalOdm(ODM odm,OutputStream stream, int failOnSeverity) throws JAXBException {
+		marshalStreamInternal(odm, stream, failOnSeverity,-1,-1);
+	}
 
-	protected static Object parseStreamInternal(InputStream stream, int failureLevel) throws JAXBException {
+	protected static Object parseStreamInternal(InputStream stream, int failOnSeverity,int stackOn,int logOn) throws JAXBException {
 		Schema schema = getSchema();
 		Unmarshaller um = getContext().createUnmarshaller();
-		um.setEventHandler(new OdmValidationEventHandler(failureLevel));
+		um.setEventHandler(new OdmValidationEventHandler(failOnSeverity,stackOn,logOn));
 		um.setSchema(schema);
 		StreamSource source = new StreamSource(stream);
 		Object object = um.unmarshal(source);
@@ -85,6 +86,14 @@ public class OdmSchema {
 			object = element.getValue();
 		}
 		return object;
+	}
+	
+	protected static void marshalStreamInternal(Object object,OutputStream stream, int failOnSeverity,int stackOn,int logOn) throws JAXBException {
+		Schema schema = getSchema();
+		Marshaller mar = getContext().createMarshaller();
+		mar.setSchema(schema);
+		mar.setEventHandler(new OdmValidationEventHandler(failOnSeverity,stackOn,logOn));
+		mar.marshal(object, stream);
 	}
 
 	protected static void generateObjects() throws JAXBException, IOException, SAXException, URISyntaxException {
@@ -103,14 +112,8 @@ public class OdmSchema {
 	protected static Schema generateSchemaObject() throws JAXBException, IOException, SAXException, URISyntaxException {
 		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 		schemaFactory.setResourceResolver(new ClasspathResourceResolver(OdmSchema.class));
-
-
 		InputStream is = OdmSchema.class.getResourceAsStream(SCHEMA_FILE);
-		LOGGER.info("stream: {}", is);
-
 		Schema schema = schemaFactory.newSchema(new Source[] { new StreamSource(is)});
-
-		LOGGER.info("Schema: {}", schema);
 		return schema;
 	}
 }

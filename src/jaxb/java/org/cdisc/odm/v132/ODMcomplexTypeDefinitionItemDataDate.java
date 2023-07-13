@@ -2,6 +2,7 @@
 package org.cdisc.odm.v132;
 
 import java.time.LocalDate;
+
 import javax.xml.bind.IsoLocalDateAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,7 +19,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataDate", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataDate {
+public class ODMcomplexTypeDefinitionItemDataDate implements ItemDataStar
+{
 
     @XmlValue
     @XmlJavaTypeAdapter(IsoLocalDateAdapter.class)
@@ -41,6 +43,22 @@ public class ODMcomplexTypeDefinitionItemDataDate {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+
+    
+    public ODMcomplexTypeDefinitionItemDataDate() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataDate(final LocalDate value, final String itemOID, final TransactionType transactionType, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
 
     
     public LocalDate getValue() {

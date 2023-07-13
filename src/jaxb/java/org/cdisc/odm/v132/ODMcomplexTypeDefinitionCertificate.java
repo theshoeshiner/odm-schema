@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionCertificate {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionCertificate() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCertificate(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

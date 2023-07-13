@@ -26,6 +26,8 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
     protected List<ODMcomplexTypeDefinitionFormRef> formRef;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+    @XmlAttribute(name = "SourceDatasetName")
+    protected String sourceDatasetName;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -37,6 +39,24 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
     protected EventType type;
     @XmlAttribute(name = "Category")
     protected String category;
+
+    
+    public ODMcomplexTypeDefinitionStudyEventDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudyEventDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormRef> formRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String sourceDatasetName, final String oid, final String name, final Boolean repeating, final EventType type, final String category) {
+        this.description = description;
+        this.formRef = formRef;
+        this.alias = alias;
+        this.sourceDatasetName = sourceDatasetName;
+        this.oid = oid;
+        this.name = name;
+        this.repeating = repeating;
+        this.type = type;
+        this.category = category;
+    }
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {
@@ -62,6 +82,16 @@ public class ODMcomplexTypeDefinitionStudyEventDef {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();
         }
         return this.alias;
+    }
+
+    
+    public String getSourceDatasetName() {
+        return sourceDatasetName;
+    }
+
+    
+    public void setSourceDatasetName(String value) {
+        this.sourceDatasetName = value;
     }
 
     

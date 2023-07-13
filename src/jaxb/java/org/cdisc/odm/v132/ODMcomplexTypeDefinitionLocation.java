@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -27,6 +28,20 @@ public class ODMcomplexTypeDefinitionLocation {
     protected LocationType locationType;
     @XmlAttribute(name = "Number")
     protected String number;
+
+    
+    public ODMcomplexTypeDefinitionLocation() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionLocation(final List<ODMcomplexTypeDefinitionMetaDataVersionRef> metaDataVersionRef, final String oid, final String name, final LocationType locationType, final String number) {
+        this.metaDataVersionRef = metaDataVersionRef;
+        this.oid = oid;
+        this.name = name;
+        this.locationType = locationType;
+        this.number = number;
+    }
 
     
     public List<ODMcomplexTypeDefinitionMetaDataVersionRef> getMetaDataVersionRef() {

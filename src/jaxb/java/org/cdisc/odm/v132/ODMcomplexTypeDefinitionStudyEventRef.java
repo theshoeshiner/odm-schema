@@ -26,6 +26,19 @@ public class ODMcomplexTypeDefinitionStudyEventRef {
     protected String studyEventOID;
 
     
+    public ODMcomplexTypeDefinitionStudyEventRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStudyEventRef(final Integer orderNumber, final Boolean mandatory, final String collectionExceptionConditionOID, final String studyEventOID) {
+        this.orderNumber = orderNumber;
+        this.mandatory = mandatory;
+        this.collectionExceptionConditionOID = collectionExceptionConditionOID;
+        this.studyEventOID = studyEventOID;
+    }
+
+    
     public Integer getOrderNumber() {
         return orderNumber;
     }

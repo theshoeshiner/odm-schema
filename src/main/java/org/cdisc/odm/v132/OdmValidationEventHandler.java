@@ -13,30 +13,37 @@ public class OdmValidationEventHandler implements ValidationEventHandler {
 
 	protected static final Logger LOGGER = LoggerFactory.getLogger(OdmValidationEventHandler.class);
 	
-	protected int allowEventSeverity = ValidationEvent.ERROR;
+	protected int failOnSeverity = ValidationEvent.ERROR+1;
+	protected int stacktraceOnSeverity = ValidationEvent.ERROR;
+	protected int logOnSeverity = ValidationEvent.ERROR;
 	protected List<ValidationEvent> events = new ArrayList<>();
 	
 	public OdmValidationEventHandler() {}
 	
-	public OdmValidationEventHandler(int allowSeverity) {
-		this.allowEventSeverity = allowSeverity;
+
+	public OdmValidationEventHandler(int failOnSeverity, int stacktraceOnSeverity, int logOnSeverity) {
+		this.failOnSeverity = failOnSeverity;
+		this.logOnSeverity = logOnSeverity;
+		this.stacktraceOnSeverity = stacktraceOnSeverity;
+		LOGGER.trace("OdmValidationEventHandler failOnSeverity: {} stacktraceOnSeverity: {} logOnSeverity: {}",failOnSeverity,stacktraceOnSeverity,logOnSeverity);
+	}
+
+
+
+	public OdmValidationEventHandler(int failOnSeverity) {
+		this(failOnSeverity,failOnSeverity-1,failOnSeverity-2);
 	}
 	
 	@Override
 	public boolean handleEvent(ValidationEvent event) {
 		events.add(event);
-		
-		
-		
-		if (event.getSeverity() <= allowEventSeverity) {
+		if (stacktraceOnSeverity >= 0 && event.getSeverity() >= stacktraceOnSeverity) {
+			LOGGER.error("Level {} Validation Error Line: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getLinkedException());
+		}
+		else if (logOnSeverity >= 0 && event.getSeverity() >= logOnSeverity) {
 			LOGGER.warn("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage());
-			return true;
 		}
-		else {
-			LOGGER.error("Level {} Validation Error Line: {} Msg: {}",event.getSeverity(),event.getLocator().getLineNumber(),event.getMessage(),event.getLinkedException());
-			return false;
-		}
-
+		return !(failOnSeverity >=0 && event.getSeverity() >= failOnSeverity);
 	}
 
 }

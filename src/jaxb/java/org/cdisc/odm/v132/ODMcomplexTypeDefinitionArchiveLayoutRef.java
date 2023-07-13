@@ -16,6 +16,16 @@ public class ODMcomplexTypeDefinitionArchiveLayoutRef {
     protected String archiveLayoutOID;
 
     
+    public ODMcomplexTypeDefinitionArchiveLayoutRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionArchiveLayoutRef(final String archiveLayoutOID) {
+        this.archiveLayoutOID = archiveLayoutOID;
+    }
+
+    
     public String getArchiveLayoutOID() {
         return archiveLayoutOID;
     }

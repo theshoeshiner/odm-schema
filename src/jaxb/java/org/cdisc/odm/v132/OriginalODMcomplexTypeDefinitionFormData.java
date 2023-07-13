@@ -3,10 +3,13 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 
@@ -23,7 +26,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlSeeAlso({
     ODMcomplexTypeDefinitionFormData.class
 })
-public class OriginalODMcomplexTypeDefinitionFormData {
+public class OriginalODMcomplexTypeDefinitionFormData implements HasAuditRecordOrId
+{
 
     @XmlElement(name = "AuditRecord")
     protected ODMcomplexTypeDefinitionAuditRecord auditRecord;
@@ -41,6 +45,28 @@ public class OriginalODMcomplexTypeDefinitionFormData {
     protected String formRepeatKey;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+    @XmlAttribute(name = "AuditRecordID")
+    @XmlIDREF
+    @XmlSchemaType(name = "IDREF")
+    protected Object auditRecordID;
+
+    
+    public OriginalODMcomplexTypeDefinitionFormData() {
+        super();
+    }
+
+    
+    public OriginalODMcomplexTypeDefinitionFormData(final ODMcomplexTypeDefinitionAuditRecord auditRecord, final ODMcomplexTypeDefinitionSignature signature, final ODMcomplexTypeDefinitionArchiveLayoutRef archiveLayoutRef, final List<ODMcomplexTypeDefinitionAnnotation> annotation, final List<ODMcomplexTypeDefinitionItemGroupData> itemGroupData, final String formOID, final String formRepeatKey, final TransactionType transactionType, final Object auditRecordID) {
+        this.auditRecord = auditRecord;
+        this.signature = signature;
+        this.archiveLayoutRef = archiveLayoutRef;
+        this.annotation = annotation;
+        this.itemGroupData = itemGroupData;
+        this.formOID = formOID;
+        this.formRepeatKey = formRepeatKey;
+        this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
+    }
 
     
     public ODMcomplexTypeDefinitionAuditRecord getAuditRecord() {
@@ -116,6 +142,16 @@ public class OriginalODMcomplexTypeDefinitionFormData {
     
     public void setTransactionType(TransactionType value) {
         this.transactionType = value;
+    }
+
+    
+    public Object getAuditRecordID() {
+        return auditRecordID;
+    }
+
+    
+    public void setAuditRecordID(Object value) {
+        this.auditRecordID = value;
     }
 
 }

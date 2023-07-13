@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 import org.cdisc.odm.v132.YesOrNoAdapter;
 
 
@@ -23,6 +24,19 @@ public class ReviewData {
     protected String userGroupOID;
     @XmlAttribute(name = "UserOID")
     protected String userOID;
+
+    
+    public ReviewData() {
+        super();
+    }
+
+    
+    public ReviewData(final String reviewKey, final Boolean reviewed, final String userGroupOID, final String userOID) {
+        this.reviewKey = reviewKey;
+        this.reviewed = reviewed;
+        this.userGroupOID = userGroupOID;
+        this.userOID = userOID;
+    }
 
     
     public String getReviewKey() {

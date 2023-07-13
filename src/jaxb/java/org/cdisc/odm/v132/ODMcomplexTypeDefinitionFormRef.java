@@ -26,6 +26,19 @@ public class ODMcomplexTypeDefinitionFormRef {
     protected String formOID;
 
     
+    public ODMcomplexTypeDefinitionFormRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionFormRef(final Integer orderNumber, final Boolean mandatory, final String collectionExceptionConditionOID, final String formOID) {
+        this.orderNumber = orderNumber;
+        this.mandatory = mandatory;
+        this.collectionExceptionConditionOID = collectionExceptionConditionOID;
+        this.formOID = formOID;
+    }
+
+    
     public Integer getOrderNumber() {
         return orderNumber;
     }

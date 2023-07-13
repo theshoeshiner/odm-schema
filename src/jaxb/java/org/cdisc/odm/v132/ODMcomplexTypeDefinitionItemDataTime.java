@@ -2,6 +2,7 @@
 package org.cdisc.odm.v132;
 
 import java.time.OffsetTime;
+
 import javax.xml.bind.IsoOffsetTimeAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -18,15 +19,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataTime", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataTime {
+public class ODMcomplexTypeDefinitionItemDataTime implements ItemDataStar
+{
 
     @XmlValue
     @XmlJavaTypeAdapter(IsoOffsetTimeAdapter.class)
     protected OffsetTime value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -41,6 +39,26 @@ public class ODMcomplexTypeDefinitionItemDataTime {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataTime() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataTime(final OffsetTime value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
 
     
     public OffsetTime getValue() {
@@ -50,26 +68,6 @@ public class ODMcomplexTypeDefinitionItemDataTime {
     
     public void setValue(OffsetTime value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     
@@ -110,6 +108,26 @@ public class ODMcomplexTypeDefinitionItemDataTime {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

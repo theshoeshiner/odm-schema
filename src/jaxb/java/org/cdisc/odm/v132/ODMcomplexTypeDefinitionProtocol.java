@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -24,6 +25,18 @@ public class ODMcomplexTypeDefinitionProtocol {
     protected List<ODMcomplexTypeDefinitionStudyEventRef> studyEventRef;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+
+    
+    public ODMcomplexTypeDefinitionProtocol() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionProtocol(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionStudyEventRef> studyEventRef, final List<ODMcomplexTypeDefinitionAlias> alias) {
+        this.description = description;
+        this.studyEventRef = studyEventRef;
+        this.alias = alias;
+    }
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {

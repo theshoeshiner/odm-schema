@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataURI", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataURI {
+public class ODMcomplexTypeDefinitionItemDataURI implements ItemDataStar
+{
 
     @XmlValue
     @XmlSchemaType(name = "anyURI")
@@ -38,6 +39,22 @@ public class ODMcomplexTypeDefinitionItemDataURI {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+
+    
+    public ODMcomplexTypeDefinitionItemDataURI() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataURI(final String value, final String itemOID, final TransactionType transactionType, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
 
     
     public String getValue() {

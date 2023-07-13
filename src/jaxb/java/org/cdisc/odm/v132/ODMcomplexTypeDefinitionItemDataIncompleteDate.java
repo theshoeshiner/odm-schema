@@ -15,7 +15,8 @@ import javax.xml.bind.annotation.XmlValue;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataIncompleteDate", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataIncompleteDate {
+public class ODMcomplexTypeDefinitionItemDataIncompleteDate implements ItemDataStar
+{
 
     @XmlValue
     protected String value;
@@ -37,6 +38,22 @@ public class ODMcomplexTypeDefinitionItemDataIncompleteDate {
     protected String itemOID;
     @XmlAttribute(name = "TransactionType")
     protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataIncompleteDate() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataIncompleteDate(final String value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
 
     
     public String getValue() {

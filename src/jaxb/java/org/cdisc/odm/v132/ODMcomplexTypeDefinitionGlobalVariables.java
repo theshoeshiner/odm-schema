@@ -24,6 +24,18 @@ public class ODMcomplexTypeDefinitionGlobalVariables {
     protected ODMcomplexTypeDefinitionProtocolName protocolName;
 
     
+    public ODMcomplexTypeDefinitionGlobalVariables() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionGlobalVariables(final ODMcomplexTypeDefinitionStudyName studyName, final ODMcomplexTypeDefinitionStudyDescription studyDescription, final ODMcomplexTypeDefinitionProtocolName protocolName) {
+        this.studyName = studyName;
+        this.studyDescription = studyDescription;
+        this.protocolName = protocolName;
+    }
+
+    
     public ODMcomplexTypeDefinitionStudyName getStudyName() {
         return studyName;
     }

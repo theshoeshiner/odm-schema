@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionCountry {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionCountry() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCountry(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

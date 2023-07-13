@@ -1,7 +1,7 @@
 
 package org.cdisc.odm.v132;
 
-import javax.xml.bind.BigIntegerIntegerAdapter;
+import javax.xml.bind.BigIntegerLongAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -35,8 +35,9 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     @XmlElement(name = "SourceID")
     protected ODMcomplexTypeDefinitionSourceID sourceID;
     @XmlAttribute(name = "OrderNumber")
-    @XmlJavaTypeAdapter(BigIntegerIntegerAdapter.class)
-    protected Integer orderNumber;
+    @XmlJavaTypeAdapter(BigIntegerLongAdapter.class)
+    @XmlSchemaType(name = "long")
+    protected Long orderNumber;
     @XmlAttribute(name = "SourceType")
     protected String sourceType;
     @XmlAttribute(name = "EditPoint")
@@ -49,6 +50,25 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
+
+    
+    public ODMcomplexTypeDefinitionAuditRecord() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAuditRecord(final ODMcomplexTypeDefinitionUserRef userRef, final ODMcomplexTypeDefinitionLocationRef locationRef, final ODMcomplexTypeDefinitionDateTimeStamp dateTimeStamp, final ODMcomplexTypeDefinitionReasonForChange reasonForChange, final ODMcomplexTypeDefinitionSourceID sourceID, final Long orderNumber, final String sourceType, final EditPointType editPoint, final Boolean usedImputationMethod, final String id) {
+        this.userRef = userRef;
+        this.locationRef = locationRef;
+        this.dateTimeStamp = dateTimeStamp;
+        this.reasonForChange = reasonForChange;
+        this.sourceID = sourceID;
+        this.orderNumber = orderNumber;
+        this.sourceType = sourceType;
+        this.editPoint = editPoint;
+        this.usedImputationMethod = usedImputationMethod;
+        this.id = id;
+    }
 
     
     public ODMcomplexTypeDefinitionUserRef getUserRef() {
@@ -101,12 +121,12 @@ public class ODMcomplexTypeDefinitionAuditRecord {
     }
 
     
-    public Integer getOrderNumber() {
+    public Long getOrderNumber() {
         return orderNumber;
     }
 
     
-    public void setOrderNumber(Integer value) {
+    public void setOrderNumber(Long value) {
         this.orderNumber = value;
     }
 

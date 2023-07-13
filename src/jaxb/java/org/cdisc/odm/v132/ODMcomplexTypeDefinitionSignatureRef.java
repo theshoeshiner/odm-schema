@@ -16,6 +16,16 @@ public class ODMcomplexTypeDefinitionSignatureRef {
     protected String signatureOID;
 
     
+    public ODMcomplexTypeDefinitionSignatureRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionSignatureRef(final String signatureOID) {
+        this.signatureOID = signatureOID;
+    }
+
+    
     public String getSignatureOID() {
         return signatureOID;
     }

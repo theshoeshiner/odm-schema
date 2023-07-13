@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,6 +19,16 @@ public class ODMcomplexTypeDefinitionAnnotations {
 
     @XmlElement(name = "Annotation")
     protected List<ODMcomplexTypeDefinitionAnnotation> annotation;
+
+    
+    public ODMcomplexTypeDefinitionAnnotations() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAnnotations(final List<ODMcomplexTypeDefinitionAnnotation> annotation) {
+        this.annotation = annotation;
+    }
 
     
     public List<ODMcomplexTypeDefinitionAnnotation> getAnnotation() {

@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionCheckValue {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionCheckValue() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionCheckValue(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

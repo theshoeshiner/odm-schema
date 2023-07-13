@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionStateProv {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionStateProv() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionStateProv(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

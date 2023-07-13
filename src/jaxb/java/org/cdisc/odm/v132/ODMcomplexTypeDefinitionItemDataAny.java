@@ -16,7 +16,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataAny", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataAny {
+public class ODMcomplexTypeDefinitionItemDataAny implements ItemDataStar
+{
 
     @XmlValue
     protected String value;
@@ -41,6 +42,23 @@ public class ODMcomplexTypeDefinitionItemDataAny {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+
+    
+    public ODMcomplexTypeDefinitionItemDataAny() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataAny(final String value, final String itemOID, final TransactionType transactionType, final Boolean isNull, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID) {
+        this.value = value;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+        this.isNull = isNull;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+    }
 
     
     public String getValue() {

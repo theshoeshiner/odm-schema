@@ -18,6 +18,17 @@ public class UserGroup {
     protected String oid;
 
     
+    public UserGroup() {
+        super();
+    }
+
+    
+    public UserGroup(final String name, final String oid) {
+        this.name = name;
+        this.oid = oid;
+    }
+
+    
     public String getName() {
         return name;
     }

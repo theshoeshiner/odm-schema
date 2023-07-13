@@ -26,6 +26,8 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     protected List<ODMcomplexTypeDefinitionItemRef> itemRef;
     @XmlElement(name = "Alias")
     protected List<ODMcomplexTypeDefinitionAlias> alias;
+    @XmlAttribute(name = "SourceDatasetName")
+    protected String sourceDatasetName;
     @XmlAttribute(name = "OID", required = true)
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
@@ -48,6 +50,29 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
     protected String purpose;
     @XmlAttribute(name = "Comment")
     protected String comment;
+
+    
+    public ODMcomplexTypeDefinitionItemGroupDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemGroupDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionItemRef> itemRef, final List<ODMcomplexTypeDefinitionAlias> alias, final String sourceDatasetName, final String oid, final String name, final Boolean repeating, final Boolean isReferenceData, final String sasDatasetName, final String domain, final String origin, final String role, final String purpose, final String comment) {
+        this.description = description;
+        this.itemRef = itemRef;
+        this.alias = alias;
+        this.sourceDatasetName = sourceDatasetName;
+        this.oid = oid;
+        this.name = name;
+        this.repeating = repeating;
+        this.isReferenceData = isReferenceData;
+        this.sasDatasetName = sasDatasetName;
+        this.domain = domain;
+        this.origin = origin;
+        this.role = role;
+        this.purpose = purpose;
+        this.comment = comment;
+    }
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {
@@ -73,6 +98,16 @@ public class ODMcomplexTypeDefinitionItemGroupDef {
             alias = new ArrayList<ODMcomplexTypeDefinitionAlias>();
         }
         return this.alias;
+    }
+
+    
+    public String getSourceDatasetName() {
+        return sourceDatasetName;
+    }
+
+    
+    public void setSourceDatasetName(String value) {
+        this.sourceDatasetName = value;
     }
 
     

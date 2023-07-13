@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -18,6 +19,16 @@ public class ODMcomplexTypeDefinitionAuditRecords {
 
     @XmlElement(name = "AuditRecord")
     protected List<ODMcomplexTypeDefinitionAuditRecord> auditRecord;
+
+    
+    public ODMcomplexTypeDefinitionAuditRecords() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionAuditRecords(final List<ODMcomplexTypeDefinitionAuditRecord> auditRecord) {
+        this.auditRecord = auditRecord;
+    }
 
     
     public List<ODMcomplexTypeDefinitionAuditRecord> getAuditRecord() {

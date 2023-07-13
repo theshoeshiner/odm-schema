@@ -17,15 +17,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlType(name = "ODMcomplexTypeDefinition-ItemDataHexBinary", propOrder = {
     "value"
 })
-public class ODMcomplexTypeDefinitionItemDataHexBinary {
+public class ODMcomplexTypeDefinitionItemDataHexBinary implements ItemDataStar
+{
 
     @XmlValue
     @XmlJavaTypeAdapter(HexBinaryAdapter.class)
     protected byte[] value;
-    @XmlAttribute(name = "ItemOID", required = true)
-    protected String itemOID;
-    @XmlAttribute(name = "TransactionType")
-    protected TransactionType transactionType;
     @XmlAttribute(name = "AuditRecordID")
     @XmlIDREF
     @XmlSchemaType(name = "IDREF")
@@ -40,6 +37,26 @@ public class ODMcomplexTypeDefinitionItemDataHexBinary {
     protected Object annotationID;
     @XmlAttribute(name = "MeasurementUnitOID")
     protected String measurementUnitOID;
+    @XmlAttribute(name = "ItemOID", required = true)
+    protected String itemOID;
+    @XmlAttribute(name = "TransactionType")
+    protected TransactionType transactionType;
+
+    
+    public ODMcomplexTypeDefinitionItemDataHexBinary() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionItemDataHexBinary(final byte[] value, final Object auditRecordID, final Object signatureID, final Object annotationID, final String measurementUnitOID, final String itemOID, final TransactionType transactionType) {
+        this.value = value;
+        this.auditRecordID = auditRecordID;
+        this.signatureID = signatureID;
+        this.annotationID = annotationID;
+        this.measurementUnitOID = measurementUnitOID;
+        this.itemOID = itemOID;
+        this.transactionType = transactionType;
+    }
 
     
     public byte[] getValue() {
@@ -49,26 +66,6 @@ public class ODMcomplexTypeDefinitionItemDataHexBinary {
     
     public void setValue(byte[] value) {
         this.value = value;
-    }
-
-    
-    public String getItemOID() {
-        return itemOID;
-    }
-
-    
-    public void setItemOID(String value) {
-        this.itemOID = value;
-    }
-
-    
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
-
-    
-    public void setTransactionType(TransactionType value) {
-        this.transactionType = value;
     }
 
     
@@ -109,6 +106,26 @@ public class ODMcomplexTypeDefinitionItemDataHexBinary {
     
     public void setMeasurementUnitOID(String value) {
         this.measurementUnitOID = value;
+    }
+
+    
+    public String getItemOID() {
+        return itemOID;
+    }
+
+    
+    public void setItemOID(String value) {
+        this.itemOID = value;
+    }
+
+    
+    public TransactionType getTransactionType() {
+        return transactionType;
+    }
+
+    
+    public void setTransactionType(TransactionType value) {
+        this.transactionType = value;
     }
 
 }

@@ -3,6 +3,7 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,6 +30,20 @@ public class ODMcomplexTypeDefinitionConditionDef {
     protected String oid;
     @XmlAttribute(name = "Name", required = true)
     protected String name;
+
+    
+    public ODMcomplexTypeDefinitionConditionDef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionConditionDef(final ODMcomplexTypeDefinitionDescription description, final List<ODMcomplexTypeDefinitionFormalExpression> formalExpression, final List<ODMcomplexTypeDefinitionAlias> alias, final String oid, final String name) {
+        this.description = description;
+        this.formalExpression = formalExpression;
+        this.alias = alias;
+        this.oid = oid;
+        this.name = name;
+    }
 
     
     public ODMcomplexTypeDefinitionDescription getDescription() {

@@ -26,6 +26,17 @@ public class ODMcomplexTypeDefinitionTranslatedText {
     protected String lang;
 
     
+    public ODMcomplexTypeDefinitionTranslatedText() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionTranslatedText(final String value, final String lang) {
+        this.value = value;
+        this.lang = lang;
+    }
+
+    
     public String getValue() {
         return value;
     }

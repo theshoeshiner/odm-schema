@@ -3,11 +3,15 @@ package org.cdisc.odm.v132;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.xml.bind.BigIntegerLongAdapter;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 
@@ -55,6 +59,38 @@ public class ODMcomplexTypeDefinitionMetaDataVersion {
     protected String name;
     @XmlAttribute(name = "Description")
     protected String description;
+    @XmlAttribute(name = "OrderNumber")
+    @XmlJavaTypeAdapter(BigIntegerLongAdapter.class)
+    @XmlSchemaType(name = "long")
+    protected Long orderNumber;
+    @XmlAttribute(name = "Active")
+    @XmlJavaTypeAdapter(YesOrNoAdapter.class)
+    protected Boolean active;
+
+    
+    public ODMcomplexTypeDefinitionMetaDataVersion() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionMetaDataVersion(final ODMcomplexTypeDefinitionInclude include, final ODMcomplexTypeDefinitionProtocol protocol, final List<ODMcomplexTypeDefinitionStudyEventDef> studyEventDef, final List<ODMcomplexTypeDefinitionFormDef> formDef, final List<ODMcomplexTypeDefinitionItemGroupDef> itemGroupDef, final List<ODMcomplexTypeDefinitionItemDef> itemDef, final List<ODMcomplexTypeDefinitionCodeList> codeList, final List<ODMcomplexTypeDefinitionImputationMethod> imputationMethod, final List<ODMcomplexTypeDefinitionPresentation> presentation, final List<ODMcomplexTypeDefinitionConditionDef> conditionDef, final List<ODMcomplexTypeDefinitionMethodDef> methodDef, final String oid, final String name, final String description, final Long orderNumber, final Boolean active) {
+        this.include = include;
+        this.protocol = protocol;
+        this.studyEventDef = studyEventDef;
+        this.formDef = formDef;
+        this.itemGroupDef = itemGroupDef;
+        this.itemDef = itemDef;
+        this.codeList = codeList;
+        this.imputationMethod = imputationMethod;
+        this.presentation = presentation;
+        this.conditionDef = conditionDef;
+        this.methodDef = methodDef;
+        this.oid = oid;
+        this.name = name;
+        this.description = description;
+        this.orderNumber = orderNumber;
+        this.active = active;
+    }
 
     
     public ODMcomplexTypeDefinitionInclude getInclude() {
@@ -176,6 +212,26 @@ public class ODMcomplexTypeDefinitionMetaDataVersion {
     
     public void setDescription(String value) {
         this.description = value;
+    }
+
+    
+    public Long getOrderNumber() {
+        return orderNumber;
+    }
+
+    
+    public void setOrderNumber(Long value) {
+        this.orderNumber = value;
+    }
+
+    
+    public Boolean getActive() {
+        return active;
+    }
+
+    
+    public void setActive(Boolean value) {
+        this.active = value;
     }
 
 }

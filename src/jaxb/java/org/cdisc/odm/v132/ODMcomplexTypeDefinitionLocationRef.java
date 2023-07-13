@@ -16,6 +16,16 @@ public class ODMcomplexTypeDefinitionLocationRef {
     protected String locationOID;
 
     
+    public ODMcomplexTypeDefinitionLocationRef() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionLocationRef(final String locationOID) {
+        this.locationOID = locationOID;
+    }
+
+    
     public String getLocationOID() {
         return locationOID;
     }

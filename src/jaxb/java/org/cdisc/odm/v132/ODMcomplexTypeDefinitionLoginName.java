@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionLoginName {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionLoginName() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionLoginName(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }

@@ -18,6 +18,16 @@ public class ODMcomplexTypeDefinitionEmail {
     protected String value;
 
     
+    public ODMcomplexTypeDefinitionEmail() {
+        super();
+    }
+
+    
+    public ODMcomplexTypeDefinitionEmail(final String value) {
+        this.value = value;
+    }
+
+    
     public String getValue() {
         return value;
     }
