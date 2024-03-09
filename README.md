@@ -1,5 +1,5 @@
-#odm-schema
-Java classes generated from the CDISC ODM Schema v1.3.2
+# odm-schema
+Java JAX-B binding classes for the CDISC ODM Schema v1.3.2
 
 Contains extensions for:
 * Query Data
